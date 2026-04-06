@@ -59,6 +59,8 @@
       quizTitleMulti: 'Kiểm tra — {m} module ({n} câu)',
       errorMarkdownParse: 'Lỗi phân tích markdown: ',
       errorMissingMd: 'Thiếu nội dung nhúng (EMBEDDED_MD).',
+      articleEnLoadFailed:
+        'Không tải được docs-en.md (mở trang qua HTTP hoặc đặt file cùng thư mục). Đang hiển thị bản tiếng Việt.',
     },
     en: {
       skipLink: 'Skip to content',
@@ -113,6 +115,8 @@
       quizTitleMulti: 'Quiz — {m} modules ({n} questions)',
       errorMarkdownParse: 'Markdown parse error: ',
       errorMissingMd: 'Missing embedded content (EMBEDDED_MD).',
+      articleEnLoadFailed:
+        'Could not load docs-en.md (serve over HTTP or keep the file next to index.html). Showing Vietnamese.',
     },
   };
 

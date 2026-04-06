@@ -523,6 +523,63 @@
 
   var quizToolbarWired = false;
 
+  var cachedMdEn = null;
+  var mdEnFetchPromise = null;
+
+  function fetchArticleEnMd() {
+    if (cachedMdEn != null) return Promise.resolve(cachedMdEn);
+    if (mdEnFetchPromise) return mdEnFetchPromise;
+    mdEnFetchPromise = fetch('docs-en.md')
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.text();
+      })
+      .then(function (text) {
+        cachedMdEn = text;
+        return text;
+      })
+      .catch(function () {
+        cachedMdEn = null;
+        mdEnFetchPromise = null;
+        return null;
+      });
+    return mdEnFetchPromise;
+  }
+
+  function showArticleLocaleHint(msg, isError) {
+    var el = document.getElementById('articleLocaleHint');
+    if (!el) return;
+    if (!msg) {
+      el.hidden = true;
+      el.textContent = '';
+      el.classList.remove('quiz-load-hint--error');
+      return;
+    }
+    el.hidden = false;
+    el.textContent = msg;
+    el.classList.toggle('quiz-load-hint--error', !!isError);
+  }
+
+  async function applyKnowledgeLocale() {
+    var vi = getEmbeddedMd();
+    if (!vi) return;
+    var loc = getContentLocale();
+    window.scrollTo(0, 0);
+    if (loc === 'en') {
+      var en = await fetchArticleEnMd();
+      if (en) {
+        showArticleLocaleHint('');
+        loadFromText(en);
+        return;
+      }
+      showArticleLocaleHint(t('articleEnLoadFailed'), true);
+      loadFromText(vi);
+      return;
+    }
+    showArticleLocaleHint('');
+    loadFromText(vi);
+  }
+
   function onLocaleChanged() {
     applyLayoutForViewport();
     if (quizState.modules.length) {
@@ -533,6 +590,7 @@
     if (els.quizPanel && !els.quizPanel.hidden) {
       refreshQuizUiForLocale();
     }
+    applyKnowledgeLocale();
   }
 
   function applyQuizStaticLabels() {
@@ -935,7 +993,19 @@
 
     var embedded = getEmbeddedMd();
     if (embedded) {
-      loadFromText(embedded);
+      if (getContentLocale() === 'en') {
+        var enBoot = await fetchArticleEnMd();
+        if (enBoot) {
+          showArticleLocaleHint('');
+          loadFromText(enBoot);
+        } else {
+          showArticleLocaleHint(t('articleEnLoadFailed'), true);
+          loadFromText(embedded);
+        }
+      } else {
+        showArticleLocaleHint('');
+        loadFromText(embedded);
+      }
     } else {
       els.loading.hidden = true;
       els.rendered.hidden = true;
