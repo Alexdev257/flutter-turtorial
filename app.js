@@ -29,6 +29,7 @@
     quizQuestionText: document.getElementById('quizQuestionText'),
     quizOptions: document.getElementById('quizOptions'),
     quizFeedback: document.getElementById('quizFeedback'),
+    quizFeedbackTitle: document.getElementById('quizFeedbackTitle'),
     quizCorrectAnswer: document.getElementById('quizCorrectAnswer'),
     quizExplain: document.getElementById('quizExplain'),
     quizContinueBtn: document.getElementById('quizContinueBtn'),
@@ -619,7 +620,11 @@
   function goToNextQuestion() {
     quizState.index++;
     quizState.awaitingContinue = false;
-    if (els.quizFeedback) els.quizFeedback.hidden = true;
+    if (els.quizFeedback) {
+      els.quizFeedback.hidden = true;
+      els.quizFeedback.classList.remove('quiz-feedback--correct');
+    }
+    if (els.quizFeedbackTitle) els.quizFeedbackTitle.textContent = 'Đáp án đúng';
     renderQuizQuestion();
   }
 
@@ -659,20 +664,30 @@
     buttons.forEach(function (b) {
       b.disabled = true;
     });
+    var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
     if (picked === correct) {
       buttons[picked].classList.add('quiz-option--correct');
       buttons[picked].setAttribute('aria-checked', 'true');
       quizState.correct++;
-      window.setTimeout(function () {
-        goToNextQuestion();
-      }, 400);
+      if (els.quizFeedbackTitle) els.quizFeedbackTitle.textContent = 'Chính xác';
+      if (els.quizCorrectAnswer) {
+        var okLetter = letters[picked] || String(picked + 1);
+        els.quizCorrectAnswer.textContent = okLetter + '. ' + q.options[picked];
+      }
+      if (els.quizExplain) els.quizExplain.textContent = q.explain || '';
+      if (els.quizFeedback) {
+        els.quizFeedback.classList.add('quiz-feedback--correct');
+        els.quizFeedback.hidden = false;
+      }
+      quizState.awaitingContinue = true;
       return;
     }
     quizState.wrong++;
     buttons[picked].classList.add('quiz-option--wrong');
     buttons[correct].classList.add('quiz-option--correct');
+    if (els.quizFeedbackTitle) els.quizFeedbackTitle.textContent = 'Đáp án đúng';
+    if (els.quizFeedback) els.quizFeedback.classList.remove('quiz-feedback--correct');
     if (els.quizCorrectAnswer) {
-      var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
       var letter = letters[correct] || String(correct + 1);
       els.quizCorrectAnswer.textContent = letter + '. ' + q.options[correct];
     }
@@ -692,7 +707,11 @@
     quizState.awaitingContinue = false;
     if (els.quizActive) els.quizActive.hidden = false;
     if (els.quizComplete) els.quizComplete.hidden = true;
-    if (els.quizFeedback) els.quizFeedback.hidden = true;
+    if (els.quizFeedback) {
+      els.quizFeedback.hidden = true;
+      els.quizFeedback.classList.remove('quiz-feedback--correct');
+    }
+    if (els.quizFeedbackTitle) els.quizFeedbackTitle.textContent = 'Đáp án đúng';
     if (els.content) els.content.classList.add('content--quiz-mode');
     if (els.quizPanel) {
       els.quizPanel.hidden = false;

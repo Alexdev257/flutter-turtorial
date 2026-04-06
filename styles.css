@@ -866,6 +866,21 @@ body {
   background: var(--color-primary-soft);
 }
 
+.quiz-feedback--correct {
+  border-color: rgba(46, 125, 50, 0.4);
+  background: rgba(46, 125, 50, 0.09);
+}
+[data-theme="dark"] .quiz-feedback--correct {
+  border-color: rgba(129, 199, 132, 0.45);
+  background: rgba(129, 199, 132, 0.12);
+}
+.quiz-feedback--correct .quiz-feedback-title {
+  color: #2e7d32;
+}
+[data-theme="dark"] .quiz-feedback--correct .quiz-feedback-title {
+  color: #81c784;
+}
+
 .quiz-feedback-title {
   margin: 0 0 8px;
   font-size: 0.75rem;
