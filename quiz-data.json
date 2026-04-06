@@ -1,0 +1,2993 @@
+{
+  "version": 1,
+  "modules": [
+    {
+      "id": "cmd",
+      "title": "Lệnh & chế độ chạy Flutter",
+      "questions": [
+        {
+          "q": "Lệnh nào dùng để kiểm tra SDK, toolchain và thiết bị?",
+          "options": [
+            "flutter doctor",
+            "flutter check",
+            "flutter verify",
+            "dart analyze"
+          ],
+          "correct": 0,
+          "explain": "`flutter doctor` liệt kê trạng thái Flutter SDK, Android/iOS toolchain, IDE và thiết bị."
+        },
+        {
+          "q": "Chế độ chạy nào gần hiệu năng release và phù hợp đo jank với DevTools Performance?",
+          "options": [
+            "Debug (mặc định)",
+            "Profile",
+            "Hot Reload",
+            "Widget Inspector"
+          ],
+          "correct": 1,
+          "explain": "`flutter run --profile` tối ưu gần release, phù hợp đo hiệu năng; Debug có overhead lớn, không nên kết luận FPS từ đó."
+        },
+        {
+          "q": "Hot Restart khác Hot Reload ở điểm chính nào?",
+          "options": [
+            "Restart chỉ đổi màu theme",
+            "Restart khởi động lại isolate Dart — state mất; Reload cố gắng giữ state",
+            "Cả hai giống nhau",
+            "Reload không bao giờ dùng được"
+          ],
+          "correct": 1,
+          "explain": "Hot Restart reset isolate (state mất). Hot Reload inject code và cố giữ state khi có thể."
+        },
+        {
+          "q": "`flutter pub get` dùng để làm gì?",
+          "options": [
+            "Cài đặt Flutter SDK trên máy",
+            "Tải dependency theo `pubspec.yaml` về project",
+            "Xóa toàn bộ `build/`",
+            "Ký app release lên Play Store"
+          ],
+          "correct": 1,
+          "explain": "`flutter pub get` đọc `pubspec.yaml` và tải package về (tương đương sau khi sửa dependency)."
+        },
+        {
+          "q": "Lệnh nào dùng để build **AAB** (định dạng Google Play)?",
+          "options": [
+            "flutter build apk --release",
+            "flutter build appbundle --release",
+            "flutter build ios",
+            "flutter pub publish"
+          ],
+          "correct": 1,
+          "explain": "`flutter build appbundle --release` tạo file `.aab` cho Play Store."
+        },
+        {
+          "q": "`flutter build apk --analyze-size` giúp gì?",
+          "options": [
+            "Chỉ đo thời gian build",
+            "Phân tích thành phần kích thước APK/AAB (treemap, báo cáo)",
+            "Xóa dependency không dùng tự động",
+            "Bắt buộc chạy trên iOS"
+          ],
+          "correct": 1,
+          "explain": "Phân tích size giúp tìm Dart AOT, native `.so`, assets chiếm chỗ."
+        },
+        {
+          "q": "**Tree shaking** trong Dart/Flutter thường có lợi gì?",
+          "options": [
+            "Tăng kích thước app",
+            "Loại code không được tham chiếu khi build release (giảm dung lượng)",
+            "Chỉ áp dụng cho WebView",
+            "Thay thế Hot Reload"
+          ],
+          "correct": 1,
+          "explain": "Dart tree shaking giúp bỏ phần không dùng khi compile release."
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "title": "Module 1 — Giới thiệu Flutter",
+      "questions": [
+        {
+          "q": "Ba lớp kiến trúc Flutter theo thứ tự từ trên xuống là gì?",
+          "options": [
+            "Embedder → Engine → Framework (Dart)",
+            "Framework (Dart) → Engine (C++) → Embedder",
+            "Skia → Dart → Kotlin",
+            "Widget → Activity → Service"
+          ],
+          "correct": 1,
+          "explain": "Framework (Dart: widget, layout…) → Engine (C++: Skia, text…) → Embedder (gắn vào OS)."
+        },
+        {
+          "q": "Flutter vẽ UI chủ yếu như thế nào so với React Native?",
+          "options": [
+            "Dùng view native XML/Storyboard cho mọi màn",
+            "Engine Flutter + Skia tự vẽ pixel, không bridge sang view native cho phần UI Flutter",
+            "Chỉ chạy trên Web",
+            "Bắt buộc dùng WebView"
+          ],
+          "correct": 1,
+          "explain": "Flutter render qua engine/Skia; khác RN bridge sang view native."
+        },
+        {
+          "q": "Khi nào nên cân nhắc thêm code native (Kotlin/Swift) trong project Flutter?",
+          "options": [
+            "Luôn luôn cho mọi màn hình",
+            "Khi cần tính năng đặc thù platform (camera sâu, SDK thanh toán…) qua MethodChannel/EventChannel",
+            "Không bao giờ được phép",
+            "Chỉ khi viết game 2D"
+          ],
+          "correct": 1,
+          "explain": "Phần đặc thù OS/SDK native có thể tích hợp qua platform channels; UI Flutter vẫn do Flutter vẽ."
+        },
+        {
+          "q": "Điểm vào chương trình Flutter/Dart thường nằm ở file nào?",
+          "options": [
+            "android/MainActivity.kt",
+            "lib/main.dart",
+            "pubspec.lock",
+            "ios/Runner.swift"
+          ],
+          "correct": 1,
+          "explain": "`lib/main.dart` gọi `runApp()` — điểm vào chuẩn."
+        },
+        {
+          "q": "JIT và AOT trong Dart/Flutter (ôn nhanh) — câu nào đúng hơn?",
+          "options": [
+            "Chỉ có JIT",
+            "JIT thường khi dev; AOT trên mobile release để hiệu năng gần native",
+            "AOT chỉ dùng cho Web",
+            "JIT và AOT giống hệt nhau"
+          ],
+          "correct": 1,
+          "explain": "Dev: JIT + hot reload; release mobile: AOT."
+        },
+        {
+          "q": "Pipeline tóm tắt từ widget tới màn hình?",
+          "options": [
+            "GPU → Widget",
+            "Widget Tree → Element + RenderObject (layout/paint) → compositing → GPU",
+            "Chỉ có JavaScript bridge",
+            "XML → Flutter"
+          ],
+          "correct": 1,
+          "explain": "Framework diff widget, layout/paint qua render object, rồi compositing."
+        },
+        {
+          "q": "Platform Channel (`MethodChannel`) dùng khi nào?",
+          "options": [
+            "Thay thế mọi UI",
+            "Gọi mã native (Kotlin/Swift) từ Dart cho tính năng đặc thù OS/SDK",
+            "Chỉ để đổi theme",
+            "Không tồn tại trong Flutter"
+          ],
+          "correct": 1,
+          "explain": "Bridge Dart ↔ native cho camera, sensor, SDK bên thứ ba, v.v."
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "title": "Module 2 — Dart cơ bản",
+      "questions": [
+        {
+          "q": "`const` khác `final` ở điểm nào?",
+          "options": [
+            "Không khác",
+            "`const` yêu cầu giá trị compile-time; `final` gán một lần nhưng có thể runtime (vd `DateTime.now()`)",
+            "`final` chỉ dùng trong class",
+            "`const` có thể gán lại"
+          ],
+          "correct": 1,
+          "explain": "`const` là hằng lúc biên dịch; `final` là biến gán một lần tại runtime."
+        },
+        {
+          "q": "`?.` và `??` trong null safety:",
+          "options": [
+            "`?.` truy cập an toàn nếu null; `??` cung cấp giá trị thay thế khi vế trái null",
+            "Cả hai đều ép non-null",
+            "`??` chỉ dùng cho List",
+            "`?.` luôn throw nếu null"
+          ],
+          "correct": 0,
+          "explain": "`?.` short-circuit; `??` chọn giá trị bên phải khi bên trái null."
+        },
+        {
+          "q": "Vì sao `async`/`await` giúp UI Flutter không bị “đơ” khi gọi mạng?",
+          "options": [
+            "Vì mạng chạy trên UI thread",
+            "Vì công việc nặng được tách sang tương lai, không block thread Dart đồng bộ quá lâu",
+            "Vì Flutter không dùng event loop",
+            "Vì `await` tắt animation"
+          ],
+          "correct": 1,
+          "explain": "`await` nhường quyền điều khiển; I/O không nên chặn isolate quá lâu trong callback đồng bộ."
+        },
+        {
+          "q": "Stream broadcast khác single-subscription ở điểm nào?",
+          "options": [
+            "Broadcast cho nhiều listener; single-subscription thường chỉ một listener tuần tự",
+            "Không có khác biệt",
+            "Single-subscription cho nhiều listener hơn",
+            "Broadcast không dùng được với `StreamBuilder`"
+          ],
+          "correct": 0,
+          "explain": "Single-subscription: một listener chính; broadcast: nhiều listener (vd `StreamController.broadcast()`)."
+        },
+        {
+          "q": "Trong Dart, toán tử chia **nguyên** hai số `int` là gì?",
+          "options": [
+            "`/` (luôn ra double)",
+            "`~/`",
+            "`%`",
+            "`div`"
+          ],
+          "correct": 1,
+          "explain": "`/` với int có thể cho double; `~/` là chia lấy phần nguyên."
+        },
+        {
+          "q": "`map` trên `Iterable` trả về lazy iterable — điều nào đúng?",
+          "options": [
+            "Đã là `List` đầy đủ ngay khi gọi `map`",
+            "Thường cần `toList()` / `for-in` để thực sự chạy và gom kết quả",
+            "Không bao giờ lazy",
+            "Chỉ dùng với `Set`"
+          ],
+          "correct": 1,
+          "explain": "`map`/`where` lazy đến khi consumer duyệt."
+        },
+        {
+          "q": "`try { } on SpecificException catch (e) { }` — nhánh `on` dùng để?",
+          "options": [
+            "Bắt mọi lỗi kể cả syntax",
+            "Bắt theo kiểu cụ thể trước khi rơi xuống `catch` chung",
+            "Không hợp lệ trong Dart",
+            "Chỉ dùng trong Flutter UI"
+          ],
+          "correct": 1,
+          "explain": "`on Type` lọc theo kiểu exception."
+        },
+        {
+          "q": "So sánh hai giá trị cùng `enum` trong Dart?",
+          "options": [
+            "Dùng `==`",
+            "Bắt buộc `equals()` reflection",
+            "Chỉ so sánh qua `hashCode`",
+            "Không so được"
+          ],
+          "correct": 0,
+          "explain": "Enum values là constant object — `==` ổn cho cùng kiểu enum."
+        }
+      ]
+    },
+    {
+      "id": "m3",
+      "title": "Module 3 — Dart nâng cao",
+      "questions": [
+        {
+          "q": "`implements` khác `extends` ở điểm nào?",
+          "options": [
+            "Giống hệt",
+            "`implements` bắt tự cài lại API public, không kế thừa implementation; `extends` kế thừa code",
+            "`implements` chỉ dùng cho enum",
+            "`extends` không cho phép @override"
+          ],
+          "correct": 1,
+          "explain": "Mọi class Dart là interface ẩn; `implements` = hợp đồng, tự viết body."
+        },
+        {
+          "q": "Sau khối đồng bộ, thứ tự xử lý microtask và event queue (mô hình ôn thi)?",
+          "options": [
+            "Event trước, microtask sau",
+            "Dọn hết microtask trước khi lấy thêm một sự kiện từ event queue",
+            "Chỉ có một queue",
+            "Random"
+          ],
+          "correct": 1,
+          "explain": "Microtask có ưu tiên cao hơn so với event tiếp theo sau khi đồng bộ xong."
+        },
+        {
+          "q": "Factory constructor thường dùng để làm gì?",
+          "options": [
+            "Chỉ tạo widget",
+            "Parse JSON, singleton, trả subtype hoặc instance cache — không bắt buộc tạo instance mới mỗi lần cú pháp giống default",
+            "Thay thế `main()`",
+            "Bắt buộc private class"
+          ],
+          "correct": 1,
+          "explain": "Factory linh hoạt logic tạo object (fromJson, cache, v.v.)."
+        },
+        {
+          "q": "`with MyMixin` trong khai báo class dùng để?",
+          "options": [
+            "Import file",
+            "Trộn implementation từ mixin vào class (theo quy tắc `on` nếu có)",
+            "Xóa method",
+            "Chỉ dùng trong test"
+          ],
+          "correct": 1,
+          "explain": "`mixin` tái sử dụng hành vi; `on` giới hạn class nào được `with`."
+        },
+        {
+          "q": "Trong literal List, `[a]` và `[...a]` khi `a` là `List` — khác gì?",
+          "options": [
+            "Giống nhau",
+            "`[a]` tạo một phần tử là List lồng; `[...a]` trải phần tử của `a` ra ngoài",
+            "Cả hai đều lỗi compile",
+            "`...` chỉ dùng cho Map"
+          ],
+          "correct": 1,
+          "explain": "Spread `...` dàn phẳng phần tử."
+        },
+        {
+          "q": "`Future(() => print(1))` và `Future.microtask(() => print(2))` — hàng đợi nào khác nhau?",
+          "options": [
+            "Cùng microtask",
+            "`microtask` vào microtask queue; `Future((){})` thường vào event queue",
+            "Cả hai vào GPU",
+            "Không chạy bao giờ"
+          ],
+          "correct": 1,
+          "explain": "Microtask được ưu tiên dọn trước event tiếp theo sau đồng bộ."
+        },
+        {
+          "q": "Repository pattern (ôn ý): UI không nên làm gì trực tiếp?",
+          "options": [
+            "Gọi `setState`",
+            "Rải `http.get`/`post` khắp `build()` — nên qua repository/service",
+            "Dùng `ListView`",
+            "Dùng `Theme`"
+          ],
+          "correct": 1,
+          "explain": "Tách tầng: repository gom API + parse + lỗi; dễ mock khi test."
+        }
+      ]
+    },
+    {
+      "id": "m4",
+      "title": "Module 4 — UI & Widget cơ bản",
+      "questions": [
+        {
+          "q": "Sau khi gọi `setState`, framework làm gì (mô tả ngắn)?",
+          "options": [
+            "Xóa app",
+            "Đánh dấu widget cần rebuild và gọi lại `build` ở frame phù hợp",
+            "Chỉ in log",
+            "Khởi động lại máy"
+          ],
+          "correct": 1,
+          "explain": "`setState` báo state đổi → schedule rebuild subtree tương ứng."
+        },
+        {
+          "q": "Vì sao không nên gọi `setState` trực tiếp trong `build()`?",
+          "options": [
+            "Vì compile error",
+            "Dễ vòng lặp vô hạn: build → setState → build → …",
+            "Vì Flutter cấm StatefulWidget",
+            "Không có vấn đề"
+          ],
+          "correct": 1,
+          "explain": "Gọi trong `build` có thể kích hoạt rebuild liên tục."
+        },
+        {
+          "q": "Sau `await` trong `State`, trước `setState` nên kiểm tra gì?",
+          "options": [
+            "`WidgetsBinding.instance`",
+            "`mounted` (widget còn trên cây)",
+            "`MediaQuery`",
+            "Không cần"
+          ],
+          "correct": 1,
+          "explain": "Tránh `setState` sau khi widget đã dispose."
+        },
+        {
+          "q": "Khi nào ưu tiên `StatelessWidget`?",
+          "options": [
+            "Luôn luôn",
+            "UI phụ thuộc chỉ tham số cha, không có state nội bộ đổi theo tương tác",
+            "Khi cần `AnimationController` trong State",
+            "Khi bắt buộc có `GlobalKey`"
+          ],
+          "correct": 1,
+          "explain": "Không state riêng → stateless; có state đổi → stateful."
+        },
+        {
+          "q": "`Theme.of(context)` trả về gì (khái niệm)?",
+          "options": [
+            "Widget route",
+            "`ThemeData` (hoặc data từ `Theme` ancestor) để đọc màu/typography",
+            "Luôn null",
+            "Chỉ dùng trên Web"
+          ],
+          "correct": 1,
+          "explain": "`Theme` là `InheritedWidget`-style — tra cứu qua context."
+        },
+        {
+          "q": "`ListView` với `children: [...]` vs `ListView.builder` — khi nào builder tốt hơn?",
+          "options": [
+            "List ngắn 1000 phần tử vẫn nên `children`",
+            "Danh sách dài — builder chỉ build item trong viewport (lazy)",
+            "Builder không bao giờ dùng được",
+            "Cả hai luôn giống hiệu năng"
+          ],
+          "correct": 1,
+          "explain": "`builder` lazy; `children` tạo hết widget con — nặng với list lớn."
+        },
+        {
+          "q": "`ListView` nằm trong `Column` không bounded height — xử lý phổ biến?",
+          "options": [
+            "Không làm gì",
+            "Bọc `ListView` trong `Expanded` (Column có chiều cao giới hạn) hoặc `shrinkWrap` + physics phù hợp",
+            "Đổi sang `Row`",
+            "Xóa `Column`"
+          ],
+          "correct": 1,
+          "explain": "Unbounded height: cần constraint hoặc shrinkWrap trong scroll cha."
+        }
+      ]
+    },
+    {
+      "id": "m5",
+      "title": "Module 5 — Điều hướng & state",
+      "questions": [
+        {
+          "q": "Sau login thành công, vì sao thường dùng `pushReplacement` thay vì `push`?",
+          "options": [
+            "Để stack cao hơn",
+            "Để thay route hiện tại — tránh Back về màn Login",
+            "Để tắt animation",
+            "Vì `push` không tồn tại"
+          ],
+          "correct": 1,
+          "explain": "`pushReplacement` không để Login nằm dưới Home trên stack."
+        },
+        {
+          "q": "`context.watch` khác `context.read` trong Provider?",
+          "options": [
+            "`watch` đăng ký rebuild khi model đổi; `read` chỉ lấy một lần, không listen trong build",
+            "Giống nhau",
+            "`read` luôn rebuild",
+            "Cả hai chỉ dùng trong `initState`"
+          ],
+          "correct": 0,
+          "explain": "Dùng `read` trong callback, `watch` khi UI phụ thuộc và cần rebuild."
+        },
+        {
+          "q": "Navigator 2.0 giải quyết vấn đề gì so với 1.0 (ôn lý thuyết)?",
+          "options": [
+            "Xóa bỏ route",
+            "Đồng bộ stack/URL khai báo — hợp web và deep link phức tạp hơn",
+            "Chỉ dùng cho iOS",
+            "Không có khác biệt"
+          ],
+          "correct": 1,
+          "explain": "Nav 2.0 = mô hình khai báo, URL ↔ stack."
+        },
+        {
+          "q": "Nhận kết quả từ màn con sau `Navigator.push`?",
+          "options": [
+            "`await push` trả `Future`; màn con gọi `Navigator.pop(context, value)`",
+            "Không thể trả dữ liệu",
+            "Chỉ dùng `setState` global",
+            "Chỉ trên Web"
+          ],
+          "correct": 0,
+          "explain": "`push` trả Future kết thúc khi `pop` có `result`."
+        },
+        {
+          "q": "`InheritedWidget` (và các wrapper như Provider) giúp gì?",
+          "options": [
+            "Chỉ vẽ border",
+            "Đẩy data xuống cây widget mà không truyền từng tham số",
+            "Thay thế `Navigator`",
+            "Chỉ cho animation"
+          ],
+          "correct": 1,
+          "explain": "Lookup theo `context`, subscribe rebuild khi data đổi."
+        },
+        {
+          "q": "Deep link Android khai báo chủ yếu ở đâu?",
+          "options": [
+            "`pubspec.yaml`",
+            "`AndroidManifest.xml` (`intent-filter` trong activity)",
+            "`main.dart` duy nhất",
+            "Chỉ trên iOS plist"
+          ],
+          "correct": 1,
+          "explain": "`intent-filter` + `VIEW`/`BROWSABLE` + `data` scheme/host."
+        },
+        {
+          "q": "`MultiProvider` dùng khi nào?",
+          "options": [
+            "Chỉ một model",
+            "Cần cung cấp nhiều `Provider`/`ChangeNotifierProvider` gốc cho subtree",
+            "Thay `MaterialApp`",
+            "Không tồn tại"
+          ],
+          "correct": 1,
+          "explain": "Gói nhiều provider cùng cấp."
+        }
+      ]
+    },
+    {
+      "id": "m6",
+      "title": "Module 6 — Responsive & Adaptive",
+      "questions": [
+        {
+          "q": "Khi nào nên ưu tiên `LayoutBuilder` thay vì `MediaQuery.sizeOf` cho layout trong một khung hẹp?",
+          "options": [
+            "Không bao giờ",
+            "Khi cần constraint do **cha** cấp (card, dialog), không phải full màn hình",
+            "Khi viết test",
+            "Chỉ khi dùng `GridView`"
+          ],
+          "correct": 1,
+          "explain": "`LayoutBuilder` phản ánh ô layout thật; `MediaQuery` thường là cửa sổ."
+        },
+        {
+          "q": "`Wrap` khác `Row` ở điểm nào?",
+          "options": [
+            "`Row` tự xuống dòng",
+            "`Wrap` tự xuống dòng khi hết chỗ; `Row` có thể overflow",
+            "Giống nhau",
+            "`Wrap` không chứa được `Chip`"
+          ],
+          "correct": 1,
+          "explain": "`Wrap` giống flex-wrap trong CSS."
+        },
+        {
+          "q": "`MediaQuery.viewInsets.bottom` tăng khi nào?",
+          "options": [
+            "Khi xoay màn hình",
+            "Khi bàn phím ảo che phần dưới — dùng để đẩy UI",
+            "Khi bật dark mode",
+            "Không bao giờ đổi"
+          ],
+          "correct": 1,
+          "explain": "`padding` là safe area; `viewInsets` liên quan IME/keyboard."
+        },
+        {
+          "q": "`MediaQuery.paddingOf(context)` khác `viewInsetsOf` khi bàn phím mở?",
+          "options": [
+            "Giống nhau",
+            "`viewInsets` (thường bottom) tăng khi IME che; `padding` là safe area/notch",
+            "Cả hai chỉ trên desktop",
+            "Không dùng được trong Flutter"
+          ],
+          "correct": 1,
+          "explain": "Insets = vùng hệ thống che (keyboard); padding = safe area."
+        },
+        {
+          "q": "`OrientationBuilder` cho biết gì?",
+          "options": [
+            "Chỉ màu sắc",
+            "Portrait vs landscape để đổi layout",
+            "Chỉ battery level",
+            "Không liên quan layout"
+          ],
+          "correct": 1,
+          "explain": "Callback nhận `Orientation` để chia UI."
+        },
+        {
+          "q": "Responsive: `GridView.count` với `crossAxisCount` theo `MediaQuery` width — mục đích?",
+          "options": [
+            "Luôn 1 cột",
+            "Tăng/giảm số cột theo không gian màn hình",
+            "Tắt scroll",
+            "Chỉ cho tablet iOS"
+          ],
+          "correct": 1,
+          "explain": "Breakpoint theo width → số cột hợp lý."
+        },
+        {
+          "q": "**Adaptive** khác **responsive** (ôn tài liệu)?",
+          "options": [
+            "Giống nhau",
+            "Adaptive đổi kiểu điều hướng/platform (rail vs bottom bar); responsive đổi layout theo không gian",
+            "Chỉ responsive tồn tại",
+            "Adaptive chỉ là đổi font"
+          ],
+          "correct": 1,
+          "explain": "Form factor / platform vs width constraint."
+        }
+      ]
+    },
+    {
+      "id": "m7",
+      "title": "Module 7 — Form & Validation",
+      "questions": [
+        {
+          "q": "`validator` trong `TextFormField` trả về `null` nghĩa là gì?",
+          "options": [
+            "Lỗi nặng",
+            "Field hợp lệ",
+            "Bỏ qua form",
+            "Crash"
+          ],
+          "correct": 1,
+          "explain": "`null` = không có lỗi; `String` = thông báo lỗi hiển thị."
+        },
+        {
+          "q": "Vì sao nên gọi `validate()` trước `save()`?",
+          "options": [
+            "Không cần thứ tự",
+            "Chỉ khi hợp lệ mới nên commit dữ liệu qua `save()`",
+            "`save()` luôn throw",
+            "`validate` xóa form"
+          ],
+          "correct": 1,
+          "explain": "Tránh lưu dữ liệu rác khi field lỗi."
+        },
+        {
+          "q": "`GestureDetector` bọc form + `unfocus()` thường nhằm mục đích gì?",
+          "options": [
+            "Tắt app",
+            "Ẩn bàn phím khi chạm vùng trống",
+            "Xóa text",
+            "Bật dark mode"
+          ],
+          "correct": 1,
+          "explain": "UX: tap ngoài ô nhập để đóng keyboard."
+        },
+        {
+          "q": "`AutovalidateMode.onUserInteraction` nghĩa là gì?",
+          "options": [
+            "Không validate bao giờ",
+            "Validate sau khi user đã tương tác field — cân bằng UX",
+            "Validate mỗi frame",
+            "Chỉ cho `TextField` thường"
+          ],
+          "correct": 1,
+          "explain": "Tránh spam lỗi trước khi user chạm ô nhập."
+        },
+        {
+          "q": "`TextField` vs `TextFormField` — khi nào cần `TextFormField`?",
+          "options": [
+            "Luôn giống nhau",
+            "Khi nằm trong `Form`, cần `validator`/`onSaved` gắn `FormState`",
+            "Chỉ khi không có keyboard",
+            "`TextField` mới có validator"
+          ],
+          "correct": 1,
+          "explain": "`TextFormField` tích hợp Form API."
+        },
+        {
+          "q": "`GlobalKey<FormState>` dùng để?",
+          "options": [
+            "Random key",
+            "Gọi `validate()` / `save()` / `reset()` trên toàn form",
+            "Chỉ mở dialog",
+            "Thay `Navigator`"
+          ],
+          "correct": 1,
+          "explain": "Truy cập `FormState` từ ngoài."
+        },
+        {
+          "q": "Sau `await` trong submit form async, cần gì trong `State`?",
+          "options": [
+            "Không cần gì",
+            "Kiểm tra `mounted` trước `setState`",
+            "Luôn `pop`",
+            "Gọi `validate` sau `save` trước"
+          ],
+          "correct": 1,
+          "explain": "Tránh cập nhật UI sau dispose."
+        }
+      ]
+    },
+    {
+      "id": "m8",
+      "title": "Module 8 — REST API & JSON",
+      "questions": [
+        {
+          "q": "HTTP 401 khác 403 ở điểm nào (ôn thi)?",
+          "options": [
+            "Giống nhau",
+            "401: chưa/sai xác thực; 403: đã xác thực nhưng không đủ quyền",
+            "403 là lỗi DNS",
+            "401 chỉ dùng cho GET"
+          ],
+          "correct": 1,
+          "explain": "Unauthorized vs Forbidden."
+        },
+        {
+          "q": "Vì sao không nên tạo `future: fetchPosts()` mới trực tiếp trong `build()` của `FutureBuilder`?",
+          "options": [
+            "Vì compile error",
+            "Mỗi rebuild có thể gọi API lặp lại",
+            "Vì `FutureBuilder` không tồn tại",
+            "Không có vấn đề"
+          ],
+          "correct": 1,
+          "explain": "Giữ Future ở state/`initState` — một lần hoặc khi chủ ý refresh."
+        },
+        {
+          "q": "Repository tách khỏi Widget giúp gì?",
+          "options": [
+            "Chậm hơn",
+            "Test/mock HTTP dễ hơn, gom endpoint + parse + lỗi một chỗ",
+            "Bắt buộc dùng SQLite",
+            "Không có lợi"
+          ],
+          "correct": 1,
+          "explain": "Tách tầng: UI không rải `http.get` khắp nơi."
+        },
+        {
+          "q": "`jsonEncode` / `jsonDecode` thuộc thư viện nào?",
+          "options": [
+            "`package:http/http.dart`",
+            "`dart:convert`",
+            "`dart:io` only",
+            "`flutter/material.dart`"
+          ],
+          "correct": 1,
+          "explain": "`dart:convert` cho JSON string ↔ object."
+        },
+        {
+          "q": "HTTP **201 Created** thường nghĩa gì sau POST?",
+          "options": [
+            "Lỗi client",
+            "Tạo resource thành công",
+            "Không có body",
+            "Token hết hạn"
+          ],
+          "correct": 1,
+          "explain": "201 = created; 200 cũng có thể tùy API."
+        },
+        {
+          "q": "Lỗi không có mạng / DNS khi gọi HTTP trong Dart thường bắt kiểu nào?",
+          "options": [
+            "`FormatException`",
+            "`SocketException`",
+            "`StateError`",
+            "`FlutterError` luôn"
+          ],
+          "correct": 1,
+          "explain": "`dart:io` `SocketException` hay gặp khi offline."
+        },
+        {
+          "q": "`Uri.parse` dùng để?",
+          "options": [
+            "Parse JSON",
+            "Tạo `Uri` từ chuỗi URL cho `http.get`/`post`",
+            "Chỉ validate email",
+            "Thay `jsonDecode`"
+          ],
+          "correct": 1,
+          "explain": "Chuẩn hóa endpoint trước khi gọi client HTTP."
+        }
+      ]
+    },
+    {
+      "id": "m9",
+      "title": "Module 9 — Lưu trữ cục bộ",
+      "questions": [
+        {
+          "q": "Khi nào chọn file JSON + `path_provider` thay vì SharedPreferences?",
+          "options": [
+            "Luôn luôn",
+            "Khi cần cấu trúc danh sách/object phức tạp hơn key–value đơn giản",
+            "Khi không có ổ đĩa",
+            "Prefs lưu được mọi kiểu không giới hạn"
+          ],
+          "correct": 1,
+          "explain": "Prefs cho flag nhỏ; file/DB cho dữ liệu có cấu trúc."
+        },
+        {
+          "q": "`getTemporaryDirectory` khác `getApplicationDocumentsDirectory`?",
+          "options": [
+            "Giống nhau",
+            "Temporary có thể bị OS dọn; Documents thường cho dữ liệu user cần giữ lâu",
+            "Chỉ dùng trên Web",
+            "Documents là RAM"
+          ],
+          "correct": 1,
+          "explain": "tmp vs user documents."
+        },
+        {
+          "q": "Offline-first nghĩa là gì (khái niệm)?",
+          "options": [
+            "Không bao giờ có mạng",
+            "Đọc local trước, đồng bộ khi có mạng",
+            "Chỉ dùng Firebase",
+            "Tắt SQLite"
+          ],
+          "correct": 1,
+          "explain": "Ưu tiên hiển thị dữ liệu cục bộ, cập nhật sau."
+        },
+        {
+          "q": "SharedPreferences hỗ trợ kiểu nào (ôn nhanh)?",
+          "options": [
+            "Mọi object Dart tùy ý",
+            "String, int, double, bool, `List<String>` — object phức tạp thường `jsonEncode` → String",
+            "Chỉ bool",
+            "Chỉ SQLite"
+          ],
+          "correct": 1,
+          "explain": "Prefs key-value đơn giản; phức tạp → JSON string hoặc file/DB."
+        },
+        {
+          "q": "`sqflite` trên Web truyền thống?",
+          "options": [
+            "Chạy giống mobile 100%",
+            "Thường **không** tương đương mobile — cần giải pháp khác (IndexedDB, Drift web, v.v.)",
+            "Bắt buộc có trên Web",
+            "Chỉ lưu ảnh"
+          ],
+          "correct": 1,
+          "explain": "Plugin SQLite classic không phải mặc định cho Flutter Web."
+        },
+        {
+          "q": "Gọi `SharedPreferences.getInstance()` nhiều lần?",
+          "options": [
+            "Luôn crash",
+            "An toàn (async nhẹ); có thể cache instance nếu muốn tối ưu",
+            "Chỉ được 1 lần cả đời app",
+            "Không async"
+          ],
+          "correct": 1,
+          "explain": "API async trả singleton phù hợp platform."
+        },
+        {
+          "q": "File JSON user trong `getApplicationDocumentsDirectory` — mục đích điển hình?",
+          "options": [
+            "Cache OS xóa bất cứ lúc nào (luôn)",
+            "Dữ liệu user cần giữ lâu (ghi chú, export) ngoài prefs đơn giản",
+            "Chỉ chứa APK",
+            "Không đọc được từ Dart"
+          ],
+          "correct": 1,
+          "explain": "Documents dir cho dữ liệu bền của user."
+        }
+      ]
+    },
+    {
+      "id": "m10",
+      "title": "Module 10 — Xác thực & phiên",
+      "questions": [
+        {
+          "q": "Authentication khác Authorization?",
+          "options": [
+            "Giống nhau",
+            "Auth: bạn là ai; Authorization: bạn được phép làm gì",
+            "Chỉ dùng trên iOS",
+            "Authorization là đăng nhập"
+          ],
+          "correct": 1,
+          "explain": "Định danh vs quyền hạn."
+        },
+        {
+          "q": "JWT payload (claims) có phải “mã hóa bí mật” không ai đọc được?",
+          "options": [
+            "Có, luôn mã hóa AES",
+            "Payload thường chỉ Base64URL — có thể đọc; chữ ký chống sửa, không phải bí mật payload",
+            "Không có payload",
+            "Chỉ server đọc được bằng mắt"
+          ],
+          "correct": 1,
+          "explain": "Ký để verify; không nhầm signed với encrypted."
+        },
+        {
+          "q": "Access token thường khác refresh token ở điểm nào?",
+          "options": [
+            "Giống hệt",
+            "Access ngắn hạn gọi API; refresh dài hơn để lấy access mới",
+            "Refresh chỉ dùng cho Web",
+            "Access không gửi qua HTTP"
+          ],
+          "correct": 1,
+          "explain": "Luồng OAuth phổ biến: rotate access bằng refresh."
+        },
+        {
+          "q": "Header gửi access token dạng Bearer thường viết thế nào?",
+          "options": [
+            "`Token: ...`",
+            "`Authorization: Bearer <token>`",
+            "`Cookie: token=...` luôn đúng",
+            "`Bearer` không dùng trong HTTP"
+          ],
+          "correct": 1,
+          "explain": "Chuẩn hay gặp: Authorization Bearer."
+        },
+        {
+          "q": "Vì sao production nên **HTTPS**?",
+          "options": [
+            "Làm chậm app",
+            "Bảo vệ token/dữ liệu trên đường truyền, chống nghe lén",
+            "HTTPS cấm trên mobile",
+            "Chỉ cho Web"
+          ],
+          "correct": 1,
+          "explain": "TLS mã hóa kênh; không log token ra console production."
+        },
+        {
+          "q": "Google Sign-In trên Android — SHA fingerprint dùng để?",
+          "options": [
+            "Đổi tên app",
+            "Firebase/Android xác minh app — cấu hình sai dễ không đăng nhập được",
+            "Chỉ trang trí",
+            "Không cần trong debug"
+          ],
+          "correct": 1,
+          "explain": "SHA-1/256 debug/release đăng ký đúng trên Firebase."
+        },
+        {
+          "q": "Logout điển hình: nên làm gì với token lưu local?",
+          "options": [
+            "Giữ mãi",
+            "Xóa token/session khỏi storage và điều hướng về login",
+            "Gửi token lên mạng xã hội",
+            "Chỉ xóa UI"
+          ],
+          "correct": 1,
+          "explain": "Clear prefs/secure storage + clear stack route phù hợp."
+        }
+      ]
+    },
+    {
+      "id": "m11",
+      "title": "Module 11 — Kiểm thử & gỡ lỗi",
+      "questions": [
+        {
+          "q": "Vì sao kim tự tháp test khuyên nhiều unit hơn integration?",
+          "options": [
+            "Integration nhanh hơn",
+            "Unit/widget nhanh, ổn định; integration chậm, dễ vỡ — giữ ít luồng E2E quan trọng",
+            "Unit không chạy được trên máy dev",
+            "Flutter cấm integration"
+          ],
+          "correct": 1,
+          "explain": "Chi phí và độ flake của integration cao hơn."
+        },
+        {
+          "q": "`pump()` khác `pumpAndSettle()` trong widget test?",
+          "options": [
+            "`pump` một frame/ngắt; `pumpAndSettle` chờ hết animation/timer pending",
+            "Giống nhau",
+            "`pump` chỉ cho integration",
+            "Cả hai không dùng sau tap"
+          ],
+          "correct": 0,
+          "explain": "Sau `tap` thường `pump`; animation dài dùng `pumpAndSettle`."
+        },
+        {
+          "q": "`find.text('X')` trong widget test tìm gì?",
+          "options": [
+            "Widget `Text` chứa đúng chuỗi (hoặc descendant)",
+            "File trên disk",
+            "Route name",
+            "Chỉ `TextField`"
+          ],
+          "correct": 0,
+          "explain": "`find.text` matcher cho `Text` data."
+        },
+        {
+          "q": "Package **`integration_test`** khác `flutter_test` ở điểm?",
+          "options": [
+            "Giống hệt",
+            "Integration chạy E2E trên thiết bị/emulator với driver; widget test trong test engine",
+            "Chỉ chạy trên Windows",
+            "Không có trong Flutter"
+          ],
+          "correct": 1,
+          "explain": "Kim tự tháp: nhiều unit/widget, ít integration."
+        },
+        {
+          "q": "Widget Inspector trong DevTools giúp gì?",
+          "options": [
+            "Chỉ đổi theme",
+            "Xem cây widget, constraint, overflow",
+            "Build APK",
+            "Không liên quan debug"
+          ],
+          "correct": 1,
+          "explain": "Debug layout và hierarchy."
+        },
+        {
+          "q": "AAA trong unit test là?",
+          "options": [
+            "Always Async Await",
+            "Arrange – Act – Assert",
+            "Android API Archive",
+            "Không có ý nghĩa"
+          ],
+          "correct": 1,
+          "explain": "Chuẩn bị dữ liệu → hành động → kiểm tra kết quả."
+        },
+        {
+          "q": "Đặt `Key` cho widget trong test khi nào hữu ích?",
+          "options": [
+            "Không bao giờ",
+            "Khi nhiều widget giống nhau, `find.byKey` ổn định hơn text",
+            "Chỉ trên Web",
+            "Thay thế `expect`"
+          ],
+          "correct": 1,
+          "explain": "`Key` giúp find không phụ thuộc chữ hiển thị."
+        }
+      ]
+    },
+    {
+      "id": "m12",
+      "title": "Module 12 — Hiệu năng & triển khai",
+      "questions": [
+        {
+          "q": "Vì sao đo FPS/jank nên dùng Profile/Release hơn Debug?",
+          "options": [
+            "Debug nhanh hơn release",
+            "Debug có assertion và overhead — không phản ánh hiệu năng thật",
+            "Profile tắt GPU",
+            "Không khác"
+          ],
+          "correct": 1,
+          "explain": "Kết luận perf từ Debug dễ sai lệch."
+        },
+        {
+          "q": "AAB khác APK khi đưa lên Google Play (ôn thi)?",
+          "options": [
+            "Giống nhau",
+            "Play Store ưu tiên/bắt buộc AAB để Google tối ưu split; APK thường sideload / nội bộ",
+            "AAB chỉ cho iOS",
+            "APK không cài được"
+          ],
+          "correct": 1,
+          "explain": "App Bundle cho Play; APK release vẫn dùng cài tay."
+        },
+        {
+          "q": "`versionCode` khác `versionName` trên Android?",
+          "options": [
+            "Giống nhau",
+            "`versionCode` số nguyên tăng mỗi upload; `versionName` chuỗi hiển thị user",
+            "Chỉ có trên iOS",
+            "Cả hai do user nhập trên Play"
+          ],
+          "correct": 1,
+          "explain": "Code tăng dần bắt buộc; name là marketing."
+        },
+        {
+          "q": "`const` constructor widget khi tham số không đổi giúp gì?",
+          "options": [
+            "Luôn rebuild",
+            "Framework có thể bỏ qua rebuild subtree khi config không đổi",
+            "Tăng kích thước APK",
+            "Chỉ dùng trong test"
+          ],
+          "correct": 1,
+          "explain": "`const` widget ổn định identity khi parent rebuild."
+        },
+        {
+          "q": "Dùng `UniqueKey()` cho mỗi item trong `ListView.builder` mỗi lần `build` — hậu quả?",
+          "options": [
+            "Tối ưu nhất",
+            "Flutter coi mọi item mới → mất state scroll/selection",
+            "Không ảnh hưởng",
+            "Bắt buộc cho performance"
+          ],
+          "correct": 1,
+          "explain": "Key ổn định theo identity dữ liệu (`ValueKey(id)`)."
+        },
+        {
+          "q": "`Selector` trong Provider giúp gì?",
+          "options": [
+            "Chọn màu",
+            "Rebuild chỉ khi phần state được “chọn” thay đổi — giảm rebuild",
+            "Thay `Navigator`",
+            "Không tồn tại"
+          ],
+          "correct": 1,
+          "explain": "Tương tự `Consumer` nhưng fine-grained."
+        },
+        {
+          "q": "Lệnh phân tích kích thước build release (ôn tài liệu)?",
+          "options": [
+            "flutter clean",
+            "flutter build apk --release --analyze-size",
+            "flutter pub get --analyze",
+            "dart fix --apply"
+          ],
+          "correct": 1,
+          "explain": "`--analyze-size` kèm build để xem breakdown."
+        }
+      ]
+    },
+    {
+      "id": "PRM393",
+      "title": "PRM393 — FE.docx",
+      "questions": [
+        {
+          "q": "What is the main purpose of control flow statements in Dart?",
+          "options": [
+            "To store data permanently",
+            "To control the execution order of code",
+            "To handle network requests",
+            "To manage UI layout"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which Provider method listens for changes and rebuilds UI?",
+          "options": [
+            "select()",
+            "listen()",
+            "watch()",
+            "read()"
+          ],
+          "correct": 2,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does context.read() do in Provider?",
+          "options": [
+            "Creates provider",
+            "Listens to changes",
+            "Disposes provider",
+            "Reads value without listening"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the benefit of using named routes?",
+          "options": [
+            "Better animations",
+            "Reduced memory usage",
+            "Faster performance",
+            "Easier navigation management in large apps"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the main role of Navigator in Flutter?",
+          "options": [
+            "Theme management",
+            "Screen navigation",
+            "API calls",
+            "State management"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What benefit does using a centralized theme provide?",
+          "options": [
+            "Better state management",
+            "Faster API calls",
+            "Consistent UI appearance",
+            "Reduced widget rebuilds"
+          ],
+          "correct": 2,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "How is the Flutter UI constructed internally?",
+          "options": [
+            "Using native UI components only",
+            "Using XML layout files",
+            "Using HTML and CSS",
+            "Using a hierarchical widget tree"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What role does the Flutter framework play in application development?",
+          "options": [
+            "It provides UI components and rendering logic",
+            "It replaces the operating system",
+            "It runs backend business logic",
+            "It manages database servers"
+          ],
+          "correct": 0,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does Navigator.pop() do?",
+          "options": [
+            "Restart app",
+            "Open a new screen",
+            "Clear stack",
+            "Close current screen"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What happens if layout constraints are violated in Flutter?",
+          "options": [
+            "Widget is ignored",
+            "A layout overflow error occurs",
+            "App crashes silently",
+            "UI is automatically fixed"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which Flutter package is commonly used for simple key-value storage?",
+          "options": [
+            "http",
+            "provider",
+            "sqflite",
+            "shared_preferences"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the main purpose of the Container widget?",
+          "options": [
+            "State management",
+            "Network requests",
+            "Layout, styling, and positioning",
+            "Navigation"
+          ],
+          "correct": 2,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the main purpose of app architecture?",
+          "options": [
+            "Organize code structure",
+            "Handle API",
+            "Improve animations",
+            "UI design"
+          ],
+          "correct": 0,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the main difference between StatelessWidget and StatefulWidget?",
+          "options": [
+            "Performance",
+            "Ability to hold mutable state",
+            "Platform compatibility",
+            "Rendering engine"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the role of the version property in openDatabase()?",
+          "options": [
+            "Flutter SDK version",
+            "Database schema version for migrations",
+            "Package version",
+            "App version"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the primary purpose of the Dart programming language in Flutter?",
+          "options": [
+            "Handling operating system processes",
+            "Running backend servers",
+            "Managing databases",
+            "Building user interfaces and application logic"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does a Dart class primarily represent?",
+          "options": [
+            "A database table",
+            "A blueprint for creating objects",
+            "A UI widget only",
+            "A network request"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the main advantage of using Provider?",
+          "options": [
+            "Faster rendering",
+            "Improved navigation",
+            "Better animations",
+            "Simpler state sharing and management"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Why is understanding the widget lifecycle important?",
+          "options": [
+            "Deploy apps faster",
+            "Improve API performance",
+            "Reduce file size",
+            "Manage UI updates correctly"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the purpose of onSaved callback?",
+          "options": [
+            "Reset form",
+            "Validate input",
+            "Store form values",
+            "Display errors"
+          ],
+          "correct": 2,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the main benefit of Flutter’s widget-based architecture?",
+          "options": [
+            "Widgets are only used for layout design",
+            "Widgets automatically manage databases",
+            "Widgets allow code reuse across platforms",
+            "Widgets replace backend services"
+          ],
+          "correct": 2,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the primary role of widgets in Flutter?",
+          "options": [
+            "Compiling Dart code",
+            "Managing databases",
+            "Handling network requests",
+            "Describing the user interface"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is an API timeout used for?",
+          "options": [
+            "Retry requests",
+            "Encrypt data",
+            "Prevent waiting indefinitely",
+            "Speed up UI"
+          ],
+          "correct": 2,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which control structure is used to repeat a block of code in Dart?",
+          "options": [
+            "switch",
+            "for",
+            "if",
+            "try"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is a route in Flutter?",
+          "options": [
+            "A database path",
+            "An abstraction for a screen or page",
+            "A theme configuration",
+            "A network request"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the main benefit of using Maps in Dart?",
+          "options": [
+            "Storing values without keys",
+            "Managing asynchronous tasks",
+            "Rendering UI components",
+            "Storing key–value pairs"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which method is used to update the UI when state changes?",
+          "options": [
+            "initState()",
+            "setState()",
+            "dispose()",
+            "build()"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What happens if local storage fails?",
+          "options": [
+            "Fallback logic is required",
+            "Data syncs",
+            "App crashes",
+            "UI freezes"
+          ],
+          "correct": 0,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does crossAxisAlignment control?",
+          "options": [
+            "Child order",
+            "Widget size",
+            "Horizontal alignment in Column",
+            "Vertical alignment in Column"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "When should you prefer Provider over setState()?",
+          "options": [
+            "For global or shared state",
+            "For navigation",
+            "For simple UI updates",
+            "For animations"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is Dart primarily designed for in the Flutter ecosystem?",
+          "options": [
+            "User interface development",
+            "General-purpose programming with UI focus",
+            "Database management",
+            "Network security"
+          ],
+          "correct": 0,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which widget is commonly used as the root of a Flutter app?",
+          "options": [
+            "Column",
+            "Scaffold",
+            "Container",
+            "MaterialApp"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What problem does state lifting help solve?",
+          "options": [
+            "Sharing state between widgets",
+            "API errors",
+            "Layout overflow",
+            "UI rendering"
+          ],
+          "correct": 0,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does the build() method return in a widget?",
+          "options": [
+            "Rendered pixels",
+            "A widget tree describing the UI",
+            "Application state",
+            "A screen"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the purpose of focusNode in a TextField?",
+          "options": [
+            "Handle validation",
+            "Control which widget has keyboard focus",
+            "Manage text value",
+            "Style the input"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the purpose of the path_provider package?",
+          "options": [
+            "Style the UI",
+            "Manage network paths",
+            "Encrypt data",
+            "Find commonly used locations on the host file system"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which statement best describes Flutter's layout system?",
+          "options": [
+            "Child controls parent size",
+            "Uses XML layouts",
+            "Based on absolute positioning",
+            "Parent sets constraints, child chooses size"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the main use of local storage in apps?",
+          "options": [
+            "Host web servers",
+            "Persist user settings and small data",
+            "Manage network hardware",
+            "Compile code"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which HTTP method is typically used to retrieve data?",
+          "options": [
+            "DELETE",
+            "PUT",
+            "POST",
+            "GET"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is session expiration?",
+          "options": [
+            "Theme reset",
+            "Automatic logout after inactivity",
+            "UI timeout",
+            "API limit"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the primary responsibility of the setState() method?",
+          "options": [
+            "Trigger widget rebuild",
+            "Handle async tasks",
+            "Persist data",
+            "Navigate screens"
+          ],
+          "correct": 0,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the primary purpose of ThemeData in Flutter?",
+          "options": [
+            "Define application-wide visual styles",
+            "Control animations",
+            "Manage navigation",
+            "Handle state changes"
+          ],
+          "correct": 0,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which database package provides SQL support in Flutter?",
+          "options": [
+            "hive",
+            "path",
+            "shared_preferences",
+            "sqflite"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the role of the Expanded widget?",
+          "options": [
+            "Force a widget to take available space",
+            "Fix widget size",
+            "Align widgets",
+            "Add margin"
+          ],
+          "correct": 0,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which widget allows overlapping of its child widgets?",
+          "options": [
+            "Row",
+            "Expanded",
+            "Stack",
+            "Column"
+          ],
+          "correct": 2,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does the decoration property in TextField allow?",
+          "options": [
+            "Control focus",
+            "Change font size",
+            "Manage state",
+            "Add labels, icons, and hint text"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What happens if a non-nullable variable is not initialized in Dart?",
+          "options": [
+            "A runtime exception occurs",
+            "The app runs normally",
+            "The value becomes null automatically",
+            "A compile-time error occurs"
+          ],
+          "correct": 3,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the primary benefit of InheritedWidget?",
+          "options": [
+            "Memory management",
+            "State persistence",
+            "Efficient data propagation",
+            "Automatic layout"
+          ],
+          "correct": 2,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the role of the Consumer widget in Provider?",
+          "options": [
+            "Create state",
+            "Listen and rebuild specific parts of the UI",
+            "Define themes",
+            "Manage navigation"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the main advantage of Navigator 2.0?",
+          "options": [
+            "Automatic themes",
+            "Better control over the navigation stack",
+            "Simpler code",
+            "Faster rendering"
+          ],
+          "correct": 1,
+          "explain": "Theo Progress test trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is Flutter?",
+          "options": [
+            "A programming language",
+            "A cross-platform UI framework",
+            "An operating system",
+            "An IDE"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Who developed Flutter?",
+          "options": [
+            "Apple",
+            "Microsoft",
+            "Google",
+            "Meta"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter allows developers to use how many codebases?",
+          "options": [
+            "One per platform codebase",
+            "Two",
+            "Three",
+            "One for all platforms"
+          ],
+          "correct": 3,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter uses which UI paradigm?",
+          "options": [
+            "Imperative",
+            "Declarative",
+            "Procedura",
+            "Functional"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Everything in Flutter is a ____ - Moi thứ trong Flutter đều là ____?",
+          "options": [
+            "Class",
+            "Object",
+            "Widget",
+            "Function"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter was originally called? - Tên ban đầu của Flutter là gì?",
+          "options": [
+            "Flame",
+            "Sky",
+            "DartUI",
+            "Jet"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which Flutter version added web & desktop support? - Phiên bản Flutter nào thêm hỗ trợ web & desktop?",
+          "options": [
+            "Flutter 1",
+            "Flutter 1.5",
+            "Flutter 2",
+            "Flutter 3"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter engine is mainly written in?",
+          "options": [
+            "Dart",
+            "Java",
+            "Kotlin",
+            "C/C++"
+          ],
+          "correct": 3,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which is NOT a Flutter architecture layer? - Đâu KHÔNG phải là một lớp kiến trúc của Flutter?",
+          "options": [
+            "Framework",
+            "Engine",
+            "Embedder",
+            "Database"
+          ],
+          "correct": 3,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter apps are compiled to? - Ứng dụng Flutter được biên dịch thành gì?",
+          "options": [
+            "Java bytecode",
+            "JavaScript only",
+            "Native machine code",
+            "HTML"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is the main advantage of Flutter? - Ưu điểm chính của Flutter là gì?",
+          "options": [
+            "Low performance",
+            "Separate codebases",
+            "Fast development & single codebase",
+            "Limited UI"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter supports which platforms?",
+          "options": [
+            "Android only",
+            "iOS only",
+            "Mobile only",
+            "Mobile, Web, Desktop"
+          ],
+          "correct": 3,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter doctor is used to?",
+          "options": [
+            "Build app",
+            "Debug UI",
+            "Check environment setup",
+            "Install packages"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which language is used to write Flutter apps?",
+          "options": [
+            "Java",
+            "Kotlin",
+            "Swift",
+            "Dart"
+          ],
+          "correct": 3,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter is best described as?",
+          "options": [
+            "Backend framework",
+            "UI toolkit",
+            "Database system",
+            "Operating system"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter renders UI using?",
+          "options": [
+            "Native UI components",
+            "HTML tags",
+            "Its own rendering engine",
+            "XML"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which company maintains Flutter? - Công ty nào duy trì Flutter?",
+          "options": [
+            "Apple",
+            "Meta",
+            "Google",
+            "Microsoft"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter widgets are? - Widget trong Flutter là gì?",
+          "options": [
+            "Mutable",
+            "Immutable",
+            "Global",
+            "Static"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter follows which programming style?",
+          "options": [
+            "Declarative",
+            "Procedural",
+            "Low-level",
+            "Script-based"
+          ],
+          "correct": 0,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter UI is built using? - UI Flutter được xây dựng bằng gì?",
+          "options": [
+            "Screens",
+            "Pages",
+            "Widget tree",
+            "Layout files"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Dart is developed by? - Dart được phát triển bởi ai?",
+          "options": [
+            "Apple",
+            "Microsoft",
+            "Google",
+            "Amazon"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Dart is a ____ language - Dart là ngôn ngữ ____?",
+          "options": [
+            "Procedural",
+            "Object-oriented",
+            "Assembly",
+            "Markup"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which is an integer type in Dart? - Kiểu số nguyên trong Dart là gì?",
+          "options": [
+            "double",
+            "num",
+            "int",
+            "String"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does final mean? - final có nghĩa là gì?",
+          "options": [
+            "Can change anytime",
+            "Assigned once",
+            "Compile-time constant",
+            "Nullable"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "const variables are? - Biến const là gì?",
+          "options": [
+            "Runtime values",
+            "Assigned later",
+            "Compile-time constants",
+            "Nullable"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does late do? - late dùng để làm gì?",
+          "options": [
+            "Make variable nullable",
+            "Delay assignment",
+            "Allow multiple assignments",
+            "Create constants"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Nullable variables are marked with? - Biến nullable được đánh dấu bằng gì?",
+          "options": [
+            "!",
+            "?",
+            "*****",
+            "&"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does the ?? operator mean? - Toán tử ?? có nghĩa là gì?",
+          "options": [
+            "Comparison",
+            "Force unwrap",
+            "Default if null",
+            "Type casting"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Entry point of a Dart program is? - Điểm bắt đầu của chương trình Dart là gì?",
+          "options": [
+            "start()",
+            "run()",
+            "init()",
+            "main()"
+          ],
+          "correct": 3,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Dart async programming uses? - Lập trình bất đồng bộ trong Dart dùng gì?",
+          "options": [
+            "Threads",
+            "Promises",
+            "Future & async/await",
+            "Callbacks only"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does the var keyword mean? - Từ khóa var có nghĩa là gì?",
+          "options": [
+            "Dynamic type always",
+            "Compile-time constant",
+            "Type inferred",
+            "Nullable only"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does dynamic allow? - dynamic cho phép điều gì?",
+          "options": [
+            "One type only",
+            "Compile-time check",
+            "Type change at runtime",
+            "Constants only"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What can num store? - Kiểu num có thể lưu gì?",
+          "options": [
+            "Only int",
+            "Only double",
+            "int and double",
+            "String"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which collection is ordered in Dart? - Collection nào có thứ tự trong Dart?",
+          "options": [
+            "Set",
+            "Map",
+            "List",
+            "Enum"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which collection has unique values? - Collection nào không chứa giá trị trùng?",
+          "options": [
+            "List",
+            "Map",
+            "Set",
+            "Queue"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Named parameters are wrapped in? - Tham số đặt tên được bọc trong gì?",
+          "options": [
+            "( )",
+            "[ ]",
+            "{ }",
+            "< >"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Required named parameters use which keyword? - Tham số đặt tên bắt buộc dùng từ khóa nào?",
+          "options": [
+            "late",
+            "required",
+            "final",
+            "this"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "A constructor is used to? - Constructor dùng để làm gì?",
+          "options": [
+            "Destroy object",
+            "Create object",
+            "Call function",
+            "Import library"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does this keyword refer to? - Từ khóa this dùng để chỉ gì?",
+          "options": [
+            "Class name",
+            "Global variable",
+            "Current object",
+            "Parent class"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Factory constructor is used when? - Factory constructor dùng khi nào?",
+          "options": [
+            "Always creating new object",
+            "Returning existing instance",
+            "Destroying object",
+            "Async programming"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Flutter app starts from which file? - Ứng dụng Flutter bắt đầu từ file nào?",
+          "options": [
+            "app.dart",
+            "home.dart",
+            "main.dart",
+            "index.dart"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which function starts a Flutter app? - Hàm nào khởi chạy ứng dụng Flutter?",
+          "options": [
+            "startApp()",
+            "initApp()",
+            "runApp()",
+            "buildApp()"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Material Design root widget is? - Widget gốc của Material Design là gì?",
+          "options": [
+            "Scaffold",
+            "Container",
+            "Column",
+            "MaterialApp"
+          ],
+          "correct": 3,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does StatelessWidget mean? - StatelessWidget có nghĩa là gì?",
+          "options": [
+            "Has mutable state",
+            "Cannot rebuild",
+            "No internal state",
+            "Uses setState"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "When is StatefulWidget used? - StatefulWidget được dùng khi nào?",
+          "options": [
+            "UI never changes",
+            "Data changes over time",
+            "Static text only",
+            "No user input"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Which widget provides app structure? - Widget nào cung cấp khung cho ứng dụng?",
+          "options": [
+            "Column",
+            "Row",
+            "Scaffold",
+            "Center"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does Hot Reload do? - Hot Reload làm gì?",
+          "options": [
+            "Restarts app fully",
+            "Keeps state and updates UI",
+            "Deletes cache",
+            "Rebuilds APK"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does Hot Restart do? - Hot Restart làm gì?",
+          "options": [
+            "Keeps state",
+            "Updates UI only",
+            "Restarts app from beginning",
+            "Clears IDE"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Movie app uses which API? - Ứng dụng Movie dùng API nào?",
+          "options": [
+            "Google Movies",
+            "IMDb",
+            "TMDB",
+            "Netflix"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Clean Architecture focuses on? - Clean Architecture tập trung vào điều gì?",
+          "options": [
+            "UI design",
+            "Database speed",
+            "Separation of concerns",
+            "Animations"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "build(BuildContext context) returns? - Hàm build(BuildContext context) trả về gì?",
+          "options": [
+            "Function",
+            "State",
+            "Widget",
+            "Theme"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is BuildContext used for? - BuildContext dùng để làm gì?",
+          "options": [
+            "Store data",
+            "Widget location in widget tree",
+            "API calls",
+            "Animation"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What does setState() do? - setState() làm gì?",
+          "options": [
+            "Deletes widget",
+            "Updates UI",
+            "Stops app",
+            "Changes theme only"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Column arranges widgets in which direction? - Column sắp xếp widget theo hướng nào?",
+          "options": [
+            "Horizontal",
+            "Vertical",
+            "Grid",
+            "Stack"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Row arranges widgets in which direction? - Row sắp xếp widget theo hướng nào?",
+          "options": [
+            "Vertical",
+            "Diagonal",
+            "Horizontal",
+            "Random"
+          ],
+          "correct": 2,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is Container used for? - Container dùng để làm gì?",
+          "options": [
+            "Only text",
+            "Layout, padding, decoration",
+            "Navigation",
+            "API calls"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is SizedBox used for? - SizedBox dùng để làm gì?",
+          "options": [
+            "Fetch data",
+            "Control size",
+            "Handle state",
+            "Theme app"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Placeholder widget is used for? - Placeholder widget dùng để làm gì?",
+          "options": [
+            "Final UI",
+            "Temporary UI",
+            "Animation",
+            "Routing"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Folder ui/screens usually contains? - Thư mục ui/screens thường chứa gì?",
+          "options": [
+            "Models",
+            "Screens",
+            "API",
+            "Database"
+          ],
+          "correct": 1,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "Clean Architecture separates which parts? - Clean Architecture tách những phần nào?",
+          "options": [
+            "UI and logic",
+            "Colors",
+            "Animations",
+            "Widgets only"
+          ],
+          "correct": 0,
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+        },
+        {
+          "q": "What is asynchronous programming used for in Dart?",
+          "options": [
+            "To make code run faster always",
+            "To perform long-running tasks without blocking execution",
+            "To pause the program",
+            "To replace exceptions"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which class represents a value that will be available in the future?",
+          "options": [
+            "Promise",
+            "Async",
+            "Future",
+            "Delay"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "How do you mark a function as asynchronous in Dart?",
+          "options": [
+            "future function",
+            "async function",
+            "Add the keyword async after the function signature",
+            "Use await in front of the function name"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What keyword is used inside an async function to wait for a Future to complete?",
+          "options": [
+            "delay",
+            "wait",
+            "await",
+            "async"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is the return type of an async function that returns an integer?",
+          "options": [
+            "int",
+            "Future<int>",
+            "Async<int>",
+            "Promise<int>"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What will this code print?",
+          "options": [
+            "A B immediately",
+            "A (pause 1 second) B",
+            "B A",
+            "Error"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which statement correctly handles a Future using .then()?",
+          "options": [
+            "Future(() => 10).then((value) => print(value));",
+            "Future(() => 10).await(print);",
+            "then Future(() => print(10));",
+            "Future.print(10).then();"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which keyword can be used together with try and catch in async functions to handle errors?",
+          "options": [
+            "wait",
+            "throw",
+            "await",
+            "async"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What does this function return?",
+          "options": [
+            "int",
+            "Future<int>",
+            "void",
+            "Async<int>"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which keyword is used to declare a variable in Dart?",
+          "options": [
+            "let",
+            "var",
+            "define",
+            "static"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is the correct syntax to declare an integer variable in Dart?",
+          "options": [
+            "int number = 5;",
+            "integer number = 5;",
+            "num number = “5”;",
+            "float number = 5;"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which of the following is not a primitive data type in Dart?",
+          "options": [
+            "int",
+            "bool",
+            "float",
+            "String"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "The default value of an uninitialized variable in Dart is:",
+          "options": [
+            "0",
+            "null",
+            "undefined",
+            "empty"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which of the following is a valid boolean declaration?",
+          "options": [
+            "bool flag = True;",
+            "boolean flag = true;",
+            "bool flag = true;",
+            "Bool flag = TRUE;"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which keyword is used to declare a variable that cannot change its value?",
+          "options": [
+            "const",
+            "var",
+            "dynamic",
+            "static"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "The final keyword in Dart means:",
+          "options": [
+            "Value can change",
+            "Value is constant at compile time",
+            "Value can be set only once",
+            "Value is always null"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is the difference between final and const?",
+          "options": [
+            "const is runtime, final is compile-time",
+            "const is compile-time, final is runtime",
+            "Both are the same",
+            "final variables are mutable"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "The symbol ? after a type name in Dart means:",
+          "options": [
+            "Optional value, can be null",
+            "Conditional statement",
+            "Type casting",
+            "Unknown operator"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What does the operator ?? do?",
+          "options": [
+            "Null check",
+            "Null-coalescing (return default if null)",
+            "Conditional operator",
+            "Assignment operator"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which operator assigns a value only if the variable is null?",
+          "options": [
+            "??=",
+            "??",
+            "?:",
+            "=>"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What happens if you try to use a late variable before initialization?",
+          "options": [
+            "It prints null",
+            "It gives a runtime error",
+            "It prints 0",
+            "It assigns default value"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which keyword is used for lazy initialization in Dart?",
+          "options": [
+            "const",
+            "late",
+            "var",
+            "static"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "The late keyword is often used with which kind of variable?",
+          "options": [
+            "Compile-time constants",
+            "Variables initialized later but guaranteed before use",
+            "Unused variables",
+            "Dynamic variables only"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What does dynamic mean in Dart?",
+          "options": [
+            "Variable type is fixed",
+            "Variable type can change at runtime",
+            "Variable is immutable",
+            "Variable must be null"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which of the following is valid?",
+          "options": [
+            "dynamic x = 5; x = “Hello”;",
+            "dynamic x = 5; x = true;",
+            "dynamic x;",
+            "All of the above"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which keyword allows both int and double values?",
+          "options": [
+            "num",
+            "dynamic",
+            "decimal",
+            "float"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "How can you convert string to int in Dart?",
+          "options": [
+            "int.parse()",
+            "toInt()",
+            "cast()",
+            "convert()"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "How can you check a variable’s type?",
+          "options": [
+            "typeof(var)",
+            "var.type",
+            "var.runtimeType",
+            "getType(var)"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which of these declares a nullable integer variable?",
+          "options": [
+            "int number;",
+            "int number?;",
+            "int? number;",
+            "var? number;"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is the data type of true in Dart?",
+          "options": [
+            "Boolean",
+            "bool",
+            "bit",
+            "logical"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which of the following is a valid declaration?",
+          "options": [
+            "var x = null;",
+            "int? x = null;",
+            "dynamic x = null;",
+            "All of the above"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which operator is used for addition in Dart?",
+          "options": [
+            "+",
+            "++",
+            "+=",
+            "add()"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which of the following is the equality operator in Dart?",
+          "options": [
+            "=",
+            "==",
+            "===",
+            ":="
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which operator is used to combine two conditions in Dart?",
+          "options": [
+            "&&",
+            "||",
+            "&",
+            "Both A and B"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which of the following operators can be used for string concatenation?",
+          "options": [
+            "+",
+            "&",
+            "++",
+            "concat()"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is a library in Dart?",
+          "options": [
+            "A collection of classes and functions",
+            "A database connection",
+            "A Flutter widget",
+            "A type of compiler"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which keyword is used to include another Dart library?",
+          "options": [
+            "include",
+            "use",
+            "import",
+            "require"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is the correct syntax to import a built-in library?",
+          "options": [
+            "import dart.io;",
+            "import 'dart:io';",
+            "include 'dart:io';",
+            "use dart.io;"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which of the following is a core Dart library?",
+          "options": [
+            "dart:math",
+            "dart:core",
+            "dart:async",
+            "All of the above"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is automatically imported into every Dart program?",
+          "options": [
+            "dart:math",
+            "dart:core",
+            "dart:async",
+            "dart:convert"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "How can you import a library with an alias?",
+          "options": [
+            "import 'dart:math' as math;",
+            "alias 'dart:math';",
+            "use dart:math -> math;",
+            "import as 'dart:math' math;"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which syntax allows you to import only specific parts of a library?",
+          "options": [
+            "import 'dart:math' only sin;",
+            "import 'dart:math' show sin, cos;",
+            "import 'dart:math' use sin, cos;",
+            "import 'dart:math' with sin;"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What keyword hides certain parts of a library during import?",
+          "options": [
+            "hide",
+            "except",
+            "remove",
+            "exclude"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is the purpose of part and part of directives in Dart?",
+          "options": [
+            "To split a single library across multiple files",
+            "To import third-party packages",
+            "To define constants",
+            "To connect Dart to Flutter"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which keyword is used to make decisions in Dart?",
+          "options": [
+            "choose",
+            "if",
+            "when",
+            "select"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is the correct syntax for an if statement in Dart?",
+          "options": [
+            "if condition { }",
+            "if (condition) { }",
+            "if [condition] { }",
+            "if {condition}"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "The else block in Dart executes when:",
+          "options": [
+            "The if condition is true",
+            "The if condition is false",
+            "The program has an error",
+            "Always executes"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which statement is used to repeat a block of code a fixed number of times?",
+          "options": [
+            "if",
+            "for",
+            "switch",
+            "break"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What does the break statement do in Dart loops?",
+          "options": [
+            "Skips one iteration",
+            "Exits the loop completely",
+            "Restarts the loop",
+            "Pauses the loop"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What does the continue statement do?",
+          "options": [
+            "Ends the loop",
+            "Skips to the next iteration",
+            "Stops the program",
+            "Exits the current block"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which loop checks the condition after executing the loop body?",
+          "options": [
+            "for",
+            "while",
+            "do-while",
+            "foreach"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which keyword is used for multiple conditions instead of many if-else statements?",
+          "options": [
+            "choose",
+            "switch",
+            "when",
+            "check"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is required after each case in a switch statement in Dart?",
+          "options": [
+            "stop",
+            "continue",
+            "break",
+            "exit"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is a class in Dart?",
+          "options": [
+            "A variable type",
+            "A function",
+            "A blueprint for creating objects",
+            "A module"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is an object in Dart?",
+          "options": [
+            "A type of variable",
+            "An instance of a class",
+            "A keyword",
+            "A list"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which keyword is used to define a class in Dart?",
+          "options": [
+            "object",
+            "define",
+            "class",
+            "struct"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "How do you create an object in Dart?",
+          "options": [
+            "Person = new();",
+            "Person p = new Person();",
+            "Person();",
+            "object Person();"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What is the purpose of a constructor in a class?",
+          "options": [
+            "To delete objects",
+            "To initialize objects",
+            "To copy data",
+            "To print variables"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What symbol is used to access an object’s property or method?",
+          "options": [
+            "#",
+            "@",
+            ".",
+            ":"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "Which of the following best describes an instance variable?",
+          "options": [
+            "A variable declared inside a method",
+            "A variable shared by all classes",
+            "A variable defined inside a class and belongs to an object",
+            "A constant value"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "What happens if you don’t define a constructor in a Dart class?",
+          "options": [
+            "The program crashes",
+            "Dart automatically creates a default constructor",
+            "You can’t create objects",
+            "You must use new"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        },
+        {
+          "q": "________ is a real-time representation of any entity.",
+          "options": [
+            "Class",
+            "Method",
+            "Object",
+            "None of the above"
+          ],
+          "correct": 0,
+          "explain": "PRM393 — trích từ FE.docx."
+        }
+      ]
+    }
+  ]
+}

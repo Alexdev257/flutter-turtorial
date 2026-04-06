@@ -54,7 +54,21 @@
       <div class="sidebar-scroll">
         <p class="sidebar-hint">Mục lục (theo mục ##)</p>
         <nav id="tocNav" class="toc" aria-label="Mục lục"></nav>
-        <p class="sidebar-footnote">Toàn bộ tài liệu được nhúng sẵn trong trang <code>index.html</code>.</p>
+        <div class="sidebar-quiz">
+          <p class="sidebar-hint">Kiểm tra trắc nghiệm</p>
+          <fieldset class="quiz-module-fieldset">
+            <legend class="quiz-sidebar-label">Chọn một hoặc nhiều module</legend>
+            <div class="quiz-module-toolbar">
+              <button type="button" class="quiz-toolbar-btn" id="quizSelectAllBtn">Tất cả</button>
+              <button type="button" class="quiz-toolbar-btn" id="quizSelectNoneBtn">Bỏ chọn</button>
+            </div>
+            <div id="quizModuleList" class="quiz-module-list" role="group" aria-label="Module ôn tập"></div>
+          </fieldset>
+          <p class="quiz-selected-count" id="quizSelectedCount" aria-live="polite"></p>
+          <button type="button" class="quiz-start-btn" id="quizStartBtn">Bắt đầu</button>
+          <p class="quiz-load-hint" id="quizLoadHint" role="status" hidden></p>
+        </div>
+        <p class="sidebar-footnote">Tài liệu nhúng trong <code>index.html</code>. Câu hỏi: <code>quiz-data.json</code> (mở trang qua HTTP nếu không tải được file).</p>
       </div>
     </aside>
     <div class="backdrop" id="backdrop" hidden></div>
@@ -71,6 +85,34 @@
           <p class="hint">Thiếu dữ liệu nhúng trong <code>index.html</code> (script <code>embedded-md-json</code>).</p>
         </div>
         <div id="rendered" class="md-root" hidden></div>
+        <section
+          id="quizPanel"
+          class="quiz-panel"
+          hidden
+          aria-hidden="true"
+          aria-labelledby="quizPanelHeading"
+        >
+          <div class="quiz-panel-head">
+            <h2 class="quiz-panel-title" id="quizPanelHeading">Kiểm tra</h2>
+            <span class="quiz-progress" id="quizProgress" aria-live="polite"></span>
+            <button type="button" class="btn-quiz-close btn-icon" id="quizCloseBtn" title="Thoát" aria-label="Thoát kiểm tra">✕</button>
+          </div>
+          <div id="quizActive" class="quiz-active">
+            <p class="quiz-question" id="quizQuestionText"></p>
+            <div class="quiz-options" id="quizOptions" role="radiogroup" aria-labelledby="quizQuestionText"></div>
+            <div class="quiz-feedback" id="quizFeedback" hidden>
+              <p class="quiz-feedback-title">Đáp án đúng</p>
+              <p class="quiz-correct-line" id="quizCorrectAnswer"></p>
+              <p class="quiz-explain" id="quizExplain"></p>
+              <button type="button" class="quiz-continue-btn" id="quizContinueBtn">Tiếp tục</button>
+            </div>
+          </div>
+          <div class="quiz-complete" id="quizComplete" hidden>
+            <p class="quiz-complete-title">Hoàn thành</p>
+            <p class="quiz-score" id="quizScoreSummary"></p>
+            <button type="button" class="quiz-start-btn" id="quizFinishBtn">Quay lại tài liệu</button>
+          </div>
+        </section>
       </article>
     </main>
   </div>

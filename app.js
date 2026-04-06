@@ -17,6 +17,26 @@
     sidebarCollapseToggle: document.getElementById('sidebarCollapseToggle'),
     backdrop: document.getElementById('backdrop'),
     fabTop: document.getElementById('fabTop'),
+    content: document.getElementById('content'),
+    quizPanel: document.getElementById('quizPanel'),
+    quizModuleList: document.getElementById('quizModuleList'),
+    quizSelectAllBtn: document.getElementById('quizSelectAllBtn'),
+    quizSelectNoneBtn: document.getElementById('quizSelectNoneBtn'),
+    quizSelectedCount: document.getElementById('quizSelectedCount'),
+    quizStartBtn: document.getElementById('quizStartBtn'),
+    quizLoadHint: document.getElementById('quizLoadHint'),
+    quizCloseBtn: document.getElementById('quizCloseBtn'),
+    quizQuestionText: document.getElementById('quizQuestionText'),
+    quizOptions: document.getElementById('quizOptions'),
+    quizFeedback: document.getElementById('quizFeedback'),
+    quizCorrectAnswer: document.getElementById('quizCorrectAnswer'),
+    quizExplain: document.getElementById('quizExplain'),
+    quizContinueBtn: document.getElementById('quizContinueBtn'),
+    quizActive: document.getElementById('quizActive'),
+    quizComplete: document.getElementById('quizComplete'),
+    quizScoreSummary: document.getElementById('quizScoreSummary'),
+    quizFinishBtn: document.getElementById('quizFinishBtn'),
+    quizProgress: document.getElementById('quizProgress'),
   };
 
   let slugCounts = {};
@@ -430,8 +450,293 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  initTheme();
-  applyLayoutForViewport();
+  const quizState = {
+    modules: [],
+    questions: [],
+    index: 0,
+    correct: 0,
+    wrong: 0,
+    awaitingContinue: false,
+  };
+
+  function loadQuizData() {
+    return fetch('quiz-data.json')
+      .then(function (r) {
+        return r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status));
+      })
+      .catch(function () {
+        var el = document.getElementById('quiz-data-embed');
+        if (el && el.textContent.trim()) {
+          try {
+            return JSON.parse(el.textContent);
+          } catch (e) {
+            return { modules: [] };
+          }
+        }
+        return { modules: [] };
+      });
+  }
+
+  function setQuizLoadHint(msg, isError) {
+    if (!els.quizLoadHint) return;
+    if (!msg) {
+      els.quizLoadHint.hidden = true;
+      els.quizLoadHint.textContent = '';
+      els.quizLoadHint.classList.remove('quiz-load-hint--error');
+      return;
+    }
+    els.quizLoadHint.hidden = false;
+    els.quizLoadHint.textContent = msg;
+    els.quizLoadHint.classList.toggle('quiz-load-hint--error', !!isError);
+  }
+
+  function countQuestionsForIds(ids) {
+    var set = {};
+    ids.forEach(function (id) {
+      set[id] = true;
+    });
+    var n = 0;
+    quizState.modules.forEach(function (m) {
+      if (set[m.id] && m.questions) n += m.questions.length;
+    });
+    return n;
+  }
+
+  function updateQuizSelectionSummary() {
+    if (!els.quizSelectedCount) return;
+    var ids = getSelectedModuleIds();
+    if (!quizState.modules.length) {
+      els.quizSelectedCount.textContent = '';
+      return;
+    }
+    var n = countQuestionsForIds(ids);
+    if (ids.length === 0) {
+      els.quizSelectedCount.textContent = 'Chưa chọn module nào.';
+    } else if (ids.length === quizState.modules.length) {
+      els.quizSelectedCount.textContent = 'Đã chọn tất cả — ' + n + ' câu.';
+    } else {
+      els.quizSelectedCount.textContent = 'Đã chọn ' + ids.length + ' module — ' + n + ' câu.';
+    }
+    if (els.quizStartBtn) els.quizStartBtn.disabled = ids.length === 0 || n === 0;
+  }
+
+  function getSelectedModuleIds() {
+    if (!els.quizModuleList) return [];
+    var cbs = els.quizModuleList.querySelectorAll('input[type="checkbox"]');
+    var ids = [];
+    cbs.forEach(function (cb) {
+      if (cb.checked) ids.push(cb.value);
+    });
+    return ids;
+  }
+
+  function buildQuestionQueue(selectedIds) {
+    var set = {};
+    selectedIds.forEach(function (id) {
+      set[id] = true;
+    });
+    var queue = [];
+    quizState.modules.forEach(function (m) {
+      if (!set[m.id] || !m.questions || !m.questions.length) return;
+      m.questions.forEach(function (q) {
+        queue.push(q);
+      });
+    });
+    return queue;
+  }
+
+  function populateQuizModules(data) {
+    if (!els.quizModuleList) return;
+    els.quizModuleList.innerHTML = '';
+    var mods = (data && data.modules) || [];
+    quizState.modules = mods;
+    if (!mods.length) {
+      setQuizLoadHint('Không tải được quiz-data.json. Hãy mở trang qua HTTP (vd Live Server) hoặc nhúng JSON vào #quiz-data-embed.', true);
+      if (els.quizStartBtn) els.quizStartBtn.disabled = true;
+      if (els.quizSelectedCount) els.quizSelectedCount.textContent = '';
+      return;
+    }
+    setQuizLoadHint('');
+    mods.forEach(function (m) {
+      var row = document.createElement('label');
+      row.className = 'quiz-module-item';
+      var cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.value = m.id;
+      cb.checked = false;
+      cb.addEventListener('change', updateQuizSelectionSummary);
+      var span = document.createElement('span');
+      span.className = 'quiz-module-item-text';
+      span.textContent = m.title + ' (' + (m.questions ? m.questions.length : 0) + ')';
+      row.appendChild(cb);
+      row.appendChild(span);
+      els.quizModuleList.appendChild(row);
+    });
+    if (els.quizSelectAllBtn) {
+      els.quizSelectAllBtn.addEventListener('click', function () {
+        els.quizModuleList.querySelectorAll('input[type="checkbox"]').forEach(function (c) {
+          c.checked = true;
+        });
+        updateQuizSelectionSummary();
+      });
+    }
+    if (els.quizSelectNoneBtn) {
+      els.quizSelectNoneBtn.addEventListener('click', function () {
+        els.quizModuleList.querySelectorAll('input[type="checkbox"]').forEach(function (c) {
+          c.checked = false;
+        });
+        updateQuizSelectionSummary();
+      });
+    }
+    updateQuizSelectionSummary();
+  }
+
+  function exitQuiz() {
+    if (!els.content || !els.quizPanel) return;
+    els.content.classList.remove('content--quiz-mode');
+    els.quizPanel.hidden = true;
+    els.quizPanel.setAttribute('aria-hidden', 'true');
+    quizState.awaitingContinue = false;
+    if (els.rendered && originalHtml) els.rendered.hidden = false;
+  }
+
+  function finishQuizRound() {
+    if (!els.quizActive || !els.quizComplete) return;
+    els.quizActive.hidden = true;
+    els.quizComplete.hidden = false;
+    var n = quizState.questions.length;
+    if (els.quizScoreSummary) {
+      els.quizScoreSummary.textContent =
+        'Đúng ' +
+        quizState.correct +
+        ' / ' +
+        n +
+        ' câu' +
+        (quizState.wrong > 0 ? ' · Sai hoặc xem lại: ' + quizState.wrong + ' lượt' : '');
+    }
+  }
+
+  function goToNextQuestion() {
+    quizState.index++;
+    quizState.awaitingContinue = false;
+    if (els.quizFeedback) els.quizFeedback.hidden = true;
+    renderQuizQuestion();
+  }
+
+  function renderQuizQuestion() {
+    if (!els.quizQuestionText || !els.quizOptions || !els.quizProgress) return;
+    var list = quizState.questions;
+    if (quizState.index >= list.length) {
+      finishQuizRound();
+      return;
+    }
+    var q = list[quizState.index];
+    els.quizQuestionText.textContent = q.q;
+    els.quizProgress.textContent = 'Câu ' + (quizState.index + 1) + ' / ' + list.length;
+    els.quizOptions.innerHTML = '';
+    var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+    q.options.forEach(function (optText, i) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'quiz-option';
+      btn.setAttribute('role', 'radio');
+      btn.setAttribute('aria-checked', 'false');
+      btn.dataset.index = String(i);
+      btn.textContent = (letters[i] || String(i + 1)) + '. ' + optText;
+      btn.addEventListener('click', function () {
+        onQuizOptionClick(i);
+      });
+      els.quizOptions.appendChild(btn);
+    });
+  }
+
+  function onQuizOptionClick(picked) {
+    if (quizState.awaitingContinue) return;
+    var q = quizState.questions[quizState.index];
+    if (!q) return;
+    var correct = q.correct;
+    var buttons = els.quizOptions.querySelectorAll('.quiz-option');
+    buttons.forEach(function (b) {
+      b.disabled = true;
+    });
+    if (picked === correct) {
+      buttons[picked].classList.add('quiz-option--correct');
+      buttons[picked].setAttribute('aria-checked', 'true');
+      quizState.correct++;
+      window.setTimeout(function () {
+        goToNextQuestion();
+      }, 400);
+      return;
+    }
+    quizState.wrong++;
+    buttons[picked].classList.add('quiz-option--wrong');
+    buttons[correct].classList.add('quiz-option--correct');
+    if (els.quizCorrectAnswer) {
+      var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+      var letter = letters[correct] || String(correct + 1);
+      els.quizCorrectAnswer.textContent = letter + '. ' + q.options[correct];
+    }
+    if (els.quizExplain) els.quizExplain.textContent = q.explain || '';
+    if (els.quizFeedback) els.quizFeedback.hidden = false;
+    quizState.awaitingContinue = true;
+  }
+
+  function startQuiz() {
+    var selectedIds = getSelectedModuleIds();
+    var queue = buildQuestionQueue(selectedIds);
+    if (!queue.length) return;
+    quizState.questions = queue;
+    quizState.index = 0;
+    quizState.correct = 0;
+    quizState.wrong = 0;
+    quizState.awaitingContinue = false;
+    if (els.quizActive) els.quizActive.hidden = false;
+    if (els.quizComplete) els.quizComplete.hidden = true;
+    if (els.quizFeedback) els.quizFeedback.hidden = true;
+    if (els.content) els.content.classList.add('content--quiz-mode');
+    if (els.quizPanel) {
+      els.quizPanel.hidden = false;
+      els.quizPanel.setAttribute('aria-hidden', 'false');
+    }
+    if (els.rendered) els.rendered.hidden = true;
+    if (window.innerWidth <= 900) closeSidebar();
+    var titleEl = document.getElementById('quizPanelHeading');
+    if (titleEl) {
+      var nMod = selectedIds.length;
+      var nQ = queue.length;
+      if (nMod === quizState.modules.length) {
+        titleEl.textContent = 'Kiểm tra — tất cả module (' + nQ + ' câu)';
+      } else if (nMod === 1) {
+        var one = quizState.modules.find(function (m) {
+          return m.id === selectedIds[0];
+        });
+        titleEl.textContent = 'Kiểm tra — ' + (one ? one.title : selectedIds[0]) + ' (' + nQ + ' câu)';
+      } else {
+        titleEl.textContent = 'Kiểm tra — ' + nMod + ' module (' + nQ + ' câu)';
+      }
+    }
+    els.quizPanel && els.quizPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    renderQuizQuestion();
+  }
+
+  function initQuiz(data) {
+    populateQuizModules(data);
+    if (els.quizStartBtn) {
+      els.quizStartBtn.addEventListener('click', startQuiz);
+    }
+    if (els.quizCloseBtn) {
+      els.quizCloseBtn.addEventListener('click', exitQuiz);
+    }
+    if (els.quizContinueBtn) {
+      els.quizContinueBtn.addEventListener('click', function () {
+        if (!quizState.awaitingContinue) return;
+        goToNextQuestion();
+      });
+    }
+    if (els.quizFinishBtn) {
+      els.quizFinishBtn.addEventListener('click', exitQuiz);
+    }
+  }
 
   function getEmbeddedMd() {
     if (typeof window.EMBEDDED_MD === 'string' && window.EMBEDDED_MD.length > 0) {
@@ -440,13 +745,22 @@
     return null;
   }
 
-  const embedded = getEmbeddedMd();
-  if (embedded) {
-    loadFromText(embedded);
-  } else {
-    els.loading.hidden = true;
-    els.rendered.hidden = true;
-    els.errorPanel.hidden = false;
-    els.errorMsg.textContent = 'Thiếu nội dung nhúng (EMBEDDED_MD).';
+  async function bootstrap() {
+    initTheme();
+    applyLayoutForViewport();
+    var quizData = await loadQuizData();
+    initQuiz(quizData);
+
+    var embedded = getEmbeddedMd();
+    if (embedded) {
+      loadFromText(embedded);
+    } else {
+      els.loading.hidden = true;
+      els.rendered.hidden = true;
+      els.errorPanel.hidden = false;
+      els.errorMsg.textContent = 'Thiếu nội dung nhúng (EMBEDDED_MD).';
+    }
   }
+
+  bootstrap();
 })();
