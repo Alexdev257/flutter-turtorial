@@ -1,0 +1,597 @@
+!
+#
+&
+&&
+( )
+*****
++
+++
++=
+.
+0
+:
+:=
+< >
+=
+==
+===
+=>
+?
+?:
+??
+??=
+@
+A (pause 1 second) B
+A B immediately
+A Flutter widget
+A UI widget only
+A blueprint for creating objects
+A collection of classes and functions
+A compile-time error occurs
+A constant value
+A cross-platform UI framework
+A database connection
+A database path
+A database table
+A function
+A keyword
+A layout overflow error occurs
+A list
+A module
+A network request
+A programming language
+A runtime exception occurs
+A screen
+A theme configuration
+A type of compiler
+A type of variable
+A variable declared inside a method
+A variable defined inside a class and belongs to an object
+A variable shared by all classes
+A variable type
+A widget tree describing the UI
+API
+API calls
+API errors
+API limit
+Ability to hold mutable state
+Add labels, icons, and hint text
+Add margin
+Add the keyword async after the function signature
+Align widgets
+All of the above
+Allow multiple assignments
+Always creating new object
+Always executes
+Amazon
+An IDE
+An abstraction for a screen or page
+An instance of a class
+An operating system
+Android only
+Animation
+Animations
+App crashes
+App crashes silently
+App version
+Apple
+Application state
+Assembly
+Assigned later
+Assigned once
+Assignment operator
+Async
+Async programming
+Async<int>
+Automatic layout
+Automatic logout after inactivity
+Automatic themes
+B A
+Backend framework
+Based on absolute positioning
+Better animations
+Better control over the navigation stack
+Better state management
+Bool flag = TRUE;
+Boolean
+Both A and B
+Both are the same
+Build app
+Building user interfaces and application logic
+C/C++
+Call function
+Callbacks only
+Can change anytime
+Cannot rebuild
+Center
+Change font size
+Changes theme only
+Check environment setup
+Child controls parent size
+Child order
+Class
+Class name
+Clear stack
+Clears IDE
+Close current screen
+Colors
+Column
+Comparison
+Compile code
+Compile-time check
+Compile-time constant
+Compile-time constants
+Compiling Dart code
+Conditional operator
+Conditional statement
+Consistent UI appearance
+Constants only
+Container
+Control animations
+Control focus
+Control size
+Control which widget has keyboard focus
+Create constants
+Create object
+Create state
+Creates provider
+Current object
+DELETE
+Dart
+Dart automatically creates a default constructor
+DartUI
+Data changes over time
+Data syncs
+Database
+Database management
+Database schema version for migrations
+Database speed
+Database system
+Debug UI
+Declarative
+Default if null
+Define application-wide visual styles
+Define themes
+Delay
+Delay assignment
+Deletes cache
+Deletes widget
+Deploy apps faster
+Describing the user interface
+Destroy object
+Destroying object
+Diagonal
+Display errors
+Disposes provider
+Dynamic type always
+Dynamic variables only
+Easier navigation management in large apps
+Efficient data propagation
+Embedder
+Encrypt data
+Ends the loop
+Engine
+Enum
+Error
+Exits the current block
+Exits the loop completely
+Expanded
+Fallback logic is required
+Fast development & single codebase
+Faster API calls
+Faster performance
+Faster rendering
+Fetch data
+Final UI
+Find commonly used locations on the host file system
+Fix widget size
+Flame
+Flutter 1
+Flutter 1.5
+Flutter 2
+Flutter 3
+Flutter SDK version
+For animations
+For global or shared state
+For navigation
+For simple UI updates
+Force a widget to take available space
+Force unwrap
+Framework
+Function
+Functional
+Future
+Future & async/await
+Future(() => 10).await(print);
+Future(() => 10).then((value) => print(value));
+Future.print(10).then();
+Future<int>
+GET
+General-purpose programming with UI focus
+Global
+Global variable
+Google
+Google Movies
+Grid
+HTML
+HTML tags
+Handle API
+Handle async tasks
+Handle state
+Handle state changes
+Handle validation
+Handling network requests
+Handling operating system processes
+Has mutable state
+Horizontal
+Horizontal alignment in Column
+Host web servers
+IMDb
+Immutable
+Imperative
+Import library
+Improve API performance
+Improve animations
+Improved navigation
+Install packages
+It assigns default value
+It gives a runtime error
+It manages database servers
+It prints 0
+It prints null
+It provides UI components and rendering logic
+It replaces the operating system
+It runs backend business logic
+Its own rendering engine
+Java
+Java bytecode
+JavaScript only
+Jet
+Keeps state
+Keeps state and updates UI
+Kotlin
+Layout files
+Layout overflow
+Layout, padding, decoration
+Layout, styling, and positioning
+Limited UI
+List
+Listen and rebuild specific parts of the UI
+Listens to changes
+Low performance
+Low-level
+Make variable nullable
+Manage UI updates correctly
+Manage navigation
+Manage network hardware
+Manage network paths
+Manage state
+Manage text value
+Managing asynchronous tasks
+Managing databases
+Map
+Markup
+MaterialApp
+Memory management
+Meta
+Method
+Microsoft
+Mobile only
+Mobile, Web, Desktop
+Models
+Mutable
+Native UI components
+Native machine code
+Navigate screens
+Navigation
+Netflix
+Network requests
+Network security
+No internal state
+No user input
+None of the above
+Null check
+Null-coalescing (return default if null)
+Nullable
+Nullable only
+Object
+Object-oriented
+One for all platforms
+One per platform codebase
+One type only
+Only double
+Only int
+Only text
+Open a new screen
+Operating system
+Optional value, can be null
+Organize code structure
+POST
+PUT
+Package version
+Pages
+Parent class
+Parent sets constraints, child chooses size
+Pauses the loop
+Performance
+Persist data
+Persist user settings and small data
+Person = new();
+Person p = new Person();
+Person();
+Platform compatibility
+Prevent waiting indefinitely
+Procedura
+Procedural
+Promise
+Promise<int>
+Promises
+Queue
+Random
+Reads value without listening
+Rebuilds APK
+Reduce file size
+Reduced memory usage
+Reduced widget rebuilds
+Rendered pixels
+Rendering UI components
+Rendering engine
+Reset form
+Restart app
+Restarts app from beginning
+Restarts app fully
+Restarts the loop
+Retry requests
+Returning existing instance
+Routing
+Row
+Running backend servers
+Runtime values
+Scaffold
+Screen navigation
+Screens
+Script-based
+Separate codebases
+Separation of concerns
+Set
+Sharing state between widgets
+Simpler code
+Simpler state sharing and management
+Skips one iteration
+Skips to the next iteration
+Sky
+Speed up UI
+Stack
+State
+State management
+State persistence
+Static
+Static text only
+Stops app
+Stops the program
+Store data
+Store form values
+Storing key–value pairs
+Storing values without keys
+String
+Style the UI
+Style the input
+Swift
+TMDB
+Temporary UI
+The app runs normally
+The if condition is false
+The if condition is true
+The program crashes
+The program has an error
+The value becomes null automatically
+Theme
+Theme app
+Theme management
+Theme reset
+Threads
+Three
+To connect Dart to Flutter
+To control the execution order of code
+To copy data
+To define constants
+To delete objects
+To handle network requests
+To import third-party packages
+To initialize objects
+To make code run faster always
+To manage UI layout
+To pause the program
+To perform long-running tasks without blocking execution
+To print variables
+To replace exceptions
+To split a single library across multiple files
+To store data permanently
+Trigger widget rebuild
+Two
+Type casting
+Type change at runtime
+Type inferred
+UI and logic
+UI design
+UI freezes
+UI is automatically fixed
+UI never changes
+UI rendering
+UI timeout
+UI toolkit
+Unknown operator
+Unused variables
+Updates UI
+Updates UI only
+Use await in front of the function name
+User interface development
+Uses XML layouts
+Uses setState
+Using HTML and CSS
+Using XML layout files
+Using a hierarchical widget tree
+Using native UI components only
+Validate input
+Value can be set only once
+Value can change
+Value is always null
+Value is constant at compile time
+Variable is immutable
+Variable must be null
+Variable type can change at runtime
+Variable type is fixed
+Variables initialized later but guaranteed before use
+Vertical
+Vertical alignment in Column
+Widget
+Widget is ignored
+Widget location in widget tree
+Widget size
+Widget tree
+Widgets allow code reuse across platforms
+Widgets are only used for layout design
+Widgets automatically manage databases
+Widgets only
+Widgets replace backend services
+XML
+You can’t create objects
+You must use new
+[ ]
+add()
+alias 'dart:math';
+app.dart
+async
+async function
+await
+bit
+bool
+bool flag = True;
+bool flag = true;
+boolean flag = true;
+break
+build()
+buildApp()
+cast()
+check
+choose
+class
+concat()
+const
+const is compile-time, final is runtime
+const is runtime, final is compile-time
+continue
+convert()
+dart:async
+dart:convert
+dart:core
+dart:math
+decimal
+define
+delay
+dispose()
+do-while
+double
+dynamic
+dynamic x = 5; x = true;
+dynamic x = 5; x = “Hello”;
+dynamic x = null;
+dynamic x;
+empty
+except
+exclude
+exit
+final
+final variables are mutable
+float
+float number = 5;
+for
+foreach
+future function
+getType(var)
+hide
+hive
+home.dart
+http
+iOS only
+if
+if (condition) { }
+if [condition] { }
+if condition { }
+if {condition}
+import
+import 'dart:io';
+import 'dart:math' as math;
+import 'dart:math' only sin;
+import 'dart:math' show sin, cos;
+import 'dart:math' use sin, cos;
+import 'dart:math' with sin;
+import as 'dart:math' math;
+import dart.io;
+include
+include 'dart:io';
+index.dart
+init()
+initApp()
+initState()
+int
+int and double
+int number = 5;
+int number;
+int number?;
+int.parse()
+int? number;
+int? x = null;
+integer number = 5;
+late
+let
+listen()
+logical
+main()
+main.dart
+null
+num
+num number = “5”;
+object
+object Person();
+path
+provider
+read()
+remove
+require
+required
+run()
+runApp()
+select
+select()
+setState()
+shared_preferences
+sqflite
+start()
+startApp()
+static
+stop
+struct
+switch
+then Future(() => print(10));
+this
+throw
+toInt()
+try
+typeof(var)
+undefined
+use
+use dart.io;
+use dart:math -> math;
+var
+var x = null;
+var.runtimeType
+var.type
+var? number;
+void
+wait
+watch()
+when
+while
+{ }
+||

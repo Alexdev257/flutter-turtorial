@@ -1856,7 +1856,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Mục đích chính của các câu lệnh điều khiển luồng trong Dart là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Để lưu trữ dữ liệu vĩnh viễn",
+            "Để kiểm soát thứ tự thực thi mã",
+            "Để xử lý các yêu cầu mạng",
+            "Để quản lý bố cục giao diện người dùng"
+          ]
         },
         {
           "q": "Which Provider method listens for changes and rebuilds UI?",
@@ -1869,7 +1875,13 @@
           "correct": 2,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Phương thức Provider nào lắng nghe thay đổi và rebuild UI?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "select()",
+            "listen()",
+            "watch()",
+            "read()"
+          ]
         },
         {
           "q": "What does context.read() do in Provider?",
@@ -1882,7 +1894,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "`context.read()` trong Provider làm gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Tạo provider",
+            "Lắng nghe thay đổi",
+            "Hủy (dispose) provider",
+            "Đọc giá trị mà không lắng nghe"
+          ]
         },
         {
           "q": "What is the benefit of using named routes?",
@@ -1895,7 +1913,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Lợi ích của named routes là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Hình động đẹp hơn",
+            "Giảm sử dụng bộ nhớ",
+            "Hiệu suất ứng dụng nhanh hơn",
+            "Quản lý điều hướng dễ dàng hơn trong các ứng dụng lớn"
+          ]
         },
         {
           "q": "What is the main role of Navigator in Flutter?",
@@ -1908,7 +1932,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Vai trò chính của Navigator trong Flutter?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Quản lý theme",
+            "Điều hướng màn hình",
+            "Gọi API",
+            "Quản lý state"
+          ]
         },
         {
           "q": "What benefit does using a centralized theme provide?",
@@ -1921,7 +1951,13 @@
           "correct": 2,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Lợi ích của theme tập trung?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Quản lý nhà nước tốt hơn",
+            "Cuộc gọi API nhanh hơn",
+            "Giao diện người dùng nhất quán",
+            "Giảm số lần xây dựng lại tiện ích con"
+          ]
         },
         {
           "q": "How is the Flutter UI constructed internally?",
@@ -1934,7 +1970,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "UI Flutter được xây dựng bên trong như thế nào?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Chỉ sử dụng các thành phần giao diện người dùng gốc",
+            "Sử dụng tệp bố cục XML",
+            "Sử dụng HTML và CSS",
+            "Sử dụng cây tiện ích phân cấp"
+          ]
         },
         {
           "q": "What role does the Flutter framework play in application development?",
@@ -1947,7 +1989,13 @@
           "correct": 0,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Flutter framework đóng vai trò gì trong phát triển ứng dụng?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Nó cung cấp các thành phần UI và logic kết xuất",
+            "Nó thay thế hệ điều hành",
+            "Nó chạy logic nghiệp vụ phụ trợ",
+            "Nó quản lý các máy chủ cơ sở dữ liệu"
+          ]
         },
         {
           "q": "What does Navigator.pop() do?",
@@ -1960,7 +2008,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "`Navigator.pop()` làm gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Khởi động lại ứng dụng",
+            "Mở màn hình mới",
+            "Xóa ngăn xếp",
+            "Đóng trình lọc màn hình hiện tại"
+          ]
         },
         {
           "q": "What happens if layout constraints are violated in Flutter?",
@@ -1973,7 +2027,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Nếu vi phạm ràng buộc layout trong Flutter thì sao?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Widget bị bỏ qua",
+            "Lỗi tràn bố cục xảy ra",
+            "Ứng dụng gặp sự cố âm thầm",
+            "Giao diện người dùng được cố định tự động"
+          ]
         },
         {
           "q": "Which Flutter package is commonly used for simple key-value storage?",
@@ -1986,7 +2046,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Package Flutter nào thường dùng cho lưu key–value đơn giản?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "http",
+            "provider",
+            "sqflite",
+            "shared_preferences"
+          ]
         },
         {
           "q": "What is the main purpose of the Container widget?",
@@ -1999,7 +2065,13 @@
           "correct": 2,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Mục đích chính của widget `Container`?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Quản lý state",
+            "Yêu cầu mạng",
+            "Bố cục, kiểu dáng và định vị",
+            "Navigation"
+          ]
         },
         {
           "q": "What is the main purpose of app architecture?",
@@ -2012,7 +2084,13 @@
           "correct": 0,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Mục đích chính của kiến trúc ứng dụng?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Tổ chức cấu trúc mã",
+            "Xử lý API",
+            "Cải thiện hoạt ảnh",
+            "Thiết kế giao diện người dùng"
+          ]
         },
         {
           "q": "What is the main difference between StatelessWidget and StatefulWidget?",
@@ -2025,7 +2103,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Khác biệt chính giữa StatelessWidget và StatefulWidget?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Performance",
+            "Khả năng giữ trạng thái có thể thay đổi",
+            "Khả năng tương thích nền tảng",
+            "Công cụ kết xuất"
+          ]
         },
         {
           "q": "What is the role of the version property in openDatabase()?",
@@ -2038,7 +2122,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Thuộc tính `version` trong `openDatabase()` dùng để?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Phiên bản Flutter SDK",
+            "Phiên bản lược đồ cơ sở dữ liệu để di chuyển",
+            "Phiên bản gói",
+            "Phiên bản ứng dụng"
+          ]
         },
         {
           "q": "What is the primary purpose of the Dart programming language in Flutter?",
@@ -2051,7 +2141,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Mục đích chính của ngôn ngữ Dart trong Flutter?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Xử lý các quy trình của hệ điều hành",
+            "Đang chạy máy chủ phụ trợ",
+            "Quản lý cơ sở dữ liệu",
+            "Xây dựng giao diện người dùng và logic ứng dụng"
+          ]
         },
         {
           "q": "What does a Dart class primarily represent?",
@@ -2064,7 +2160,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Một class Dart chủ yếu biểu diễn điều gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Bảng cơ sở dữ liệu",
+            "Một bản thiết kế để tạo các đối tượng",
+            "Chỉ tiện ích giao diện người dùng",
+            "Yêu cầu mạng"
+          ]
         },
         {
           "q": "What is the main advantage of using Provider?",
@@ -2077,7 +2179,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Ưu điểm chính khi dùng Provider?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Kết xuất nhanh hơn",
+            "Điều hướng được cải thiện",
+            "Hình động đẹp hơn",
+            "Chia sẻ và quản lý trạng thái đơn giản hơn"
+          ]
         },
         {
           "q": "Why is understanding the widget lifecycle important?",
@@ -2090,7 +2198,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Vì sao cần hiểu vòng đời widget?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Triển khai ứng dụng nhanh hơn",
+            "Cải thiện hiệu suất API",
+            "Giảm kích thước tệp",
+            "Quản lý cập nhật giao diện người dùng chính xác"
+          ]
         },
         {
           "q": "What is the purpose of onSaved callback?",
@@ -2103,7 +2217,13 @@
           "correct": 2,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Mục đích của callback `onSaved`?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Đặt lại biểu mẫu",
+            "ユーザー入力の検証",
+            "Giá trị biểu mẫu cửa hàng",
+            "Hiển thị các lỗi PHP"
+          ]
         },
         {
           "q": "What is the main benefit of Flutter’s widget-based architecture?",
@@ -2116,7 +2236,13 @@
           "correct": 2,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Lợi ích chính của kiến trúc dựa trên widget?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Widget chỉ được sử dụng để thiết kế bố cục",
+            "Tiện ích tự động quản lý cơ sở dữ liệu",
+            "Tiện ích cho phép sử dụng lại mã trên các nền tảng",
+            "Tiện ích thay thế các dịch vụ phụ trợ"
+          ]
         },
         {
           "q": "What is the primary role of widgets in Flutter?",
@@ -2129,7 +2255,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Vai trò chính của widget trong Flutter?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Biên dịch mã DART",
+            "Quản lý cơ sở dữ liệu",
+            "Xử lý yêu cầu mạng",
+            "Mô tả giao diện người dùng"
+          ]
         },
         {
           "q": "What is an API timeout used for?",
@@ -2142,7 +2274,13 @@
           "correct": 2,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "API timeout dùng để?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Thử lại yêu cầu",
+            "Mã hóa dữ liệu",
+            "Ngăn chặn việc chờ đợi vô thời hạn",
+            "Tăng tốc giao diện người dùng"
+          ]
         },
         {
           "q": "Which control structure is used to repeat a block of code in Dart?",
@@ -2155,7 +2293,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Cấu trúc điều khiển nào dùng để lặp lại một khối mã trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "switch",
+            "for",
+            "if",
+            "try"
+          ]
         },
         {
           "q": "What is a route in Flutter?",
@@ -2168,7 +2312,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Route trong Flutter là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Đường dẫn cơ sở dữ liệu",
+            "Một sự trừu tượng cho một màn hình hoặc trang",
+            "Cấu hình giao diện",
+            "Yêu cầu mạng"
+          ]
         },
         {
           "q": "What is the main benefit of using Maps in Dart?",
@@ -2181,7 +2331,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Lợi ích chính khi dùng Map trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Lưu trữ các giá trị không có khóa",
+            "Quản lý các tác vụ không đồng bộ",
+            "Kết xuất các thành phần giao diện người dùng",
+            "Lưu trữ các cặp khóa-giá trị"
+          ]
         },
         {
           "q": "Which method is used to update the UI when state changes?",
@@ -2194,7 +2350,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Phương thức nào dùng để cập nhật UI khi state đổi?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "initState()",
+            "setState()",
+            "dispose()",
+            "build()"
+          ]
         },
         {
           "q": "What happens if local storage fails?",
@@ -2207,7 +2369,13 @@
           "correct": 0,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Nếu local storage thất bại thì sao?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Bắt buộc phải có logic dự phòng",
+            "Đồng bộ hóa dữ liệu",
+            "Sự cố ứng dụng",
+            "Giao diện người dùng bị đóng băng"
+          ]
         },
         {
           "q": "What does crossAxisAlignment control?",
@@ -2220,7 +2388,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "`crossAxisAlignment` điều khiển gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Lệnh con",
+            "kích cở Tiện ích",
+            "Căn chỉnh theo chiều ngang trong Cột",
+            "Căn chỉnh theo chiều dọc trong Cột"
+          ]
         },
         {
           "q": "When should you prefer Provider over setState()?",
@@ -2233,7 +2407,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Khi nào nên ưu tiên Provider hơn setState()?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Đối với trạng thái toàn cầu hoặc chia sẻ",
+            "Font for navigation",
+            "Để cập nhật giao diện người dùng đơn giản",
+            "Đối với hoạt ảnh"
+          ]
         },
         {
           "q": "What is Dart primarily designed for in the Flutter ecosystem?",
@@ -2246,7 +2426,13 @@
           "correct": 0,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Dart trong hệ sinh thái Flutter chủ yếu được thiết kế để?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Phát triển giao diện người dùng",
+            "Lập trình mục đích chung với trọng tâm giao diện người dùng",
+            "Quản lý cơ sở dữ liệu",
+            "Bảo mật mạng"
+          ]
         },
         {
           "q": "Which widget is commonly used as the root of a Flutter app?",
@@ -2259,7 +2445,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Widget nào thường làm root của app Flutter?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Column",
+            "Scaffold",
+            "Container",
+            "MaterialApp"
+          ]
         },
         {
           "q": "What problem does state lifting help solve?",
@@ -2272,7 +2464,13 @@
           "correct": 0,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "State lifting giúp giải quyết vấn đề gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Trạng thái chia sẻ giữa các tiện ích con",
+            "Lỗi API",
+            "Sự tràn bố cục",
+            "Kết xuất giao diện người dùng"
+          ]
         },
         {
           "q": "What does the build() method return in a widget?",
@@ -2285,7 +2483,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "`build()` của một widget trả về gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Điểm ảnh được kết xuất",
+            "Cây tiện ích mô tả giao diện người dùng",
+            "Trạng thái ứng dụng",
+            "Màn hình A"
+          ]
         },
         {
           "q": "What is the purpose of focusNode in a TextField?",
@@ -2298,7 +2502,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Mục đích `focusNode` trong TextField?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Xử lý xác nhận",
+            "Kiểm soát tiện ích nào có tiêu điểm bàn phím",
+            "Quản lý giá trị văn bản",
+            "Tạo kiểu cho đầu vào"
+          ]
         },
         {
           "q": "What is the purpose of the path_provider package?",
@@ -2311,7 +2521,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Mục đích package `path_provider`?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Tạo kiểu cho giao diện người dùng",
+            "Quản lý đường dẫn mạng",
+            "Mã hóa dữ liệu",
+            "Tìm các vị trí thường được sử dụng trên hệ thống tệp máy chủ"
+          ]
         },
         {
           "q": "Which statement best describes Flutter's layout system?",
@@ -2324,7 +2540,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Câu nào mô tả hệ thống layout của Flutter đúng nhất?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Quy mô phụ huynh do trẻ kiểm soát",
+            "Sử dụng bố cục XML",
+            "Dựa trên định vị tuyệt đối",
+            "Phụ huynh đặt ra các ràng buộc, trẻ chọn kích thước"
+          ]
         },
         {
           "q": "What is the main use of local storage in apps?",
@@ -2337,7 +2559,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Dùng local storage trong app chủ yếu để?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Máy chủ web",
+            "Duy trì cài đặt người dùng và dữ liệu nhỏ",
+            "Quản lý phần cứng mạng",
+            "Biên dịch mã"
+          ]
         },
         {
           "q": "Which HTTP method is typically used to retrieve data?",
@@ -2350,7 +2578,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "HTTP method nào thường dùng để lấy dữ liệu?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "DELETE",
+            "PUT",
+            "POST",
+            "GET"
+          ]
         },
         {
           "q": "What is session expiration?",
@@ -2363,7 +2597,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Session expiration là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Đặt lại chủ đề",
+            "Tự động đăng xuất sau khi không hoạt động",
+            "Hết thời gian giao diện người dùng",
+            "Giới hạn API"
+          ]
         },
         {
           "q": "What is the primary responsibility of the setState() method?",
@@ -2376,7 +2616,13 @@
           "correct": 0,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Trách nhiệm chính của `setState()`?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Xây dựng lại tiện ích kích hoạt",
+            "Xử lý các tác vụ không đồng bộ",
+            "Dữ liệu liên tục",
+            "Điều hướng màn hình"
+          ]
         },
         {
           "q": "What is the primary purpose of ThemeData in Flutter?",
@@ -2389,7 +2635,13 @@
           "correct": 0,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Mục đích chính của `ThemeData` trong Flutter?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Xác định kiểu trực quan trên toàn ứng dụng",
+            "Kiểm soát hoạt ảnh",
+            "Quản lý điều hướng",
+            "Xử lý thay đổi trạng thái"
+          ]
         },
         {
           "q": "Which database package provides SQL support in Flutter?",
@@ -2402,7 +2654,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Package nào cung cấp hỗ trợ SQL trong Flutter?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "hive",
+            "path",
+            "shared_preferences",
+            "sqflite"
+          ]
         },
         {
           "q": "What is the role of the Expanded widget?",
@@ -2415,7 +2673,13 @@
           "correct": 0,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Vai trò của widget `Expanded`?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Buộc một tiện ích con chiếm không gian trống",
+            "kích cở Tiện ích",
+            "Căn chỉnh các tiện ích con",
+            "Thêm ký quỹ"
+          ]
         },
         {
           "q": "Which widget allows overlapping of its child widgets?",
@@ -2428,7 +2692,13 @@
           "correct": 2,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Widget nào cho phép các con chồng lên nhau?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Row",
+            "Expanded",
+            "Stack",
+            "Column"
+          ]
         },
         {
           "q": "What does the decoration property in TextField allow?",
@@ -2441,7 +2711,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Thuộc tính `decoration` của TextField cho phép gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Lấy nét điều khiển",
+            "Thay đổi kích thước font chữ",
+            "Quản lý trạng thái",
+            "Thêm nhãn, biểu tượng và văn bản gợi ý"
+          ]
         },
         {
           "q": "What happens if a non-nullable variable is not initialized in Dart?",
@@ -2454,7 +2730,13 @@
           "correct": 3,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Nếu biến non-nullable không được khởi tạo trong Dart thì sao?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Một ngoại lệ thời gian chạy xảy ra",
+            "Ứng dụng chạy bình thường",
+            "Giá trị tự động trở thành vô giá trị",
+            "Đã xảy ra lỗi thời gian biên dịch"
+          ]
         },
         {
           "q": "What is the primary benefit of InheritedWidget?",
@@ -2467,7 +2749,13 @@
           "correct": 2,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Lợi ích chính của InheritedWidget?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Quản lý bộ nhớ",
+            "Sự kiên trì của nhà nước",
+            "Truyền dữ liệu hiệu quả",
+            "Bố cục tự động"
+          ]
         },
         {
           "q": "What is the role of the Consumer widget in Provider?",
@@ -2480,7 +2768,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Vai trò của widget `Consumer` trong Provider?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Tạo tiểu bang",
+            "Lắng nghe và xây dựng lại các phần cụ thể của giao diện người dùng",
+            "Xác định chủ đề",
+            "Quản lý điều hướng"
+          ]
         },
         {
           "q": "What is the main advantage of Navigator 2.0?",
@@ -2493,7 +2787,13 @@
           "correct": 1,
           "explain": "Theo Progress test trong FE.docx (PRM393).",
           "q_vi": "Ưu điểm chính của Navigator 2.0?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Chủ đề tự động",
+            "Kiểm soát tốt hơn đối với ngăn xếp điều hướng",
+            "Mã đơn giản hơn",
+            "Kết xuất nhanh hơn"
+          ]
         },
         {
           "q": "What is Flutter?",
@@ -2506,7 +2806,13 @@
           "correct": 1,
           "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
           "q_vi": "Flutter là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Ngôn ngữ lập trình",
+            "Khung giao diện người dùng đa nền tảng",
+            "hệ điều hành (máy tính)",
+            "IDE"
+          ]
         },
         {
           "q": "Who developed Flutter?",
@@ -2519,7 +2825,13 @@
           "correct": 2,
           "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
           "q_vi": "Ai phát triển Flutter?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Apple",
+            "Microsoft",
+            "Google",
+            "Meta"
+          ]
         },
         {
           "q": "Flutter allows developers to use how many codebases?",
@@ -2532,7 +2844,13 @@
           "correct": 3,
           "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
           "q_vi": "Flutter cho phép developer dùng bao nhiêu codebase?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Một cho mỗi cơ sở mã nền tảng",
+            "Two",
+            "Three",
+            "Một nền tảng cho tất cả các nền tảng"
+          ]
         },
         {
           "q": "Flutter uses which UI paradigm?",
@@ -2545,7 +2863,13 @@
           "correct": 1,
           "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
           "q_vi": "Flutter dùng mô hình UI nào?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Imperative",
+            "Declarative",
+            "Procedura",
+            "Functional"
+          ]
         },
         {
           "q": "Everything in Flutter is a ____ - Moi thứ trong Flutter đều là ____?",
@@ -2556,7 +2880,13 @@
             "Function"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Class",
+            "Object",
+            "Widget",
+            "Function"
+          ]
         },
         {
           "q": "Flutter was originally called? - Tên ban đầu của Flutter là gì?",
@@ -2567,7 +2897,13 @@
             "Jet"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Flame",
+            "Sky",
+            "DartUI",
+            "Jet"
+          ]
         },
         {
           "q": "Which Flutter version added web & desktop support? - Phiên bản Flutter nào thêm hỗ trợ web & desktop?",
@@ -2578,7 +2914,13 @@
             "Flutter 3"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Rung 1",
+            "Flutter 1.5",
+            "Rung 2",
+            "Rung 3"
+          ]
         },
         {
           "q": "Flutter engine is mainly written in?",
@@ -2591,7 +2933,13 @@
           "correct": 3,
           "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
           "q_vi": "Engine Flutter chủ yếu được viết bằng ngôn ngữ nào?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Dart",
+            "Java",
+            "Kotlin",
+            "C/C"
+          ]
         },
         {
           "q": "Which is NOT a Flutter architecture layer? - Đâu KHÔNG phải là một lớp kiến trúc của Flutter?",
@@ -2602,7 +2950,13 @@
             "Database"
           ],
           "correct": 3,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Framework",
+            "Engine",
+            "Embedder",
+            "Database"
+          ]
         },
         {
           "q": "Flutter apps are compiled to? - Ứng dụng Flutter được biên dịch thành gì?",
@@ -2613,7 +2967,13 @@
             "HTML"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Java bytecode",
+            "Chỉ JavaScript",
+            "Mã máy gốc",
+            "HTML"
+          ]
         },
         {
           "q": "What is the main advantage of Flutter? - Ưu điểm chính của Flutter là gì?",
@@ -2624,7 +2984,13 @@
             "Limited UI"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Hiệu suất thấp",
+            "Các cơ sở mã riêng biệt",
+            "Phát triển nhanh & cơ sở mã duy nhất",
+            "Giao diện người dùng hạn chế"
+          ]
         },
         {
           "q": "Flutter supports which platforms?",
@@ -2637,7 +3003,13 @@
           "correct": 3,
           "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
           "q_vi": "Flutter hỗ trợ những nền tảng nào?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Chỉ dành cho Andoird",
+            "chỉ dành cho iOS",
+            "Chỉ di động",
+            "Di động, Web, Máy tính để bàn"
+          ]
         },
         {
           "q": "Flutter doctor is used to?",
@@ -2650,7 +3022,13 @@
           "correct": 2,
           "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
           "q_vi": "`flutter doctor` dùng để làm gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Xây dựng ứng dụng",
+            "Gỡ lỗi giao diện người dùng",
+            "Kiểm tra thiết lập môi trường",
+            "Cài đặt gói"
+          ]
         },
         {
           "q": "Which language is used to write Flutter apps?",
@@ -2663,7 +3041,13 @@
           "correct": 3,
           "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
           "q_vi": "Ngôn ngữ nào dùng để viết app Flutter?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Java",
+            "Kotlin",
+            "Swift",
+            "Dart"
+          ]
         },
         {
           "q": "Flutter is best described as?",
@@ -2676,7 +3060,13 @@
           "correct": 1,
           "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
           "q_vi": "Flutter được mô tả đúng nhất là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Khung phụ trợ",
+            "Bộ công cụ giao diện người dùng",
+            "Hệ thống cơ sở dữ liệu",
+            "Hệ điều hành"
+          ]
         },
         {
           "q": "Flutter renders UI using?",
@@ -2689,7 +3079,13 @@
           "correct": 2,
           "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
           "q_vi": "Flutter render UI bằng gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Các thành phần giao diện người dùng gốc",
+            "Thẻ HTML",
+            "Công cụ kết xuất của riêng nó",
+            "XML"
+          ]
         },
         {
           "q": "Which company maintains Flutter? - Công ty nào duy trì Flutter?",
@@ -2700,7 +3096,13 @@
             "Microsoft"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Apple",
+            "Meta",
+            "Google",
+            "Microsoft"
+          ]
         },
         {
           "q": "Flutter widgets are? - Widget trong Flutter là gì?",
@@ -2711,7 +3113,13 @@
             "Static"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Mutable",
+            "Immutable",
+            "Global",
+            "Static"
+          ]
         },
         {
           "q": "Flutter follows which programming style?",
@@ -2724,7 +3132,13 @@
           "correct": 0,
           "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
           "q_vi": "Flutter theo phong cách lập trình nào?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Declarative",
+            "Procedural",
+            "Mức thấp",
+            "Dựa vào văn lệnh"
+          ]
         },
         {
           "q": "Flutter UI is built using? - UI Flutter được xây dựng bằng gì?",
@@ -2735,7 +3149,13 @@
             "Layout files"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Screens",
+            "Pages",
+            "Cây tiện ích",
+            "Tệp bố cục"
+          ]
         },
         {
           "q": "Dart is developed by? - Dart được phát triển bởi ai?",
@@ -2746,7 +3166,13 @@
             "Amazon"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Apple",
+            "Microsoft",
+            "Google",
+            "Amazon"
+          ]
         },
         {
           "q": "Dart is a ____ language - Dart là ngôn ngữ ____?",
@@ -2757,7 +3183,13 @@
             "Markup"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Procedural",
+            "Lập trình hướng đối tượng",
+            "Assembly",
+            "Markup"
+          ]
         },
         {
           "q": "Which is an integer type in Dart? - Kiểu số nguyên trong Dart là gì?",
@@ -2768,7 +3200,13 @@
             "String"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "double",
+            "num",
+            "int",
+            "String"
+          ]
         },
         {
           "q": "What does final mean? - final có nghĩa là gì?",
@@ -2779,7 +3217,13 @@
             "Nullable"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Có thể thay đổi bất cứ lúc nào",
+            "Chỉ định một lần",
+            "Hằng số thời gian biên dịch",
+            "Nullable"
+          ]
         },
         {
           "q": "const variables are? - Biến const là gì?",
@@ -2790,7 +3234,13 @@
             "Nullable"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Giá trị thời gian chạy",
+            "Được chỉ định sau",
+            "Hằng số thời gian biên dịch",
+            "Nullable"
+          ]
         },
         {
           "q": "What does late do? - late dùng để làm gì?",
@@ -2801,7 +3251,13 @@
             "Create constants"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Làm cho biến trở nên vô hiệu",
+            "Hoãn chỉ định",
+            "Cho phép nhiều nhiệm vụ",
+            "Tạo hằng số"
+          ]
         },
         {
           "q": "Nullable variables are marked with? - Biến nullable được đánh dấu bằng gì?",
@@ -2812,7 +3268,13 @@
             "&"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "!",
+            "NHỮNG GÌ",
+            "*****",
+            "&"
+          ]
         },
         {
           "q": "What does the ?? operator mean? - Toán tử ?? có nghĩa là gì?",
@@ -2823,7 +3285,13 @@
             "Type casting"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Comparison",
+            "Buộc mở khóa",
+            "Mặc định nếu rỗng",
+            "Loại đúc"
+          ]
         },
         {
           "q": "Entry point of a Dart program is? - Điểm bắt đầu của chương trình Dart là gì?",
@@ -2834,7 +3302,13 @@
             "main()"
           ],
           "correct": 3,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "start()",
+            "run()",
+            "init()",
+            "main()"
+          ]
         },
         {
           "q": "Dart async programming uses? - Lập trình bất đồng bộ trong Dart dùng gì?",
@@ -2845,7 +3319,13 @@
             "Callbacks only"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Threads",
+            "Promises",
+            "Tương lai & không đồng bộ/đang chờ",
+            "Chỉ gọi lại"
+          ]
         },
         {
           "q": "What does the var keyword mean? - Từ khóa var có nghĩa là gì?",
@@ -2856,7 +3336,13 @@
             "Nullable only"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Luôn luôn là loại động",
+            "Hằng số thời gian biên dịch",
+            "Loại được suy ra",
+            "Chỉ có thể vô hiệu hóa"
+          ]
         },
         {
           "q": "What does dynamic allow? - dynamic cho phép điều gì?",
@@ -2867,7 +3353,13 @@
             "Constants only"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Chỉ một loại",
+            "Kiểm tra thời gian biên dịch",
+            "Nhập thay đổi khi chạy",
+            "Chỉ các hằng số"
+          ]
         },
         {
           "q": "What can num store? - Kiểu num có thể lưu gì?",
@@ -2878,7 +3370,13 @@
             "String"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Chỉ int",
+            "Chỉ nhân đôi",
+            "int và double",
+            "String"
+          ]
         },
         {
           "q": "Which collection is ordered in Dart? - Collection nào có thứ tự trong Dart?",
@@ -2889,7 +3387,13 @@
             "Enum"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Set",
+            "Map",
+            "List",
+            "Enum"
+          ]
         },
         {
           "q": "Which collection has unique values? - Collection nào không chứa giá trị trùng?",
@@ -2900,7 +3404,13 @@
             "Queue"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "List",
+            "Map",
+            "Set",
+            "Queue"
+          ]
         },
         {
           "q": "Named parameters are wrapped in? - Tham số đặt tên được bọc trong gì?",
@@ -2911,7 +3421,13 @@
             "< >"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "( )",
+            "[ ]",
+            "{ }",
+            "< >"
+          ]
         },
         {
           "q": "Required named parameters use which keyword? - Tham số đặt tên bắt buộc dùng từ khóa nào?",
@@ -2922,7 +3438,13 @@
             "this"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "late",
+            "required",
+            "final",
+            "this"
+          ]
         },
         {
           "q": "A constructor is used to? - Constructor dùng để làm gì?",
@@ -2933,7 +3455,13 @@
             "Import library"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Phá hủy đối tượng",
+            "Mở tài liệu",
+            "Chức năng gọi",
+            "Nhập thư viện"
+          ]
         },
         {
           "q": "What does this keyword refer to? - Từ khóa this dùng để chỉ gì?",
@@ -2944,7 +3472,13 @@
             "Parent class"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "TÊN LỚP",
+            "Biến toàn cục",
+            "Đối tượng hiện tại",
+            "Lớp phụ huynh"
+          ]
         },
         {
           "q": "Factory constructor is used when? - Factory constructor dùng khi nào?",
@@ -2955,7 +3489,13 @@
             "Async programming"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Luôn tạo đối tượng mới",
+            "Trả lại phiên bản hiện có",
+            "Phá hủy đối tượng",
+            "Lập trình bất đồng bộ"
+          ]
         },
         {
           "q": "Flutter app starts from which file? - Ứng dụng Flutter bắt đầu từ file nào?",
@@ -2966,7 +3506,13 @@
             "index.dart"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "app.dart",
+            "home.dart",
+            "main.dart",
+            "index.dart"
+          ]
         },
         {
           "q": "Which function starts a Flutter app? - Hàm nào khởi chạy ứng dụng Flutter?",
@@ -2977,7 +3523,13 @@
             "buildApp()"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "startApp()",
+            "initApp()",
+            "runApp()",
+            "buildApp()"
+          ]
         },
         {
           "q": "Material Design root widget is? - Widget gốc của Material Design là gì?",
@@ -2988,7 +3540,13 @@
             "MaterialApp"
           ],
           "correct": 3,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Scaffold",
+            "Container",
+            "Column",
+            "MaterialApp"
+          ]
         },
         {
           "q": "What does StatelessWidget mean? - StatelessWidget có nghĩa là gì?",
@@ -2999,7 +3557,13 @@
             "Uses setState"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Có trạng thái biến đổi",
+            "Không thể xây dựng lại",
+            "Không có trạng thái bên trong",
+            "Sử dụng setState"
+          ]
         },
         {
           "q": "When is StatefulWidget used? - StatefulWidget được dùng khi nào?",
@@ -3010,7 +3574,13 @@
             "No user input"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Giao diện người dùng không bao giờ thay",
+            "thay đổi theo thời gian.",
+            "Chỉ văn bản tĩnh",
+            "Không có đầu vào của người dùng"
+          ]
         },
         {
           "q": "Which widget provides app structure? - Widget nào cung cấp khung cho ứng dụng?",
@@ -3021,7 +3591,13 @@
             "Center"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Column",
+            "Row",
+            "Scaffold",
+            "Center"
+          ]
         },
         {
           "q": "What does Hot Reload do? - Hot Reload làm gì?",
@@ -3032,7 +3608,13 @@
             "Rebuilds APK"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Khởi động lại hoàn toàn ứng dụng",
+            "Duy trì trạng thái và cập nhật giao diện người dùng",
+            "Xóa bộ nhớ cache",
+            "Xây dựng lại APK"
+          ]
         },
         {
           "q": "What does Hot Restart do? - Hot Restart làm gì?",
@@ -3043,7 +3625,13 @@
             "Clears IDE"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Giữ trạng thái",
+            "Chỉ cập nhật giao diện người dùng",
+            "Khởi động lại ứng dụng từ đầu",
+            "Xóa IDE"
+          ]
         },
         {
           "q": "Movie app uses which API? - Ứng dụng Movie dùng API nào?",
@@ -3054,7 +3642,13 @@
             "Netflix"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Tìm phim ảnh qua GoogleQuery",
+            "IMDb",
+            "TMDB",
+            "Netflix"
+          ]
         },
         {
           "q": "Clean Architecture focuses on? - Clean Architecture tập trung vào điều gì?",
@@ -3065,7 +3659,13 @@
             "Animations"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Thiết kế giao diện người dùng",
+            "Tốc độ cơ sở dữ liệu",
+            "Tách biệt các mối quan tâm",
+            "Animations"
+          ]
         },
         {
           "q": "build(BuildContext context) returns? - Hàm build(BuildContext context) trả về gì?",
@@ -3076,7 +3676,13 @@
             "Theme"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Function",
+            "State",
+            "Widget",
+            "Theme"
+          ]
         },
         {
           "q": "What is BuildContext used for? - BuildContext dùng để làm gì?",
@@ -3087,7 +3693,13 @@
             "Animation"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Lưu thông tin thẻ",
+            "Vị trí tiện ích con trong cây tiện ích con",
+            "Gọi API",
+            "Animation"
+          ]
         },
         {
           "q": "What does setState() do? - setState() làm gì?",
@@ -3098,7 +3710,13 @@
             "Changes theme only"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Xóa tiện ích con",
+            "Cập nhật giao diện người dùng",
+            "Dừng ứng dụng",
+            "Chỉ thay đổi chủ đề"
+          ]
         },
         {
           "q": "Column arranges widgets in which direction? - Column sắp xếp widget theo hướng nào?",
@@ -3109,7 +3727,13 @@
             "Stack"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Horizontal",
+            "Vertical",
+            "Grid",
+            "Stack"
+          ]
         },
         {
           "q": "Row arranges widgets in which direction? - Row sắp xếp widget theo hướng nào?",
@@ -3120,7 +3744,13 @@
             "Random"
           ],
           "correct": 2,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Vertical",
+            "Diagonal",
+            "Horizontal",
+            "Random"
+          ]
         },
         {
           "q": "What is Container used for? - Container dùng để làm gì?",
@@ -3131,7 +3761,13 @@
             "API calls"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Chỉ văn bản",
+            "Bố cục, đệm, trang trí",
+            "Navigation",
+            "Gọi API"
+          ]
         },
         {
           "q": "What is SizedBox used for? - SizedBox dùng để làm gì?",
@@ -3142,7 +3778,13 @@
             "Theme app"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Tìm nạp dữ liệu",
+            "Kích thước điều khiển",
+            "Trạng thái tay cầm",
+            "Ứng dụng chủ đề"
+          ]
         },
         {
           "q": "Placeholder widget is used for? - Placeholder widget dùng để làm gì?",
@@ -3153,7 +3795,13 @@
             "Routing"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Giao diện người dùng cuối cùng",
+            "Giao diện người dùng tạm thời",
+            "Animation",
+            "Routing"
+          ]
         },
         {
           "q": "Folder ui/screens usually contains? - Thư mục ui/screens thường chứa gì?",
@@ -3164,7 +3812,13 @@
             "Database"
           ],
           "correct": 1,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Models",
+            "Screens",
+            "API",
+            "Database"
+          ]
         },
         {
           "q": "Clean Architecture separates which parts? - Clean Architecture tách những phần nào?",
@@ -3175,7 +3829,13 @@
             "Widgets only"
           ],
           "correct": 0,
-          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393)."
+          "explain": "Theo bộ câu Quizlet trong FE.docx (PRM393).",
+          "options_vi": [
+            "Giao diện người dùng và logic",
+            "Colors",
+            "Animations",
+            "Chỉ các tiện ích con"
+          ]
         },
         {
           "q": "What is asynchronous programming used for in Dart?",
@@ -3188,7 +3848,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Lập trình bất đồng bộ trong Dart dùng để làm gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Để làm cho mã luôn chạy nhanh hơn",
+            "Để thực hiện các nhiệm vụ dài hạn mà không bị chặn thực thi",
+            "Để tạm dừng chương trình",
+            "Để thay thế các trường hợp ngoại lệ"
+          ]
         },
         {
           "q": "Which class represents a value that will be available in the future?",
@@ -3201,7 +3867,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Lớp nào biểu diễn giá trị sẽ có trong tương lai?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Promise",
+            "Async",
+            "Future",
+            "Delay"
+          ]
         },
         {
           "q": "How do you mark a function as asynchronous in Dart?",
@@ -3214,7 +3886,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Làm sao đánh dấu một hàm là bất đồng bộ trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "chức năng trong tương lai",
+            "chức năng không đồng bộ",
+            "Thêm từ khóa không đồng bộ sau chữ ký hàm",
+            "Sử dụng await trước tên hàm"
+          ]
         },
         {
           "q": "What keyword is used inside an async function to wait for a Future to complete?",
@@ -3227,7 +3905,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào trong hàm async dùng để chờ một Future hoàn thành?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "delay",
+            "wait",
+            "await",
+            "async"
+          ]
         },
         {
           "q": "What is the return type of an async function that returns an integer?",
@@ -3240,7 +3924,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Kiểu trả về của hàm async trả về số nguyên là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "int",
+            "Tương lai<int>",
+            "Async",
+            "Hứa<int>"
+          ]
         },
         {
           "q": "What will this code print?",
@@ -3253,7 +3943,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Đoạn mã này sẽ in ra gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "A B ngay lập tức",
+            "A (pause 1 second) B",
+            "B/A",
+            "Error"
+          ]
         },
         {
           "q": "Which statement correctly handles a Future using .then()?",
@@ -3266,7 +3962,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Câu nào xử lý Future đúng bằng `.then()`?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Future(() => 10).then((value) => print(value));",
+            "Future(() => 10).await(print);",
+            "then Future(() => print(10));",
+            "Future.print(10).then();"
+          ]
         },
         {
           "q": "Which keyword can be used together with try and catch in async functions to handle errors?",
@@ -3279,7 +3981,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào có thể dùng cùng try/catch trong hàm async để xử lý lỗi?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "wait",
+            "throw",
+            "await",
+            "async"
+          ]
         },
         {
           "q": "What does this function return?",
@@ -3292,7 +4000,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Hàm này trả về gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "int",
+            "Tương lai<int>",
+            "void",
+            "Async"
+          ]
         },
         {
           "q": "Which keyword is used to declare a variable in Dart?",
@@ -3305,7 +4019,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng để khai báo biến trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "let",
+            "var",
+            "define",
+            "static"
+          ]
         },
         {
           "q": "What is the correct syntax to declare an integer variable in Dart?",
@@ -3318,7 +4038,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Cú pháp đúng để khai báo biến kiểu int trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "int number = 5;",
+            "số nguyên = 5;",
+            "num number = “5”;",
+            "số phao = 5;"
+          ]
         },
         {
           "q": "Which of the following is not a primitive data type in Dart?",
@@ -3331,7 +4057,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Phần nào sau đây không phải kiểu primitive trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "int",
+            "bool",
+            "float",
+            "String"
+          ]
         },
         {
           "q": "The default value of an uninitialized variable in Dart is:",
@@ -3344,7 +4076,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Giá trị mặc định của biến chưa khởi tạo trong Dart là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "0",
+            "null",
+            "undefined",
+            "empty"
+          ]
         },
         {
           "q": "Which of the following is a valid boolean declaration?",
@@ -3357,7 +4095,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Khai báo boolean hợp lệ nào sau đây?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "cờ bool = Đúng;",
+            "cờ boolean = đúng;",
+            "cờ bool = đúng;",
+            "Cờ Bool = TRUE;"
+          ]
         },
         {
           "q": "Which keyword is used to declare a variable that cannot change its value?",
@@ -3370,7 +4114,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng để khai báo biến không đổi giá trị?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "const",
+            "var",
+            "dynamic",
+            "static"
+          ]
         },
         {
           "q": "The final keyword in Dart means:",
@@ -3383,7 +4133,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa `final` trong Dart có nghĩa là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Giá trị có thể thay đổi",
+            "Giá trị không đổi tại thời điểm biên dịch",
+            "Giá trị chỉ có thể được đặt một lần",
+            "Giá trị luôn luôn là vô giá trị"
+          ]
         },
         {
           "q": "What is the difference between final and const?",
@@ -3396,7 +4152,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Khác biệt giữa `final` và `const` là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "const là thời gian chạy, final là thời gian biên dịch",
+            "const là thời gian biên dịch, final là thời gian chạy",
+            "Cả hai đều giống nhau",
+            "các biến số cuối cùng có thể thay đổi"
+          ]
         },
         {
           "q": "The symbol ? after a type name in Dart means:",
@@ -3409,7 +4171,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Ký hiệu `?` sau tên kiểu trong Dart có nghĩa là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Giá trị tùy chọn, có thể là rỗng",
+            "Câu lệnh điều kiện",
+            "Loại đúc",
+            "Toán tử không xác định"
+          ]
         },
         {
           "q": "What does the operator ?? do?",
@@ -3422,7 +4190,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Toán tử `??` làm gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Kiểm tra vô hiệu",
+            "Null-coalescing (return default if null)",
+            "Toán tử có điều kiện",
+            "Nhà điều hành chuyển nhượng"
+          ]
         },
         {
           "q": "Which operator assigns a value only if the variable is null?",
@@ -3435,7 +4209,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Toán tử nào gán giá trị chỉ khi biến là null?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "??=",
+            "??",
+            "?:",
+            "=>"
+          ]
         },
         {
           "q": "What happens if you try to use a late variable before initialization?",
@@ -3448,7 +4228,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Nếu dùng biến `late` trước khi khởi tạo thì sao?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Nó in vô giá trị",
+            "Nó đưa ra lỗi thời gian chạy",
+            "Nó in 0",
+            "Nó gán giá trị mặc định"
+          ]
         },
         {
           "q": "Which keyword is used for lazy initialization in Dart?",
@@ -3461,7 +4247,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng cho khởi tạo lười (lazy) trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "const",
+            "late",
+            "var",
+            "static"
+          ]
         },
         {
           "q": "The late keyword is often used with which kind of variable?",
@@ -3474,7 +4266,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "`late` thường dùng với loại biến nào?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Hằng số thời gian biên dịch",
+            "Các biến được khởi tạo sau nhưng được đảm bảo trước khi sử dụng",
+            "Các biến chưa sử dụng",
+            "Chỉ các biến động"
+          ]
         },
         {
           "q": "What does dynamic mean in Dart?",
@@ -3487,7 +4285,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "`dynamic` trong Dart có nghĩa là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Loại biến là cố định",
+            "Loại biến có thể thay đổi khi chạy",
+            "Biến là bất biến",
+            "Biến phải là rỗng"
+          ]
         },
         {
           "q": "Which of the following is valid?",
@@ -3500,7 +4304,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Phần nào sau đây là hợp lệ?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "động x = 5; x = “Xin chào”;",
+            "động x = 5; x = true;",
+            "động x;",
+            "Tất cả các đáp án trên"
+          ]
         },
         {
           "q": "Which keyword allows both int and double values?",
@@ -3513,7 +4323,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào cho phép cả int và double?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "num",
+            "dynamic",
+            "decimal",
+            "float"
+          ]
         },
         {
           "q": "How can you convert string to int in Dart?",
@@ -3526,7 +4342,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Làm sao chuyển chuỗi sang int trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "int.parse()",
+            "toInt()",
+            "cast()",
+            "convert()"
+          ]
         },
         {
           "q": "How can you check a variable’s type?",
@@ -3539,7 +4361,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Làm sao kiểm tra kiểu của một biến?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "typeof(var)",
+            "var.type",
+            "var.runtimeType",
+            "getType(var)"
+          ]
         },
         {
           "q": "Which of these declares a nullable integer variable?",
@@ -3552,7 +4380,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Cách nào khai báo biến int nullable?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "số int;",
+            "int number?;",
+            "int? number;",
+            "var? number;"
+          ]
         },
         {
           "q": "What is the data type of true in Dart?",
@@ -3565,7 +4399,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Kiểu dữ liệu của `true` trong Dart là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Boolean",
+            "bool",
+            "bit",
+            "logical"
+          ]
         },
         {
           "q": "Which of the following is a valid declaration?",
@@ -3578,7 +4418,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Khai báo nào sau đây hợp lệ?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "var x = null;",
+            "int? x = null;",
+            "động x = null;",
+            "Tất cả các đáp án trên"
+          ]
         },
         {
           "q": "Which operator is used for addition in Dart?",
@@ -3591,7 +4437,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Toán tử nào dùng cho phép cộng trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "+",
+            "++",
+            "+=",
+            "add()"
+          ]
         },
         {
           "q": "Which of the following is the equality operator in Dart?",
@@ -3604,7 +4456,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Toán tử nào là toán tử so sánh bằng trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "=",
+            "==",
+            "===",
+            ":="
+          ]
         },
         {
           "q": "Which operator is used to combine two conditions in Dart?",
@@ -3617,7 +4475,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Toán tử nào dùng để kết hợp hai điều kiện?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "&&",
+            "||",
+            "&",
+            "<g id=\"1\">° </g>Cả A và B"
+          ]
         },
         {
           "q": "Which of the following operators can be used for string concatenation?",
@@ -3630,7 +4494,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Toán tử nào có thể nối chuỗi?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "+",
+            "&",
+            "++",
+            "concat()"
+          ]
         },
         {
           "q": "What is a library in Dart?",
@@ -3643,7 +4513,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Thư viện (library) trong Dart là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Tập hợp các lớp và chức năng",
+            "Kết nối cơ sở dữ liệu",
+            "Một tiện ích rung",
+            "Một loại trình biên dịch"
+          ]
         },
         {
           "q": "Which keyword is used to include another Dart library?",
@@ -3656,7 +4532,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng để nạp thư viện Dart khác?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "include",
+            "use",
+            "import",
+            "require"
+          ]
         },
         {
           "q": "What is the correct syntax to import a built-in library?",
@@ -3669,7 +4551,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Cú pháp đúng để import thư viện built-in?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "nhập dart.io;",
+            "nhập 'DART:io';",
+            "bao gồm 'DART:io';",
+            "sử dụng dart.io;"
+          ]
         },
         {
           "q": "Which of the following is a core Dart library?",
@@ -3682,7 +4570,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Phần nào là thư viện cốt lõi của Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "dART:toán học",
+            "phi tiêu:lõi",
+            "dart:async",
+            "Tất cả các đáp án trên"
+          ]
         },
         {
           "q": "What is automatically imported into every Dart program?",
@@ -3695,7 +4589,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Thư viện nào được tự động import vào mọi chương trình Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "dART:toán học",
+            "phi tiêu:lõi",
+            "dart:async",
+            "dart:convert"
+          ]
         },
         {
           "q": "How can you import a library with an alias?",
@@ -3708,7 +4608,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Làm sao import thư viện kèm alias?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "nhập 'DART:math' làm toán;",
+            "bí danh 'DART:math';",
+            "sử dụng DART:math -> math;",
+            "nhập dưới dạng toán 'DART:math';"
+          ]
         },
         {
           "q": "Which syntax allows you to import only specific parts of a library?",
@@ -3721,7 +4627,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Cú pháp nào chỉ import một phần của thư viện?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "chỉ nhập 'DART:math' sin;",
+            "nhập 'DART:math' hiển thị sin, cos;",
+            "nhập 'DART:math' sử dụng sin, cos;",
+            "nhập 'DART:math' với sin;"
+          ]
         },
         {
           "q": "What keyword hides certain parts of a library during import?",
@@ -3734,7 +4646,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào ẩn một phần thư viện khi import?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "hide",
+            "except",
+            "remove",
+            "exclude"
+          ]
         },
         {
           "q": "What is the purpose of part and part of directives in Dart?",
@@ -3747,7 +4665,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Mục đích của `part` và `part of` trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Để tách một thư viện duy nhất trên nhiều tệp",
+            "Để nhập các gói của bên thứ ba",
+            "Để xác định hằng số",
+            "Để kết nối DART với Flutter"
+          ]
         },
         {
           "q": "Which keyword is used to make decisions in Dart?",
@@ -3760,7 +4684,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng để ra quyết định trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "choose",
+            "if",
+            "when",
+            "select"
+          ]
         },
         {
           "q": "What is the correct syntax for an if statement in Dart?",
@@ -3773,7 +4703,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Cú pháp đúng cho câu lệnh `if` trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "if condition { }",
+            "if (condition) { }",
+            "nếu [điều kiện] { }",
+            "nếu {condition}"
+          ]
         },
         {
           "q": "The else block in Dart executes when:",
@@ -3786,7 +4722,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Khối `else` trong Dart chạy khi nào?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Điều kiện if là đúng",
+            "Điều kiện if là false",
+            "Chương trình có lỗi",
+            "Luôn thực thi"
+          ]
         },
         {
           "q": "Which statement is used to repeat a block of code a fixed number of times?",
@@ -3799,7 +4741,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Câu lệnh nào dùng để lặp khối mã số lần cố định?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "if",
+            "for",
+            "switch",
+            "break"
+          ]
         },
         {
           "q": "What does the break statement do in Dart loops?",
@@ -3812,7 +4760,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "`break` trong vòng lặp Dart làm gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Bỏ qua một lần lặp lại",
+            "Thoát khỏi vòng lặp hoàn toàn",
+            "Khởi động lại vòng lặp",
+            "Tạm dừng vòng lặp"
+          ]
         },
         {
           "q": "What does the continue statement do?",
@@ -3825,7 +4779,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "`continue` làm gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Kết thúc vòng lặp",
+            "Bỏ qua đến lần lặp tiếp theo",
+            "Dừng chương trình",
+            "Thoát khỏi khối hiện tại"
+          ]
         },
         {
           "q": "Which loop checks the condition after executing the loop body?",
@@ -3838,7 +4798,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Vòng lặp nào kiểm tra điều kiện sau khi chạy thân vòng lặp?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "for",
+            "while",
+            "do-while",
+            "foreach"
+          ]
         },
         {
           "q": "Which keyword is used for multiple conditions instead of many if-else statements?",
@@ -3851,7 +4817,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng cho nhiều nhánh thay cho nhiều if-else?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "choose",
+            "switch",
+            "when",
+            "check"
+          ]
         },
         {
           "q": "What is required after each case in a switch statement in Dart?",
@@ -3864,7 +4836,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Sau mỗi `case` trong `switch` của Dart cần gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "stop",
+            "continue",
+            "break",
+            "exit"
+          ]
         },
         {
           "q": "What is a class in Dart?",
@@ -3877,7 +4855,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Class trong Dart là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Một loại biến",
+            "Một hàm",
+            "Một bản thiết kế để tạo các đối tượng",
+            "Một mô-đun"
+          ]
         },
         {
           "q": "What is an object in Dart?",
@@ -3890,7 +4874,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Object trong Dart là gì?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Kiểu biến",
+            "Một thực thể của một lớp",
+            "Một từ khóa",
+            "Danh sách gì?"
+          ]
         },
         {
           "q": "Which keyword is used to define a class in Dart?",
@@ -3903,7 +4893,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng để định nghĩa class?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "object",
+            "define",
+            "class",
+            "struct"
+          ]
         },
         {
           "q": "How do you create an object in Dart?",
@@ -3916,7 +4912,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Làm sao tạo object trong Dart?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Person = new();",
+            "Person p = new Person();",
+            "Person();",
+            "object Person();"
+          ]
         },
         {
           "q": "What is the purpose of a constructor in a class?",
@@ -3929,7 +4931,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Mục đích của constructor trong class?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "オブジェクトの削除",
+            "Để khởi tạo các đối tượng",
+            "Để sao chép dữ liệu",
+            "Để in các biến"
+          ]
         },
         {
           "q": "What symbol is used to access an object’s property or method?",
@@ -3942,7 +4950,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Ký hiệu nào dùng để truy cập thuộc tính hoặc method của object?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "#",
+            "@",
+            ".",
+            ":"
+          ]
         },
         {
           "q": "Which of the following best describes an instance variable?",
@@ -3955,7 +4969,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Mô tả nào đúng nhất về biến instance?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Một biến được khai báo bên trong một phương thức",
+            "Một biến được chia sẻ bởi tất cả các lớp",
+            "Một biến được định nghĩa bên trong một lớp và thuộc về một đối tượng",
+            "Giá trị phiếu bầu cố định"
+          ]
         },
         {
           "q": "What happens if you don’t define a constructor in a Dart class?",
@@ -3968,7 +4988,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Nếu không định nghĩa constructor trong class Dart thì sao?",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Chương trình gặp sự cố",
+            "DART tự động tạo một hàm tạo mặc định",
+            "Bạn không thể tạo đối tượng",
+            "Bạn phải sử dụng"
+          ]
         },
         {
           "q": "________ is a real-time representation of any entity.",
@@ -3981,7 +5007,13 @@
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "________ là biểu diễn thời gian thực của một thực thể.",
-          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393)."
+          "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
+          "options_vi": [
+            "Class",
+            "Method",
+            "Object",
+            "Không có đáp án nào nêu trên"
+          ]
         }
       ]
     }
