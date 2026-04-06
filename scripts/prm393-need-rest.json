@@ -1,0 +1,732 @@
+{
+  "50": {
+    "q": "What is Flutter?",
+    "options": [
+      "A programming language",
+      "A cross-platform UI framework",
+      "An operating system",
+      "An IDE"
+    ],
+    "correct": 1
+  },
+  "51": {
+    "q": "Who developed Flutter?",
+    "options": [
+      "Apple",
+      "Microsoft",
+      "Google",
+      "Meta"
+    ],
+    "correct": 2
+  },
+  "52": {
+    "q": "Flutter allows developers to use how many codebases?",
+    "options": [
+      "One per platform codebase",
+      "Two",
+      "Three",
+      "One for all platforms"
+    ],
+    "correct": 3
+  },
+  "53": {
+    "q": "Flutter uses which UI paradigm?",
+    "options": [
+      "Imperative",
+      "Declarative",
+      "Procedura",
+      "Functional"
+    ],
+    "correct": 1
+  },
+  "57": {
+    "q": "Flutter engine is mainly written in?",
+    "options": [
+      "Dart",
+      "Java",
+      "Kotlin",
+      "C/C++"
+    ],
+    "correct": 3
+  },
+  "61": {
+    "q": "Flutter supports which platforms?",
+    "options": [
+      "Android only",
+      "iOS only",
+      "Mobile only",
+      "Mobile, Web, Desktop"
+    ],
+    "correct": 3
+  },
+  "62": {
+    "q": "Flutter doctor is used to?",
+    "options": [
+      "Build app",
+      "Debug UI",
+      "Check environment setup",
+      "Install packages"
+    ],
+    "correct": 2
+  },
+  "63": {
+    "q": "Which language is used to write Flutter apps?",
+    "options": [
+      "Java",
+      "Kotlin",
+      "Swift",
+      "Dart"
+    ],
+    "correct": 3
+  },
+  "64": {
+    "q": "Flutter is best described as?",
+    "options": [
+      "Backend framework",
+      "UI toolkit",
+      "Database system",
+      "Operating system"
+    ],
+    "correct": 1
+  },
+  "65": {
+    "q": "Flutter renders UI using?",
+    "options": [
+      "Native UI components",
+      "HTML tags",
+      "Its own rendering engine",
+      "XML"
+    ],
+    "correct": 2
+  },
+  "68": {
+    "q": "Flutter follows which programming style?",
+    "options": [
+      "Declarative",
+      "Procedural",
+      "Low-level",
+      "Script-based"
+    ],
+    "correct": 0
+  },
+  "110": {
+    "q": "What is asynchronous programming used for in Dart?",
+    "options": [
+      "To make code run faster always",
+      "To perform long-running tasks without blocking execution",
+      "To pause the program",
+      "To replace exceptions"
+    ],
+    "correct": 0
+  },
+  "111": {
+    "q": "Which class represents a value that will be available in the future?",
+    "options": [
+      "Promise",
+      "Async",
+      "Future",
+      "Delay"
+    ],
+    "correct": 0
+  },
+  "112": {
+    "q": "How do you mark a function as asynchronous in Dart?",
+    "options": [
+      "future function",
+      "async function",
+      "Add the keyword async after the function signature",
+      "Use await in front of the function name"
+    ],
+    "correct": 0
+  },
+  "113": {
+    "q": "What keyword is used inside an async function to wait for a Future to complete?",
+    "options": [
+      "delay",
+      "wait",
+      "await",
+      "async"
+    ],
+    "correct": 0
+  },
+  "114": {
+    "q": "What is the return type of an async function that returns an integer?",
+    "options": [
+      "int",
+      "Future<int>",
+      "Async<int>",
+      "Promise<int>"
+    ],
+    "correct": 0
+  },
+  "115": {
+    "q": "What will this code print?",
+    "options": [
+      "A B immediately",
+      "A (pause 1 second) B",
+      "B A",
+      "Error"
+    ],
+    "correct": 0
+  },
+  "116": {
+    "q": "Which statement correctly handles a Future using .then()?",
+    "options": [
+      "Future(() => 10).then((value) => print(value));",
+      "Future(() => 10).await(print);",
+      "then Future(() => print(10));",
+      "Future.print(10).then();"
+    ],
+    "correct": 0
+  },
+  "117": {
+    "q": "Which keyword can be used together with try and catch in async functions to handle errors?",
+    "options": [
+      "wait",
+      "throw",
+      "await",
+      "async"
+    ],
+    "correct": 0
+  },
+  "118": {
+    "q": "What does this function return?",
+    "options": [
+      "int",
+      "Future<int>",
+      "void",
+      "Async<int>"
+    ],
+    "correct": 0
+  },
+  "119": {
+    "q": "Which keyword is used to declare a variable in Dart?",
+    "options": [
+      "let",
+      "var",
+      "define",
+      "static"
+    ],
+    "correct": 0
+  },
+  "120": {
+    "q": "What is the correct syntax to declare an integer variable in Dart?",
+    "options": [
+      "int number = 5;",
+      "integer number = 5;",
+      "num number = “5”;",
+      "float number = 5;"
+    ],
+    "correct": 0
+  },
+  "121": {
+    "q": "Which of the following is not a primitive data type in Dart?",
+    "options": [
+      "int",
+      "bool",
+      "float",
+      "String"
+    ],
+    "correct": 0
+  },
+  "122": {
+    "q": "The default value of an uninitialized variable in Dart is:",
+    "options": [
+      "0",
+      "null",
+      "undefined",
+      "empty"
+    ],
+    "correct": 0
+  },
+  "123": {
+    "q": "Which of the following is a valid boolean declaration?",
+    "options": [
+      "bool flag = True;",
+      "boolean flag = true;",
+      "bool flag = true;",
+      "Bool flag = TRUE;"
+    ],
+    "correct": 0
+  },
+  "124": {
+    "q": "Which keyword is used to declare a variable that cannot change its value?",
+    "options": [
+      "const",
+      "var",
+      "dynamic",
+      "static"
+    ],
+    "correct": 0
+  },
+  "125": {
+    "q": "The final keyword in Dart means:",
+    "options": [
+      "Value can change",
+      "Value is constant at compile time",
+      "Value can be set only once",
+      "Value is always null"
+    ],
+    "correct": 0
+  },
+  "126": {
+    "q": "What is the difference between final and const?",
+    "options": [
+      "const is runtime, final is compile-time",
+      "const is compile-time, final is runtime",
+      "Both are the same",
+      "final variables are mutable"
+    ],
+    "correct": 0
+  },
+  "127": {
+    "q": "The symbol ? after a type name in Dart means:",
+    "options": [
+      "Optional value, can be null",
+      "Conditional statement",
+      "Type casting",
+      "Unknown operator"
+    ],
+    "correct": 0
+  },
+  "128": {
+    "q": "What does the operator ?? do?",
+    "options": [
+      "Null check",
+      "Null-coalescing (return default if null)",
+      "Conditional operator",
+      "Assignment operator"
+    ],
+    "correct": 0
+  },
+  "129": {
+    "q": "Which operator assigns a value only if the variable is null?",
+    "options": [
+      "??=",
+      "??",
+      "?:",
+      "=>"
+    ],
+    "correct": 0
+  },
+  "130": {
+    "q": "What happens if you try to use a late variable before initialization?",
+    "options": [
+      "It prints null",
+      "It gives a runtime error",
+      "It prints 0",
+      "It assigns default value"
+    ],
+    "correct": 0
+  },
+  "131": {
+    "q": "Which keyword is used for lazy initialization in Dart?",
+    "options": [
+      "const",
+      "late",
+      "var",
+      "static"
+    ],
+    "correct": 0
+  },
+  "132": {
+    "q": "The late keyword is often used with which kind of variable?",
+    "options": [
+      "Compile-time constants",
+      "Variables initialized later but guaranteed before use",
+      "Unused variables",
+      "Dynamic variables only"
+    ],
+    "correct": 0
+  },
+  "133": {
+    "q": "What does dynamic mean in Dart?",
+    "options": [
+      "Variable type is fixed",
+      "Variable type can change at runtime",
+      "Variable is immutable",
+      "Variable must be null"
+    ],
+    "correct": 0
+  },
+  "134": {
+    "q": "Which of the following is valid?",
+    "options": [
+      "dynamic x = 5; x = “Hello”;",
+      "dynamic x = 5; x = true;",
+      "dynamic x;",
+      "All of the above"
+    ],
+    "correct": 0
+  },
+  "135": {
+    "q": "Which keyword allows both int and double values?",
+    "options": [
+      "num",
+      "dynamic",
+      "decimal",
+      "float"
+    ],
+    "correct": 0
+  },
+  "136": {
+    "q": "How can you convert string to int in Dart?",
+    "options": [
+      "int.parse()",
+      "toInt()",
+      "cast()",
+      "convert()"
+    ],
+    "correct": 0
+  },
+  "137": {
+    "q": "How can you check a variable’s type?",
+    "options": [
+      "typeof(var)",
+      "var.type",
+      "var.runtimeType",
+      "getType(var)"
+    ],
+    "correct": 0
+  },
+  "138": {
+    "q": "Which of these declares a nullable integer variable?",
+    "options": [
+      "int number;",
+      "int number?;",
+      "int? number;",
+      "var? number;"
+    ],
+    "correct": 0
+  },
+  "139": {
+    "q": "What is the data type of true in Dart?",
+    "options": [
+      "Boolean",
+      "bool",
+      "bit",
+      "logical"
+    ],
+    "correct": 0
+  },
+  "140": {
+    "q": "Which of the following is a valid declaration?",
+    "options": [
+      "var x = null;",
+      "int? x = null;",
+      "dynamic x = null;",
+      "All of the above"
+    ],
+    "correct": 0
+  },
+  "141": {
+    "q": "Which operator is used for addition in Dart?",
+    "options": [
+      "+",
+      "++",
+      "+=",
+      "add()"
+    ],
+    "correct": 0
+  },
+  "142": {
+    "q": "Which of the following is the equality operator in Dart?",
+    "options": [
+      "=",
+      "==",
+      "===",
+      ":="
+    ],
+    "correct": 0
+  },
+  "143": {
+    "q": "Which operator is used to combine two conditions in Dart?",
+    "options": [
+      "&&",
+      "||",
+      "&",
+      "Both A and B"
+    ],
+    "correct": 0
+  },
+  "144": {
+    "q": "Which of the following operators can be used for string concatenation?",
+    "options": [
+      "+",
+      "&",
+      "++",
+      "concat()"
+    ],
+    "correct": 0
+  },
+  "145": {
+    "q": "What is a library in Dart?",
+    "options": [
+      "A collection of classes and functions",
+      "A database connection",
+      "A Flutter widget",
+      "A type of compiler"
+    ],
+    "correct": 0
+  },
+  "146": {
+    "q": "Which keyword is used to include another Dart library?",
+    "options": [
+      "include",
+      "use",
+      "import",
+      "require"
+    ],
+    "correct": 0
+  },
+  "147": {
+    "q": "What is the correct syntax to import a built-in library?",
+    "options": [
+      "import dart.io;",
+      "import 'dart:io';",
+      "include 'dart:io';",
+      "use dart.io;"
+    ],
+    "correct": 0
+  },
+  "148": {
+    "q": "Which of the following is a core Dart library?",
+    "options": [
+      "dart:math",
+      "dart:core",
+      "dart:async",
+      "All of the above"
+    ],
+    "correct": 0
+  },
+  "149": {
+    "q": "What is automatically imported into every Dart program?",
+    "options": [
+      "dart:math",
+      "dart:core",
+      "dart:async",
+      "dart:convert"
+    ],
+    "correct": 0
+  },
+  "150": {
+    "q": "How can you import a library with an alias?",
+    "options": [
+      "import 'dart:math' as math;",
+      "alias 'dart:math';",
+      "use dart:math -> math;",
+      "import as 'dart:math' math;"
+    ],
+    "correct": 0
+  },
+  "151": {
+    "q": "Which syntax allows you to import only specific parts of a library?",
+    "options": [
+      "import 'dart:math' only sin;",
+      "import 'dart:math' show sin, cos;",
+      "import 'dart:math' use sin, cos;",
+      "import 'dart:math' with sin;"
+    ],
+    "correct": 0
+  },
+  "152": {
+    "q": "What keyword hides certain parts of a library during import?",
+    "options": [
+      "hide",
+      "except",
+      "remove",
+      "exclude"
+    ],
+    "correct": 0
+  },
+  "153": {
+    "q": "What is the purpose of part and part of directives in Dart?",
+    "options": [
+      "To split a single library across multiple files",
+      "To import third-party packages",
+      "To define constants",
+      "To connect Dart to Flutter"
+    ],
+    "correct": 0
+  },
+  "154": {
+    "q": "Which keyword is used to make decisions in Dart?",
+    "options": [
+      "choose",
+      "if",
+      "when",
+      "select"
+    ],
+    "correct": 0
+  },
+  "155": {
+    "q": "What is the correct syntax for an if statement in Dart?",
+    "options": [
+      "if condition { }",
+      "if (condition) { }",
+      "if [condition] { }",
+      "if {condition}"
+    ],
+    "correct": 0
+  },
+  "156": {
+    "q": "The else block in Dart executes when:",
+    "options": [
+      "The if condition is true",
+      "The if condition is false",
+      "The program has an error",
+      "Always executes"
+    ],
+    "correct": 0
+  },
+  "157": {
+    "q": "Which statement is used to repeat a block of code a fixed number of times?",
+    "options": [
+      "if",
+      "for",
+      "switch",
+      "break"
+    ],
+    "correct": 0
+  },
+  "158": {
+    "q": "What does the break statement do in Dart loops?",
+    "options": [
+      "Skips one iteration",
+      "Exits the loop completely",
+      "Restarts the loop",
+      "Pauses the loop"
+    ],
+    "correct": 0
+  },
+  "159": {
+    "q": "What does the continue statement do?",
+    "options": [
+      "Ends the loop",
+      "Skips to the next iteration",
+      "Stops the program",
+      "Exits the current block"
+    ],
+    "correct": 0
+  },
+  "160": {
+    "q": "Which loop checks the condition after executing the loop body?",
+    "options": [
+      "for",
+      "while",
+      "do-while",
+      "foreach"
+    ],
+    "correct": 0
+  },
+  "161": {
+    "q": "Which keyword is used for multiple conditions instead of many if-else statements?",
+    "options": [
+      "choose",
+      "switch",
+      "when",
+      "check"
+    ],
+    "correct": 0
+  },
+  "162": {
+    "q": "What is required after each case in a switch statement in Dart?",
+    "options": [
+      "stop",
+      "continue",
+      "break",
+      "exit"
+    ],
+    "correct": 0
+  },
+  "163": {
+    "q": "What is a class in Dart?",
+    "options": [
+      "A variable type",
+      "A function",
+      "A blueprint for creating objects",
+      "A module"
+    ],
+    "correct": 0
+  },
+  "164": {
+    "q": "What is an object in Dart?",
+    "options": [
+      "A type of variable",
+      "An instance of a class",
+      "A keyword",
+      "A list"
+    ],
+    "correct": 0
+  },
+  "165": {
+    "q": "Which keyword is used to define a class in Dart?",
+    "options": [
+      "object",
+      "define",
+      "class",
+      "struct"
+    ],
+    "correct": 0
+  },
+  "166": {
+    "q": "How do you create an object in Dart?",
+    "options": [
+      "Person = new();",
+      "Person p = new Person();",
+      "Person();",
+      "object Person();"
+    ],
+    "correct": 0
+  },
+  "167": {
+    "q": "What is the purpose of a constructor in a class?",
+    "options": [
+      "To delete objects",
+      "To initialize objects",
+      "To copy data",
+      "To print variables"
+    ],
+    "correct": 0
+  },
+  "168": {
+    "q": "What symbol is used to access an object’s property or method?",
+    "options": [
+      "#",
+      "@",
+      ".",
+      ":"
+    ],
+    "correct": 0
+  },
+  "169": {
+    "q": "Which of the following best describes an instance variable?",
+    "options": [
+      "A variable declared inside a method",
+      "A variable shared by all classes",
+      "A variable defined inside a class and belongs to an object",
+      "A constant value"
+    ],
+    "correct": 0
+  },
+  "170": {
+    "q": "What happens if you don’t define a constructor in a Dart class?",
+    "options": [
+      "The program crashes",
+      "Dart automatically creates a default constructor",
+      "You can’t create objects",
+      "You must use new"
+    ],
+    "correct": 0
+  },
+  "171": {
+    "q": "________ is a real-time representation of any entity.",
+    "options": [
+      "Class",
+      "Method",
+      "Object",
+      "None of the above"
+    ],
+    "correct": 0
+  }
+}

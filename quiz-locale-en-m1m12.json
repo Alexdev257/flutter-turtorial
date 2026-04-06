@@ -1,0 +1,876 @@
+{
+  "m1": [
+    {
+      "q_en": "What are Flutter’s three architecture layers from top to bottom?",
+      "options_en": [
+        "Embedder → Engine → Framework (Dart)",
+        "Framework (Dart) → Engine (C++) → Embedder",
+        "Skia → Dart → Kotlin",
+        "Widget → Activity → Service"
+      ],
+      "explain_en": "Framework (Dart: widgets, layout…) → Engine (C++: Skia, text…) → Embedder (ties to the OS)."
+    },
+    {
+      "q_en": "How does Flutter mainly draw the UI compared to React Native?",
+      "options_en": [
+        "Uses native XML/Storyboard views for every screen",
+        "Flutter engine + Skia paints pixels; Flutter UI does not bridge to native views",
+        "Web only",
+        "Must use WebView"
+      ],
+      "explain_en": "Flutter renders via its engine/Skia; RN bridges to native views."
+    },
+    {
+      "q_en": "When should you add native code (Kotlin/Swift) in a Flutter project?",
+      "options_en": [
+        "Always, for every screen",
+        "When you need deep platform features (camera, payment SDKs…) via MethodChannel/EventChannel",
+        "Never allowed",
+        "Only for 2D games"
+      ],
+      "explain_en": "Platform-specific OS/SDK bits integrate via platform channels; Flutter still paints the Flutter UI."
+    },
+    {
+      "q_en": "Where is the usual entry point of a Flutter/Dart app?",
+      "options_en": [
+        "android/MainActivity.kt",
+        "lib/main.dart",
+        "pubspec.lock",
+        "ios/Runner.swift"
+      ],
+      "explain_en": "`lib/main.dart` calls `runApp()` — the standard entry."
+    },
+    {
+      "q_en": "JIT vs AOT in Dart/Flutter (quick review) — which is more accurate?",
+      "options_en": [
+        "JIT only",
+        "JIT in dev; AOT on mobile release for near-native performance",
+        "AOT is web-only",
+        "JIT and AOT are identical"
+      ],
+      "explain_en": "Dev: JIT + hot reload; mobile release: AOT."
+    },
+    {
+      "q_en": "Short pipeline from widget to screen?",
+      "options_en": [
+        "GPU → Widget",
+        "Widget tree → Element + RenderObject (layout/paint) → compositing → GPU",
+        "JavaScript bridge only",
+        "XML → Flutter"
+      ],
+      "explain_en": "The framework diffs widgets, layout/paint via render objects, then compositing."
+    },
+    {
+      "q_en": "When is a Platform Channel (`MethodChannel`) used?",
+      "options_en": [
+        "Replaces all UI",
+        "Call native (Kotlin/Swift) from Dart for OS/SDK-specific features",
+        "Only to change theme",
+        "Does not exist in Flutter"
+      ],
+      "explain_en": "Bridges Dart ↔ native for camera, sensors, third-party SDKs, etc."
+    }
+  ],
+  "m2": [
+    {
+      "q_en": "How does `const` differ from `final`?",
+      "options_en": [
+        "No difference",
+        "`const` requires compile-time values; `final` is single assignment but can be runtime (e.g. `DateTime.now()`)",
+        "`final` is only inside classes",
+        "`const` can be reassigned"
+      ],
+      "explain_en": "`const` is compile-time constant; `final` is assigned once at runtime."
+    },
+    {
+      "q_en": "`?.` and `??` in null safety:",
+      "options_en": [
+        "`?.` safely accesses if non-null; `??` supplies a value when the left side is null",
+        "Both force non-null",
+        "`??` is only for List",
+        "`?.` always throws if null"
+      ],
+      "explain_en": "`?.` short-circuits; `??` picks the right side when the left is null."
+    },
+    {
+      "q_en": "Why do `async`/`await` help keep the Flutter UI responsive during network calls?",
+      "options_en": [
+        "Because network runs on the UI thread",
+        "Heavy work is scheduled for later without blocking the Dart isolate synchronously for too long",
+        "Because Flutter has no event loop",
+        "Because `await` disables animation"
+      ],
+      "explain_en": "`await` yields; I/O should not block the isolate inside long synchronous callbacks."
+    },
+    {
+      "q_en": "How does a broadcast stream differ from a single-subscription stream?",
+      "options_en": [
+        "Broadcast allows many listeners; single-subscription is usually one sequential listener",
+        "No difference",
+        "Single-subscription allows more listeners",
+        "Broadcast cannot be used with `StreamBuilder`"
+      ],
+      "explain_en": "Single-subscription: one main listener; broadcast: many (e.g. `StreamController.broadcast()`)."
+    },
+    {
+      "q_en": "In Dart, which operator is **integer division** for two `int` values?",
+      "options_en": [
+        "`/` (always yields double)",
+        "`~/`",
+        "`%`",
+        "`div`"
+      ],
+      "explain_en": "`/` with ints may yield double; `~/` is truncating integer division."
+    },
+    {
+      "q_en": "`map` on `Iterable` returns a lazy iterable — which is true?",
+      "options_en": [
+        "It is already a full `List` right after `map`",
+        "You usually need `toList()` / `for-in` to actually run and collect results",
+        "It is never lazy",
+        "Only works with `Set`"
+      ],
+      "explain_en": "`map`/`where` are lazy until consumed."
+    },
+    {
+      "q_en": "`try { } on SpecificException catch (e) { }` — what is `on` for?",
+      "options_en": [
+        "Catches everything including syntax errors",
+        "Catches a specific type before falling through to a general `catch`",
+        "Invalid in Dart",
+        "Only for Flutter UI"
+      ],
+      "explain_en": "`on Type` filters by exception type."
+    },
+    {
+      "q_en": "How do you compare two values of the same `enum` in Dart?",
+      "options_en": [
+        "Use `==`",
+        "Must use `equals()` via reflection",
+        "Only compare via `hashCode`",
+        "Cannot compare"
+      ],
+      "explain_en": "Enum values are constant objects — `==` works for the same enum type."
+    }
+  ],
+  "m3": [
+    {
+      "q_en": "How does `implements` differ from `extends`?",
+      "options_en": [
+        "Identical",
+        "`implements` requires you to reimplement the public API with no inherited implementation; `extends` inherits code",
+        "`implements` is only for enum",
+        "`extends` disallows @override"
+      ],
+      "explain_en": "Every Dart class is an implicit interface; `implements` is the contract—you write the bodies."
+    },
+    {
+      "q_en": "After synchronous code, microtask vs event queue order (exam model)?",
+      "options_en": [
+        "Event first, microtasks later",
+        "Drain all microtasks before taking the next event from the event queue",
+        "Only one queue exists",
+        "Random"
+      ],
+      "explain_en": "Microtasks run with higher priority than the next event after sync code finishes."
+    },
+    {
+      "q_en": "What are factory constructors commonly used for?",
+      "options_en": [
+        "Only to create widgets",
+        "JSON parsing, singletons, returning subtypes or cached instances—not always a new instance per call",
+        "Replace `main()`",
+        "Force a private class"
+      ],
+      "explain_en": "Factories flex object creation (`fromJson`, cache, etc.)."
+    },
+    {
+      "q_en": "What does `with MyMixin` on a class do?",
+      "options_en": [
+        "Imports a file",
+        "Mixes mixin implementation into the class (subject to `on` constraints)",
+        "Removes methods",
+        "Only in tests"
+      ],
+      "explain_en": "Mixins reuse behavior; `on` limits which classes can use `with`."
+    },
+    {
+      "q_en": "In a List literal, `[a]` vs `[...a]` when `a` is a `List` — difference?",
+      "options_en": [
+        "Same",
+        "`[a]` nests a List as one element; `[...a]` spreads elements of `a`",
+        "Both are compile errors",
+        "`...` is only for Map"
+      ],
+      "explain_en": "Spread `...` flattens elements."
+    },
+    {
+      "q_en": "`Future(() => print(1))` vs `Future.microtask(() => print(2))` — different queues?",
+      "options_en": [
+        "Same microtask queue",
+        "`microtask` uses the microtask queue; `Future((){})` usually schedules on the event queue",
+        "Both go to the GPU",
+        "Never run"
+      ],
+      "explain_en": "Microtasks are drained before the next event after sync work."
+    },
+    {
+      "q_en": "Repository pattern (idea): what should the UI **not** do directly?",
+      "options_en": [
+        "Call `setState`",
+        "Scatter `http.get`/`post` across `build()` — use a repository/service",
+        "Use `ListView`",
+        "Use `Theme`"
+      ],
+      "explain_en": "Layering: repository owns endpoints + parsing + errors; easier to mock in tests."
+    }
+  ],
+  "m4": [
+    {
+      "q_en": "After `setState`, what does the framework do (short)?",
+      "options_en": [
+        "Deletes the app",
+        "Marks the widget dirty and calls `build` again on the next frame",
+        "Only logs",
+        "Reboots the device"
+      ],
+      "explain_en": "`setState` signals state changed → schedules rebuild of that subtree."
+    },
+    {
+      "q_en": "Why avoid calling `setState` directly inside `build()`?",
+      "options_en": [
+        "Compile error",
+        "Risk of infinite loop: build → setState → build → …",
+        "Flutter bans `StatefulWidget`",
+        "No issue"
+      ],
+      "explain_en": "Calling in `build` can trigger endless rebuilds."
+    },
+    {
+      "q_en": "After `await` in a `State`, what should you check before `setState`?",
+      "options_en": [
+        "`WidgetsBinding.instance`",
+        "`mounted` (widget still in the tree)",
+        "`MediaQuery`",
+        "Nothing"
+      ],
+      "explain_en": "Avoid `setState` after dispose."
+    },
+    {
+      "q_en": "When prefer `StatelessWidget`?",
+      "options_en": [
+        "Always",
+        "UI depends only on parent args, no internal state that changes with interaction",
+        "When you need `AnimationController` in State",
+        "When you must use `GlobalKey`"
+      ],
+      "explain_en": "No own changing state → stateless; changing state → stateful."
+    },
+    {
+      "q_en": "What does `Theme.of(context)` return (concept)?",
+      "options_en": [
+        "A route widget",
+        "`ThemeData` (or data from a `Theme` ancestor) for colors/typography",
+        "Always null",
+        "Web only"
+      ],
+      "explain_en": "`Theme` is InheritedWidget-style lookup via context."
+    },
+    {
+      "q_en": "`ListView` with `children: [...]` vs `ListView.builder` — when is builder better?",
+      "options_en": [
+        "Even for 1000 items always use `children`",
+        "Long lists — builder only builds items in the viewport (lazy)",
+        "Builder never works",
+        "Always same performance"
+      ],
+      "explain_en": "`builder` is lazy; `children` builds all children — heavy for large lists."
+    },
+    {
+      "q_en": "`ListView` inside an unbounded `Column` — common fix?",
+      "options_en": [
+        "Do nothing",
+        "Wrap `ListView` in `Expanded` (Column has bounded height) or `shrinkWrap` + suitable physics",
+        "Switch to `Row`",
+        "Remove `Column`"
+      ],
+      "explain_en": "Unbounded height: need constraints or shrinkWrap inside a scrolling parent."
+    }
+  ],
+  "m5": [
+    {
+      "q_en": "After successful login, why prefer `pushReplacement` over `push`?",
+      "options_en": [
+        "To grow the stack more",
+        "Replace the current route so Back does not return to Login",
+        "Disable animation",
+        "Because `push` does not exist"
+      ],
+      "explain_en": "`pushReplacement` avoids leaving Login under Home on the stack."
+    },
+    {
+      "q_en": "`context.watch` vs `context.read` in Provider?",
+      "options_en": [
+        "`watch` subscribes and rebuilds when the model changes; `read` gets value once without listening in build",
+        "Same",
+        "`read` always rebuilds",
+        "Both only in `initState`"
+      ],
+      "explain_en": "Use `read` in callbacks; `watch` when UI depends on the model."
+    },
+    {
+      "q_en": "What problem does Navigator 2.0 address vs 1.0 (theory)?",
+      "options_en": [
+        "Removes routes",
+        "Declarative stack/URL sync — better for web and complex deep links",
+        "iOS only",
+        "No difference"
+      ],
+      "explain_en": "Nav 2.0: declarative model; URL ↔ stack."
+    },
+    {
+      "q_en": "How do you receive a result from a child screen after `Navigator.push`?",
+      "options_en": [
+        "`await push` returns a `Future`; child calls `Navigator.pop(context, value)`",
+        "Cannot return data",
+        "Only global `setState`",
+        "Web only"
+      ],
+      "explain_en": "`push` completes when `pop` supplies a `result`."
+    },
+    {
+      "q_en": "What do `InheritedWidget` (and wrappers like Provider) help with?",
+      "options_en": [
+        "Only draw borders",
+        "Push data down the tree without passing every constructor arg",
+        "Replace `Navigator`",
+        "Only for animation"
+      ],
+      "explain_en": "Lookup via `context`, rebuild when data changes."
+    },
+    {
+      "q_en": "Where are Android deep links mainly declared?",
+      "options_en": [
+        "`pubspec.yaml`",
+        "`AndroidManifest.xml` (`intent-filter` on the activity)",
+        "`main.dart` only",
+        "iOS plist only"
+      ],
+      "explain_en": "`intent-filter` with `VIEW`/`BROWSABLE` + `data` scheme/host."
+    },
+    {
+      "q_en": "When use `MultiProvider`?",
+      "options_en": [
+        "Only one model",
+        "Provide several `Provider`/`ChangeNotifierProvider` roots for a subtree",
+        "Replace `MaterialApp`",
+        "Does not exist"
+      ],
+      "explain_en": "Bundles multiple providers at the same level."
+    }
+  ],
+  "m6": [
+    {
+      "q_en": "When prefer `LayoutBuilder` over `MediaQuery.sizeOf` in a tight area?",
+      "options_en": [
+        "Never",
+        "When you need **parent** constraints (card, dialog), not full screen",
+        "When writing tests",
+        "Only with `GridView`"
+      ],
+      "explain_en": "`LayoutBuilder` reflects the real layout box; `MediaQuery` is usually the window."
+    },
+    {
+      "q_en": "How does `Wrap` differ from `Row`?",
+      "options_en": [
+        "`Row` wraps lines automatically",
+        "`Wrap` wraps to the next line when out of space; `Row` may overflow",
+        "Same",
+        "`Wrap` cannot hold `Chip`"
+      ],
+      "explain_en": "`Wrap` is like flex-wrap in CSS."
+    },
+    {
+      "q_en": "When does `MediaQuery.viewInsets.bottom` increase?",
+      "options_en": [
+        "On rotation",
+        "When the soft keyboard covers the bottom — used to push UI",
+        "When enabling dark mode",
+        "Never changes"
+      ],
+      "explain_en": "`padding` is safe area; `viewInsets` relates to IME/keyboard."
+    },
+    {
+      "q_en": "`MediaQuery.paddingOf(context)` vs `viewInsetsOf` when keyboard is open?",
+      "options_en": [
+        "Same",
+        "`viewInsets` (often bottom) grows when IME covers; `padding` is safe area/notch",
+        "Desktop only",
+        "Not usable in Flutter"
+      ],
+      "explain_en": "Insets = system-occluded area (keyboard); padding = safe area."
+    },
+    {
+      "q_en": "What does `OrientationBuilder` provide?",
+      "options_en": [
+        "Colors only",
+        "Portrait vs landscape to switch layout",
+        "Battery only",
+        "Unrelated to layout"
+      ],
+      "explain_en": "Callback receives `Orientation` to branch UI."
+    },
+    {
+      "q_en": "Responsive: `GridView.count` with `crossAxisCount` from `MediaQuery` width — purpose?",
+      "options_en": [
+        "Always one column",
+        "More/fewer columns based on screen width",
+        "Disable scrolling",
+        "iPad only"
+      ],
+      "explain_en": "Breakpoints from width → sensible column count."
+    },
+    {
+      "q_en": "**Adaptive** vs **responsive** (from the doc)?",
+      "options_en": [
+        "Same",
+        "Adaptive changes navigation/platform patterns (rail vs bottom bar); responsive changes layout by space",
+        "Only responsive exists",
+        "Adaptive is only font size"
+      ],
+      "explain_en": "Form factor/platform vs width constraints."
+    }
+  ],
+  "m7": [
+    {
+      "q_en": "`validator` on `TextFormField` returns `null` — meaning?",
+      "options_en": [
+        "Severe error",
+        "Field is valid",
+        "Skip the form",
+        "Crash"
+      ],
+      "explain_en": "`null` = no error; `String` = error message shown."
+    },
+    {
+      "q_en": "Why call `validate()` before `save()`?",
+      "options_en": [
+        "Order does not matter",
+        "Only commit data via `save()` when fields are valid",
+        "`save()` always throws",
+        "`validate` clears the form"
+      ],
+      "explain_en": "Avoid saving bad values when fields fail."
+    },
+    {
+      "q_en": "Form wrapped in `GestureDetector` + `unfocus()` — typical goal?",
+      "options_en": [
+        "Close the app",
+        "Dismiss keyboard when tapping outside fields",
+        "Clear text",
+        "Enable dark mode"
+      ],
+      "explain_en": "UX: tap outside inputs to hide keyboard."
+    },
+    {
+      "q_en": "What is `AutovalidateMode.onUserInteraction`?",
+      "options_en": [
+        "Never validate",
+        "Validate after the user interacts with a field — balances UX",
+        "Validate every frame",
+        "Only for plain `TextField`"
+      ],
+      "explain_en": "Avoid showing errors before the user touches the field."
+    },
+    {
+      "q_en": "`TextField` vs `TextFormField` — when need `TextFormField`?",
+      "options_en": [
+        "Always identical",
+        "Inside `Form`, need `validator`/`onSaved` tied to `FormState`",
+        "Only when there is no keyboard",
+        "`TextField` has validators"
+      ],
+      "explain_en": "`TextFormField` integrates with Form APIs."
+    },
+    {
+      "q_en": "`GlobalKey<FormState>` is for?",
+      "options_en": [
+        "Random key",
+        "Call `validate()` / `save()` / `reset()` on the whole form",
+        "Only open dialogs",
+        "Replace `Navigator`"
+      ],
+      "explain_en": "Access `FormState` from outside."
+    },
+    {
+      "q_en": "After `await` in async form submit, what should `State` do?",
+      "options_en": [
+        "Nothing",
+        "Check `mounted` before `setState`",
+        "Always `pop`",
+        "Call `validate` after `save` first"
+      ],
+      "explain_en": "Avoid updating UI after dispose."
+    }
+  ],
+  "m8": [
+    {
+      "q_en": "HTTP 401 vs 403 (exam review)?",
+      "options_en": [
+        "Same",
+        "401: not/s wrongly authenticated; 403: authenticated but not authorized",
+        "403 is DNS error",
+        "401 is GET-only"
+      ],
+      "explain_en": "Unauthorized vs Forbidden."
+    },
+    {
+      "q_en": "Why avoid `future: fetchPosts()` created fresh directly in `FutureBuilder`’s `build()`?",
+      "options_en": [
+        "Compile error",
+        "Each rebuild may repeat the API call",
+        "`FutureBuilder` does not exist",
+        "No problem"
+      ],
+      "explain_en": "Keep the `Future` in state/`initState` — once unless you intentionally refresh."
+    },
+    {
+      "q_en": "Why split a repository from the widget?",
+      "options_en": [
+        "Slower",
+        "Easier to test/mock HTTP; one place for endpoints + parsing + errors",
+        "Forces SQLite",
+        "No benefit"
+      ],
+      "explain_en": "Layering: UI should not scatter `http.get` everywhere."
+    },
+    {
+      "q_en": "Which library provides `jsonEncode` / `jsonDecode`?",
+      "options_en": [
+        "`package:http/http.dart`",
+        "`dart:convert`",
+        "`dart:io` only",
+        "`flutter/material.dart`"
+      ],
+      "explain_en": "`dart:convert` for JSON string ↔ objects."
+    },
+    {
+      "q_en": "HTTP **201 Created** usually means after POST?",
+      "options_en": [
+        "Client error",
+        "Resource created successfully",
+        "No body",
+        "Token expired"
+      ],
+      "explain_en": "201 = created; some APIs use 200 instead."
+    },
+    {
+      "q_en": "No network / DNS errors when calling HTTP from Dart are often caught as?",
+      "options_en": [
+        "`FormatException`",
+        "`SocketException`",
+        "`StateError`",
+        "Always `FlutterError`"
+      ],
+      "explain_en": "`dart:io` `SocketException` is common when offline."
+    },
+    {
+      "q_en": "`Uri.parse` is used to?",
+      "options_en": [
+        "Parse JSON",
+        "Build a `Uri` from a URL string for `http.get`/`post`",
+        "Only validate email",
+        "Replace `jsonDecode`"
+      ],
+      "explain_en": "Normalize the endpoint before HTTP calls."
+    }
+  ],
+  "m9": [
+    {
+      "q_en": "When choose JSON file + `path_provider` over SharedPreferences?",
+      "options_en": [
+        "Always",
+        "When you need structured lists/objects beyond simple key–value",
+        "When there is no disk",
+        "Prefs store unlimited arbitrary types"
+      ],
+      "explain_en": "Prefs for small flags; file/DB for structured data."
+    },
+    {
+      "q_en": "`getTemporaryDirectory` vs `getApplicationDocumentsDirectory`?",
+      "options_en": [
+        "Same",
+        "Temp may be cleaned by the OS; documents usually for user data to keep",
+        "Web only",
+        "Documents is RAM"
+      ],
+      "explain_en": "tmp vs user documents."
+    },
+    {
+      "q_en": "What does offline-first mean (concept)?",
+      "options_en": [
+        "Never online",
+        "Read local first, sync when network is available",
+        "Firebase only",
+        "Disable SQLite"
+      ],
+      "explain_en": "Show local data first, update later."
+    },
+    {
+      "q_en": "Which types does SharedPreferences support (quick review)?",
+      "options_en": [
+        "Any Dart object",
+        "String, int, double, bool, `List<String>` — complex objects often `jsonEncode` → String",
+        "bool only",
+        "SQLite only"
+      ],
+      "explain_en": "Simple key–value; complex → JSON string or file/DB."
+    },
+    {
+      "q_en": "`sqflite` on classic Flutter Web?",
+      "options_en": [
+        "Same as mobile 100%",
+        "Usually **not** equivalent — use other solutions (IndexedDB, Drift web, etc.)",
+        "Required on Web",
+        "Images only"
+      ],
+      "explain_en": "Classic SQLite plugin is not the default story for Flutter Web."
+    },
+    {
+      "q_en": "Calling `SharedPreferences.getInstance()` many times?",
+      "options_en": [
+        "Always crashes",
+        "Safe (light async); you can cache the instance to optimize",
+        "Only once per app lifetime",
+        "Not async"
+      ],
+      "explain_en": "Async API returns a platform-appropriate singleton."
+    },
+    {
+      "q_en": "User JSON file in `getApplicationDocumentsDirectory` — typical purpose?",
+      "options_en": [
+        "OS always deletes anytime",
+        "User data to keep long-term (notes, export) beyond simple prefs",
+        "Only store APK",
+        "Unreadable from Dart"
+      ],
+      "explain_en": "Documents dir for durable user data."
+    }
+  ],
+  "m10": [
+    {
+      "q_en": "Authentication vs Authorization?",
+      "options_en": [
+        "Same",
+        "Auth: who you are; Authorization: what you may do",
+        "iOS only",
+        "Authorization means login"
+      ],
+      "explain_en": "Identity vs permissions."
+    },
+    {
+      "q_en": "Is a JWT payload (claims) “secret encrypted” so nobody can read it?",
+      "options_en": [
+        "Yes, always AES",
+        "Payload is usually Base64URL — readable; signature prevents tampering, not hiding payload",
+        "There is no payload",
+        "Only servers can read it"
+      ],
+      "explain_en": "Signed to verify; don’t confuse signed with encrypted."
+    },
+    {
+      "q_en": "How do access and refresh tokens usually differ?",
+      "options_en": [
+        "Identical",
+        "Access short-lived for API calls; refresh longer to obtain new access",
+        "Refresh is web-only",
+        "Access is never sent over HTTP"
+      ],
+      "explain_en": "Common OAuth flow: rotate access with refresh."
+    },
+    {
+      "q_en": "How is a Bearer access token usually sent?",
+      "options_en": [
+        "`Token: ...`",
+        "`Authorization: Bearer <token>`",
+        "`Cookie: token=...` is always correct",
+        "`Bearer` is not used in HTTP"
+      ],
+      "explain_en": "Common pattern: Authorization Bearer."
+    },
+    {
+      "q_en": "Why use **HTTPS** in production?",
+      "options_en": [
+        "Slows the app",
+        "Protects tokens/data in transit against eavesdropping",
+        "HTTPS banned on mobile",
+        "Web only"
+      ],
+      "explain_en": "TLS encrypts the channel; don’t log tokens in production."
+    },
+    {
+      "q_en": "Google Sign-In on Android — SHA fingerprint is for?",
+      "options_en": [
+        "Rename the app",
+        "Firebase/Android verify the app — misconfig often breaks sign-in",
+        "Cosmetic only",
+        "Not needed in debug"
+      ],
+      "explain_en": "Register debug/release SHA-1/256 correctly on Firebase."
+    },
+    {
+      "q_en": "Typical logout: what to do with locally stored tokens?",
+      "options_en": [
+        "Keep forever",
+        "Remove token/session from storage and navigate to login",
+        "Post token to social media",
+        "Clear UI only"
+      ],
+      "explain_en": "Clear prefs/secure storage + adjust navigation stack as needed."
+    }
+  ],
+  "m11": [
+    {
+      "q_en": "Why does the test pyramid favor more unit tests than integration?",
+      "options_en": [
+        "Integration is faster",
+        "Unit/widget are fast and stable; integration is slow and flaky — keep few critical E2E flows",
+        "Unit tests don’t run on dev machines",
+        "Flutter forbids integration"
+      ],
+      "explain_en": "Integration cost and flake are higher."
+    },
+    {
+      "q_en": "`pump()` vs `pumpAndSettle()` in widget tests?",
+      "options_en": [
+        "`pump` advances a frame/short work; `pumpAndSettle` waits for animations/timers to finish",
+        "Same",
+        "`pump` is integration-only",
+        "Neither after tap"
+      ],
+      "explain_en": "After `tap` often `pump`; long animations use `pumpAndSettle`."
+    },
+    {
+      "q_en": "What does `find.text('X')` match in widget tests?",
+      "options_en": [
+        "`Text` with that exact string (or descendant)",
+        "A file on disk",
+        "Route name",
+        "`TextField` only"
+      ],
+      "explain_en": "`find.text` matcher for `Text` data."
+    },
+    {
+      "q_en": "How does **`integration_test`** differ from `flutter_test`?",
+      "options_en": [
+        "Identical",
+        "Integration runs E2E on device/emulator with a driver; widget tests use the test engine",
+        "Windows only",
+        "Not in Flutter"
+      ],
+      "explain_en": "Pyramid: many unit/widget, few integration."
+    },
+    {
+      "q_en": "Widget Inspector in DevTools helps with?",
+      "options_en": [
+        "Only theme",
+        "Widget tree, constraints, overflow",
+        "Build APK",
+        "Unrelated to debugging"
+      ],
+      "explain_en": "Debug layout and hierarchy."
+    },
+    {
+      "q_en": "AAA in unit tests means?",
+      "options_en": [
+        "Always Async Await",
+        "Arrange – Act – Assert",
+        "Android API Archive",
+        "Meaningless"
+      ],
+      "explain_en": "Setup → action → verify."
+    },
+    {
+      "q_en": "When is a `Key` on a widget useful in tests?",
+      "options_en": [
+        "Never",
+        "Many similar widgets — `find.byKey` is more stable than text",
+        "Web only",
+        "Replaces `expect`"
+      ],
+      "explain_en": "`Key` avoids depending on visible strings."
+    }
+  ],
+  "m12": [
+    {
+      "q_en": "Why measure FPS/jank in Profile/Release rather than Debug?",
+      "options_en": [
+        "Debug is faster than release",
+        "Debug has assertions and overhead — not real-world performance",
+        "Profile disables GPU",
+        "No difference"
+      ],
+      "explain_en": "Perf conclusions from Debug are misleading."
+    },
+    {
+      "q_en": "AAB vs APK for Google Play (exam review)?",
+      "options_en": [
+        "Same",
+        "Play prefers/requires AAB for splits/optimization; APK often for sideload/internal",
+        "AAB is iOS-only",
+        "APK cannot install"
+      ],
+      "explain_en": "App Bundle for Play; release APK still used for manual installs."
+    },
+    {
+      "q_en": "`versionCode` vs `versionName` on Android?",
+      "options_en": [
+        "Same",
+        "`versionCode` integer bumps each upload; `versionName` user-visible string",
+        "iOS only",
+        "Both entered by users on Play"
+      ],
+      "explain_en": "Monotonic code for store; name for marketing."
+    },
+    {
+      "q_en": "`const` widget constructor when args don’t change helps how?",
+      "options_en": [
+        "Always rebuilds",
+        "Framework may skip rebuilding the subtree when config is unchanged",
+        "Increases APK size",
+        "Tests only"
+      ],
+      "explain_en": "`const` widgets keep stable identity when parent rebuilds."
+    },
+    {
+      "q_en": "Using `UniqueKey()` per `ListView.builder` item on every `build` — effect?",
+      "options_en": [
+        "Best optimization",
+        "Flutter treats every item as new — loses scroll/selection state",
+        "No effect",
+        "Required for performance"
+      ],
+      "explain_en": "Stable keys from data (`ValueKey(id)`)."
+    },
+    {
+      "q_en": "What does Provider `Selector` help with?",
+      "options_en": [
+        "Pick colors",
+        "Rebuild only when the selected slice of state changes — fewer rebuilds",
+        "Replace `Navigator`",
+        "Does not exist"
+      ],
+      "explain_en": "Like `Consumer` but finer-grained."
+    },
+    {
+      "q_en": "Command to analyze release build size (from the doc)?",
+      "options_en": [
+        "flutter clean",
+        "flutter build apk --release --analyze-size",
+        "flutter pub get --analyze",
+        "dart fix --apply"
+      ],
+      "explain_en": "`--analyze-size` with build shows a breakdown."
+    }
+  ]
+}
