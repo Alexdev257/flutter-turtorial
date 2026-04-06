@@ -5018,449 +5018,639 @@
       ]
     },
     {
-      "id": "flutter_quiz_full",
+      "id": "flutter_quiz_full_no_abbreviation",
       "title": "Trắc nghiệm Flutter (Câu 1 - 80)",
       "title_en": "Flutter Multiple Choice (Q1 - Q80)",
       "questions": [
         {
           "q": "Lệnh nào được sử dụng để xác minh rằng Flutter SDK và tất cả các công cụ cần thiết đã được cấu hình chính xác?",
           "q_en": "Which command is used to verify that the Flutter SDK and all required tools are correctly configured?",
-          "options": ["Widget Inspector", "flutter clean", "flutter doctor", "Microtask queue"],
-          "options_en": ["Widget Inspector", "flutter clean", "flutter doctor", "Microtask queue"],
+          "options": [
+            "Widget Inspector",
+            "flutter clean",
+            "flutter doctor",
+            "Microtask queue"
+          ],
+          "options_en": [
+            "Widget Inspector",
+            "flutter clean",
+            "flutter doctor",
+            "Microtask queue"
+          ],
           "correct": 2,
-          "explain": "Lệnh flutter doctor kiểm tra môi trường và hiển thị báo cáo cài đặt.",
-          "explain_en": "flutter doctor checks your environment and displays a report."
+          "explain": "Lệnh flutter doctor kiểm tra và hiển thị báo cáo về trạng thái cài đặt của Flutter.",
+          "explain_en": "The flutter doctor command checks your environment and displays a report of the status of your Flutter installation."
         },
         {
           "q": "Trong một dự án Flutter tiêu chuẩn, tệp nào đóng vai trò là điểm vào của ứng dụng?",
           "q_en": "In a standard Flutter project, which file serves as the application's entry point?",
-          "options": ["main.dart", "runApp()", "validator", "ThemeData"],
-          "options_en": ["main.dart", "runApp()", "validator", "ThemeData"],
-          "correct": 0,
-          "explain": "Tệp main.dart chứa hàm main() để khởi chạy ứng dụng.",
-          "explain_en": "The main.dart file contains the main() function."
-        },
-        {
-          "q": "Hàm nào chịu trách nhiệm lấy widget gốc và gắn nó vào màn hình?",
-          "q_en": "Which Flutter function is responsible for taking the root widget and attaching it to the screen to build the widget tree?",
-          "options": ["SnackBar", "runApp()", "main.dart", "Scaffold"],
-          "options_en": ["SnackBar", "runApp()", "main.dart", "Scaffold"],
-          "correct": 1,
-          "explain": "Hàm runApp() gắn widget vào màn hình làm gốc của cây widget.",
-          "explain_en": "runApp() attaches the given widget to the screen."
-        },
-        {
-          "q": "Hot Reload khác với Hot Restart như thế nào?",
-          "q_en": "How does Hot Reload differ from Hot Restart in Flutter development?",
           "options": [
-            "Định danh duy nhất Form.",
-            "Tìm kiếm trên cây widget một chuỗi cụ thể.",
-            "Cho phép một mã nguồn hiển thị UI bằng engine riêng.",
-            "Hot Reload cập nhật UI không mất trạng thái, Hot Restart đặt lại trạng thái."
+            "main.dart",
+            "runApp()",
+            "validator",
+            "ThemeData"
           ],
           "options_en": [
-            "It uniquely identifies the Form...",
-            "It searches the widget tree...",
-            "It allows a single codebase to render UI...",
+            "main.dart",
+            "runApp()",
+            "validator",
+            "ThemeData"
+          ],
+          "correct": 0,
+          "explain": "Tệp main.dart chứa hàm main(), là điểm bắt đầu thực thi của mọi ứng dụng Flutter.",
+          "explain_en": "The main.dart file contains the main() function, which is the starting point of execution for every Flutter app."
+        },
+        {
+          "q": "Hàm nào của Flutter chịu trách nhiệm lấy widget gốc và gắn nó vào màn hình để xây dựng cây widget?",
+          "q_en": "Which Flutter function is responsible for taking the root widget and attaching it to the screen to build the widget tree?",
+          "options": [
+            "SnackBar",
+            "runApp()",
+            "main.dart",
+            "Scaffold"
+          ],
+          "options_en": [
+            "SnackBar",
+            "runApp()",
+            "main.dart",
+            "Scaffold"
+          ],
+          "correct": 1,
+          "explain": "Hàm runApp() gắn widget được cung cấp vào màn hình và làm cho nó trở thành gốc của cây widget.",
+          "explain_en": "The runApp() function attaches the given widget to the screen and makes it the root of the widget tree."
+        },
+        {
+          "q": "Hot Reload khác với Hot Restart như thế nào trong quá trình phát triển Flutter?",
+          "q_en": "How does Hot Reload differ from Hot Restart in Flutter development?",
+          "options": [
+            "Nó định danh duy nhất Biểu mẫu (Form) và cho phép truy cập vào trạng thái của nó để xác thực và lưu.",
+            "Nó tìm kiếm trên cây widget một widget có chứa chuỗi văn bản được chỉ định.",
+            "Nó cho phép một cơ sở mã duy nhất hiển thị giao diện người dùng bằng công cụ riêng của nó trên các nền tảng khác nhau.",
+            "Hot Reload cập nhật giao diện người dùng mà không làm mất trạng thái, trong khi Hot Restart đặt lại trạng thái ứng dụng."
+          ],
+          "options_en": [
+            "It uniquely identifies the Form and allows access to its state for validation and saving.",
+            "It searches the widget tree for a widget that contains the specified string of text.",
+            "It allows a single codebase to render UI using its own engine across different platforms.",
             "Hot Reload updates the UI without losing state, while Hot Restart resets the app state."
           ],
           "correct": 3,
-          "explain": "Hot Reload giữ nguyên state, Hot Restart reset toàn bộ.",
-          "explain_en": "Hot Reload preserves state, while Hot Restart resets it."
+          "explain": "Hot Reload tiêm mã nguồn mới và giữ nguyên trạng thái hiện tại, còn Hot Restart khởi động lại hoàn toàn trạng thái ứng dụng.",
+          "explain_en": "Hot Reload injects updated source code files while preserving state. Hot Restart resets the state entirely."
         },
         {
-          "q": "Lợi ích chính của kiến trúc Flutter đối với phát triển đa nền tảng là gì?",
+          "q": "Lợi ích chính của thiết kế kiến trúc Flutter đối với việc phát triển đa nền tảng là gì?",
           "q_en": "What is the primary benefit of Flutter's architectural design regarding cross-platform development?",
           "options": [
-            "Cập nhật UI không mất trạng thái.",
-            "Tránh xâm nhập hệ thống.",
-            "Sử dụng engine riêng hiển thị UI cho nhiều nền tảng từ một mã nguồn.",
-            "Định danh duy nhất Form."
+            "Hot Reload cập nhật giao diện người dùng mà không làm mất trạng thái, trong khi Hot Restart đặt lại trạng thái ứng dụng.",
+            "Nó đảm bảo giao diện người dùng tránh được các sự xâm nhập của hệ thống như rãnh khuyết (notch), thanh trạng thái và phần cắt camera.",
+            "Nó cho phép một cơ sở mã duy nhất hiển thị giao diện người dùng bằng công cụ riêng của nó trên các nền tảng khác nhau.",
+            "Nó định danh duy nhất Biểu mẫu (Form) và cho phép truy cập vào trạng thái của nó để xác thực và lưu."
           ],
           "options_en": [
-            "Hot Reload updates the UI without losing state...",
-            "It ensures the UI avoids system intrusions...",
+            "Hot Reload updates the UI without losing state, while Hot Restart resets the app state.",
+            "It ensures the UI avoids system intrusions like notches, status bars, and camera cutouts.",
             "It allows a single codebase to render UI using its own engine across different platforms.",
-            "It uniquely identifies the Form..."
+            "It uniquely identifies the Form and allows access to its state for validation and saving."
           ],
           "correct": 2,
-          "explain": "Flutter dùng engine Skia/Impeller để vẽ UI đồng nhất.",
-          "explain_en": "Flutter draws UI using its own engine."
+          "explain": "Flutter vẽ mọi thứ bằng Skia/Impeller engine của riêng mình, đảm bảo tính nhất quán trên mọi nền tảng.",
+          "explain_en": "Flutter draws everything using its own rendering engine, ensuring consistency across platforms."
         },
         {
-          "q": "Các kiểu dữ liệu cốt lõi nào trong Dart dùng cho số nguyên và số thập phân?",
+          "q": "Xác định các kiểu dữ liệu cốt lõi trong Dart được sử dụng cho số nguyên và số thập phân.",
           "q_en": "Identify the Dart core data types used for whole numbers and decimal numbers.",
-          "options": ["Microtask queue", "int và double", "flutter clean", "flutter doctor"],
-          "options_en": ["Microtask queue", "int and double", "flutter clean", "flutter doctor"],
+          "options": [
+            "Microtask queue",
+            "int và double",
+            "flutter clean",
+            "flutter doctor"
+          ],
+          "options_en": [
+            "Microtask queue",
+            "int and double",
+            "flutter clean",
+            "flutter doctor"
+          ],
           "correct": 1,
-          "explain": "Dart sử dụng 'int' và 'double'.",
-          "explain_en": "Dart uses 'int' and 'double'."
+          "explain": "Dart sử dụng 'int' cho số nguyên và 'double' cho số thập phân.",
+          "explain_en": "Dart uses 'int' for integers and 'double' for floating-point numbers."
         },
         {
-          "q": "Trong Dart, cú pháp nào nhúng giá trị biểu thức vào chuỗi?",
+          "q": "Trong Dart, cú pháp nào được sử dụng để nhúng giá trị của một biểu thức vào bên trong một chuỗi?",
           "q_en": "In Dart, what syntax is used to embed the value of an expression inside a string?",
           "options": [
-            "Performance Timeline in DevTools",
+            "Performance Timeline trong DevTools",
             "flutter build apk --analyze-size",
             "factory Model.fromJson(Map<String, dynamic> json)",
-            "Nội suy chuỗi với ${expression}"
+            "Nội suy chuỗi sử dụng `${expression}`"
           ],
           "options_en": [
             "Performance Timeline in DevTools",
             "flutter build apk --analyze-size",
             "factory Model.fromJson(Map<String, dynamic> json)",
-            "String interpolation using ${expression}"
+            "String interpolation using `${expression}`"
           ],
           "correct": 3,
-          "explain": "Sử dụng ${} để chèn giá trị (String interpolation).",
-          "explain_en": "Using ${} for String interpolation."
+          "explain": "Sử dụng dấu ${} để chèn giá trị của biểu thức vào chuỗi.",
+          "explain_en": "Using ${} allows embedding expressions directly into strings."
         },
         {
-          "q": "Kiểu collection nào trong Dart lưu trữ các giá trị duy nhất không có thứ tự?",
+          "q": "Kiểu collection nào trong Dart được sử dụng để lưu trữ một tập hợp các giá trị duy nhất không có thứ tự?",
           "q_en": "Which Dart collection type is used to store an unordered collection of unique values?",
-          "options": ["Card", "Set", "as", "Hero"],
-          "options_en": ["Card", "Set", "as", "Hero"],
+          "options": [
+            "Card",
+            "Set",
+            "as",
+            "Hero"
+          ],
+          "options_en": [
+            "Card",
+            "Set",
+            "as",
+            "Hero"
+          ],
           "correct": 1,
-          "explain": "Set không chứa phần tử trùng lặp và không có thứ tự.",
+          "explain": "Set là một collection không chứa các phần tử trùng lặp và không có thứ tự.",
           "explain_en": "A Set contains unique elements and is unordered."
         },
         {
-          "q": "Mục đích của toán tử `??` trong Dart là gì?",
+          "q": "Mục đích của toán tử `??` trong Dart null safety là gì?",
           "q_en": "What is the purpose of the `??` operator in Dart null safety?",
           "options": [
-            "Tự xây dựng dựa trên ảnh chụp mới nhất của Future.",
-            "Chứa mã nguồn test.",
-            "Buộc lấp đầy không gian trống.",
-            "Cung cấp giá trị mặc định nếu bên trái là null."
+            "Nó tự xây dựng dựa trên ảnh chụp nhanh mới nhất của quá trình tương tác với một Future.",
+            "Nó chứa mã nguồn cho các bài kiểm tra đơn vị (unit), tiện ích (widget) và tích hợp (integration).",
+            "Nó buộc một phần tử con lấp đầy không gian trống còn lại trong trục chính.",
+            "Nó cung cấp một giá trị mặc định nếu biểu thức bên trái của nó là null."
           ],
           "options_en": [
-            "It builds itself based on the latest snapshot...",
-            "It contains the source code for tests...",
-            "It forces a child to fill remaining space...",
+            "It builds itself based on the latest snapshot of interaction with a Future.",
+            "It contains the source code for unit, widget, and integration tests.",
+            "It forces a child to fill the remaining available space in the main axis.",
             "It provides a default value if the expression on its left is null."
           ],
           "correct": 3,
-          "explain": "Toán tử `??` trả về giá trị bên phải nếu bên trái null.",
-          "explain_en": "Returns right side if left is null."
+          "explain": "Toán tử `??` trả về giá trị bên phải nếu biểu thức bên trái là null.",
+          "explain_en": "Returns the right side if the left expression evaluates to null."
         },
         {
-          "q": "Toán tử nào trong Dart dùng để ép kiểu đối tượng?",
+          "q": "Toán tử nào trong Dart được sử dụng để ép kiểu một đối tượng sang một kiểu cụ thể?",
           "q_en": "Which Dart operator is used to cast an object to a specific type?",
-          "options": ["Hero", "as", "Set", "Card"],
-          "options_en": ["Hero", "as", "Set", "Card"],
-          "correct": 1,
-          "explain": "Toán tử `as` dùng để ép kiểu.",
-          "explain_en": "`as` is used for type casting."
-        },
-        {
-          "q": "Chức năng của toán tử `!` trong Dart null safety là gì?",
-          "q_en": "In Dart, what is the specific function of the `!` (bang) operator in the context of null safety?",
           "options": [
-            "Sắp xếp theo chiều dọc.",
-            "Chèn khoảng trống.",
-            "Khẳng định mạnh mẽ biểu thức không null.",
-            "Quản lý hoạt ảnh chuyển màn hình."
+            "Hero",
+            "as",
+            "Set",
+            "Card"
           ],
           "options_en": [
-            "Column arranges children vertically...",
-            "It insets its child...",
+            "Hero",
+            "as",
+            "Set",
+            "Card"
+          ],
+          "correct": 1,
+          "explain": "Toán tử `as` dùng để ép kiểu (typecast).",
+          "explain_en": "The `as` operator is used to cast an object to a specific type."
+        },
+        {
+          "q": "Trong Dart, chức năng cụ thể của toán tử `!` (bang) trong ngữ cảnh null safety là gì?",
+          "q_en": "In Dart, what is the specific function of the `!` (bang) operator in the context of null safety?",
+          "options": [
+            "Column sắp xếp các phần tử con theo chiều dọc, trong khi Row sắp xếp các phần tử con theo chiều ngang.",
+            "Nó chèn phần tử con của nó bằng một khoảng không gian được chỉ định.",
+            "Nó khẳng định một cách bắt buộc rằng một biểu thức có thể null là không null.",
+            "Nó quản lý hoạt ảnh chuyển đổi cụ thể theo nền tảng giữa các màn hình."
+          ],
+          "options_en": [
+            "Column arranges children vertically, while Row arranges children horizontally.",
+            "It insets its child by a specified amount of space.",
             "It forcefully asserts that a nullable expression is non-null.",
-            "It manages transition animation..."
+            "It manages the platform-specific transition animation between screens."
           ],
           "correct": 2,
-          "explain": "Toán tử `!` báo cho trình biên dịch biết giá trị chắc chắn không null.",
-          "explain_en": "The `!` operator casts away nullability."
+          "explain": "Toán tử `!` báo cho trình biên dịch biết rằng một giá trị nullable chắc chắn không bị null.",
+          "explain_en": "The `!` operator tells the compiler that a nullable value is not null."
         },
         {
-          "q": "Từ khóa nào định nghĩa lớp con kế thừa từ lớp cha?",
+          "q": "Từ khóa Dart nào được sử dụng để định nghĩa một lớp con kế thừa từ một lớp cha?",
           "q_en": "Which Dart keyword is used to define a subclass that inherits from a parent class?",
-          "options": ["extends", "Scaffold", "Stream", "runApp()"],
-          "options_en": ["extends", "Scaffold", "Stream", "runApp()"],
+          "options": [
+            "extends",
+            "Scaffold",
+            "Stream",
+            "runApp()"
+          ],
+          "options_en": [
+            "extends",
+            "Scaffold",
+            "Stream",
+            "runApp()"
+          ],
           "correct": 0,
-          "explain": "Từ khóa `extends` dùng để kế thừa.",
-          "explain_en": "`extends` is used for inheritance."
+          "explain": "Từ khóa `extends` được sử dụng để lớp con kế thừa từ lớp cha.",
+          "explain_en": "The `extends` keyword is used for inheritance."
         },
         {
-          "q": "Chức năng của hàm khởi tạo 'factory' trong Dart là gì?",
+          "q": "Chức năng của một hàm khởi tạo 'factory' trong Dart là gì?",
           "q_en": "What is the function of a 'factory' constructor in Dart?",
           "options": [
-            "Trả về thể hiện có sẵn hoặc lớp con thay vì luôn tạo mới.",
-            "Chế độ Profile mode.",
-            "Xây dựng lại khi một phần model thay đổi.",
-            "Cho phép cuộn widget."
+            "Nó cho phép một hàm khởi tạo trả về một thể hiện hiện có hoặc một thể hiện của lớp con thay vì luôn tạo một thể hiện mới.",
+            "Chế độ Profile dành cho kiểm tra hiệu suất với một số công cụ gỡ lỗi, trong khi chế độ Release được tối ưu hóa hoàn toàn để triển khai.",
+            "Nó cho phép một widget chỉ xây dựng lại khi một phần cụ thể của mô hình thay đổi, thay vì toàn bộ mô hình.",
+            "Nó cho phép một widget con duy nhất có thể cuộn được khi nó vượt quá không gian dọc hoặc ngang của màn hình."
           ],
           "options_en": [
             "It allows a constructor to return an existing instance or a subclass instance instead of always creating a new one.",
-            "Profile mode is for performance testing...",
-            "It allows a widget to rebuild only when a specific part...",
-            "It allows a single child widget to be scrollable..."
+            "Profile mode is for performance testing with some debugging tools, while Release mode is fully optimised for deployment.",
+            "It allows a widget to rebuild only when a specific part of a model changes, rather than the entire model.",
+            "It allows a single child widget to be scrollable when it exceeds the screen's vertical or horizontal space."
           ],
           "correct": 0,
-          "explain": "Factory constructor có thể trả về instance từ cache hoặc subtype.",
-          "explain_en": "Factory constructor can return cached or subtype instances."
+          "explain": "Factory constructor có thể trả về một thể hiện từ cache hoặc của một lớp con.",
+          "explain_en": "A factory constructor does not always create a new instance of its class."
         },
         {
-          "q": "Lớp Dart nào quản lý chuỗi sự kiện bất đồng bộ?",
+          "q": "Lớp Dart nào được sử dụng để quản lý một chuỗi các sự kiện bất đồng bộ?",
           "q_en": "Which Dart class is used to manage a sequence of asynchronous events?",
-          "options": ["final", "Stream", "map()", "extends"],
-          "options_en": ["final", "Stream", "map()", "extends"],
+          "options": [
+            "final",
+            "Stream",
+            "map()",
+            "extends"
+          ],
+          "options_en": [
+            "final",
+            "Stream",
+            "map()",
+            "extends"
+          ],
           "correct": 1,
-          "explain": "Stream cung cấp dữ liệu luồng bất đồng bộ.",
-          "explain_en": "Stream handles asynchronous events."
+          "explain": "Stream cung cấp luồng dữ liệu hoặc sự kiện bất đồng bộ.",
+          "explain_en": "A Stream provides an asynchronous sequence of data."
         },
         {
-          "q": "Hàng đợi nào có độ ưu tiên cao hơn trong event loop của Dart?",
+          "q": "Trong vòng lặp sự kiện (event loop) của Dart, hàng đợi nào có độ ưu tiên cao hơn: hàng đợi microtask hay hàng đợi event?",
           "q_en": "In the Dart event loop, which queue has higher priority: the microtask queue or the event queue?",
-          "options": ["flutter doctor", "Widget Inspector", "Microtask queue", "AppBundle (.aab)"],
-          "options_en": ["flutter doctor", "Widget Inspector", "Microtask queue", "AppBundle (.aab)"],
+          "options": [
+            "flutter doctor",
+            "Widget Inspector",
+            "Microtask queue",
+            "AppBundle (.aab)"
+          ],
+          "options_en": [
+            "flutter doctor",
+            "Widget Inspector",
+            "Microtask queue",
+            "AppBundle (.aab)"
+          ],
           "correct": 2,
-          "explain": "Microtask queue luôn được ưu tiên thực thi trước Event queue.",
-          "explain_en": "Microtask queue is drained before event queue."
+          "explain": "Vòng lặp sự kiện luôn dọn sạch hàng đợi microtask trước khi xử lý hàng đợi sự kiện (event).",
+          "explain_en": "The event loop completely drains the microtask queue before the event queue."
         },
         {
-          "q": "Phương thức nào chuyển đổi các mục của Stream thành giá trị mới?",
+          "q": "Phương thức Dart nào được sử dụng để chuyển đổi các mục của một Stream thành các giá trị mới?",
           "q_en": "Which Dart method is used to transform the items of a Stream into new values?",
-          "options": ["map()", "final", "Card", "Stream"],
-          "options_en": ["map()", "final", "Card", "Stream"],
+          "options": [
+            "map()",
+            "final",
+            "Card",
+            "Stream"
+          ],
+          "options_en": [
+            "map()",
+            "final",
+            "Card",
+            "Stream"
+          ],
           "correct": 0,
-          "explain": "Phương thức `map()` biến đổi phần tử.",
-          "explain_en": "`map()` transforms elements."
+          "explain": "Phương thức `map()` biến đổi từng phần tử thành một phần tử mới.",
+          "explain_en": "The `map()` method transforms each element into a new element."
         },
         {
-          "q": "Constructor nào thường tạo đối tượng từ Map dữ liệu?",
+          "q": "Constructor nào thường được sử dụng trong các mô hình Dart để tạo một đối tượng từ một Map dữ liệu?",
           "q_en": "Which constructor is typically used in Dart models to create an object from a Map of data?",
           "options": [
             "flutter build apk --analyze-size",
             "factory Model.fromJson(Map<String, dynamic> json)",
-            "Performance Timeline in DevTools",
-            "String interpolation"
+            "Performance Timeline trong DevTools",
+            "Nội suy chuỗi sử dụng `${expression}`"
           ],
           "options_en": [
             "flutter build apk --analyze-size",
             "factory Model.fromJson(Map<String, dynamic> json)",
             "Performance Timeline in DevTools",
-            "String interpolation"
+            "String interpolation using `${expression}`"
           ],
           "correct": 1,
-          "explain": "Mẫu `fromJson` được dùng để parse JSON.",
-          "explain_en": "`fromJson` parses JSON maps."
+          "explain": "Mẫu `fromJson` là tiêu chuẩn để phân tích cú pháp dữ liệu JSON.",
+          "explain_en": "The `fromJson` pattern is standard for parsing JSON maps."
         },
         {
-          "q": "Widget nào cung cấp cấu trúc app bar, FAB, và layout cơ bản?",
+          "q": "Widget Flutter nào cung cấp thanh ứng dụng (app bar) mặc định, nút hành động nổi và cấu trúc bố cục cho giao diện trực quan?",
           "q_en": "Which Flutter widget provides a default app bar, a floating action button, and a layout structure for the visual interface?",
-          "options": ["SnackBar", "Scaffold", "runApp()", "main.dart"],
-          "options_en": ["SnackBar", "Scaffold", "runApp()", "main.dart"],
+          "options": [
+            "SnackBar",
+            "Scaffold",
+            "runApp()",
+            "main.dart"
+          ],
+          "options_en": [
+            "SnackBar",
+            "Scaffold",
+            "runApp()",
+            "main.dart"
+          ],
           "correct": 1,
-          "explain": "Scaffold cung cấp cấu trúc Material Design cơ bản.",
-          "explain_en": "Scaffold provides standard Material Design layouts."
+          "explain": "Scaffold cung cấp cấu trúc giao diện theo tiêu chuẩn Material Design.",
+          "explain_en": "Scaffold implements the basic Material Design visual layout structure."
         },
         {
-          "q": "Khác biệt chính giữa `Column` và `Row` là gì?",
+          "q": "Sự khác biệt chính giữa các widget `Column` và `Row` trong Flutter là gì?",
           "q_en": "What is the primary difference between `Column` and `Row` widgets in Flutter?",
           "options": [
-            "Column sắp xếp dọc, Row sắp xếp ngang.",
-            "Gói gọn logic mạng.",
-            "Khẳng định không null.",
-            "Quản lý hoạt ảnh."
+            "Column sắp xếp các phần tử con theo chiều dọc, trong khi Row sắp xếp các phần tử con theo chiều ngang.",
+            "Nó đóng gói toàn bộ logic giao tiếp mạng, tách biệt nó khỏi lớp giao diện người dùng (UI).",
+            "Nó khẳng định một cách bắt buộc rằng một biểu thức có thể null là không null.",
+            "Nó quản lý hoạt ảnh chuyển đổi cụ thể theo nền tảng giữa các màn hình."
           ],
           "options_en": [
             "Column arranges children vertically, while Row arranges children horizontally.",
-            "It encapsulates network logic...",
-            "It forcefully asserts non-null...",
-            "It manages transition animation..."
+            "It encapsulates all network communication logic, separating it from the UI layer.",
+            "It forcefully asserts that a nullable expression is non-null.",
+            "It manages the platform-specific transition animation between screens."
           ],
           "correct": 0,
-          "explain": "Column xếp dọc (trục Y), Row xếp ngang (trục X).",
-          "explain_en": "Column is vertical, Row is horizontal."
+          "explain": "Column căn chỉnh các phần tử theo chiều dọc, còn Row theo chiều ngang.",
+          "explain_en": "Column layouts elements vertically, whereas Row layouts elements horizontally."
         },
         {
-          "q": "Widget nào phù hợp để hiển thị danh sách cuộn tuyến tính tải theo nhu cầu?",
+          "q": "Widget Flutter nào phù hợp nhất để hiển thị một danh sách tuyến tính có thể cuộn các phần tử con được xây dựng theo nhu cầu?",
           "q_en": "Which Flutter widget is best suited for displaying a scrollable, linear list of children built on demand?",
-          "options": ["precacheImage()", "textInputAction", "GestureDetector", "ListView.builder"],
-          "options_en": ["precacheImage()", "textInputAction", "GestureDetector", "ListView.builder"],
+          "options": [
+            "precacheImage()",
+            "textInputAction",
+            "GestureDetector",
+            "ListView.builder"
+          ],
+          "options_en": [
+            "precacheImage()",
+            "textInputAction",
+            "GestureDetector",
+            "ListView.builder"
+          ],
           "correct": 3,
-          "explain": "ListView.builder chỉ tạo widget khi hiển thị.",
-          "explain_en": "ListView.builder creates widgets lazily."
+          "explain": "ListView.builder chỉ tạo ra các widget khi chúng chuẩn bị hiển thị trên màn hình để tối ưu hiệu suất.",
+          "explain_en": "ListView.builder optimizes memory by instantiating widgets only as they become visible."
         },
         {
-          "q": "Mục đích của widget `Padding` là gì?",
+          "q": "Mục đích của widget `Padding` trong Flutter là gì?",
           "q_en": "What is the purpose of the `Padding` widget in Flutter?",
           "options": [
-            "Khẳng định không null.",
-            "Quản lý hoạt ảnh.",
-            "Chèn phần tử con bằng khoảng trống xác định.",
-            "Chứa mã nguồn test."
+            "Nó khẳng định một cách bắt buộc rằng một biểu thức có thể null là không null.",
+            "Nó quản lý hoạt ảnh chuyển đổi cụ thể theo nền tảng giữa các màn hình.",
+            "Nó chèn phần tử con của nó bằng một khoảng không gian được chỉ định.",
+            "Nó chứa mã nguồn cho các bài kiểm tra đơn vị (unit), tiện ích (widget) và tích hợp (integration)."
           ],
           "options_en": [
-            "It forcefully asserts non-null...",
-            "It manages transition animation...",
+            "It forcefully asserts that a nullable expression is non-null.",
+            "It manages the platform-specific transition animation between screens.",
             "It insets its child by a specified amount of space.",
-            "It contains source code for tests..."
+            "It contains the source code for unit, widget, and integration tests."
           ],
           "correct": 2,
-          "explain": "Padding dùng để tạo khoảng trống quanh widget con.",
-          "explain_en": "Padding insets its child."
+          "explain": "Padding dùng để tạo khoảng trống (khoảng đệm) xung quanh widget con của nó.",
+          "explain_en": "Padding insets its child by the given padding amount."
         },
         {
-          "q": "Widget nào áp dụng kiểu trực quan đồng nhất (như bóng đổ, góc bo tròn)?",
+          "q": "Widget nào được sử dụng để áp dụng một kiểu giao diện đồng nhất (như bóng đổ và góc bo tròn) cho một phần nội dung?",
           "q_en": "Which widget is used to apply a uniform visual style (like shadows and rounded corners) to a piece of content?",
-          "options": ["Hero", "Card", "Form", "Wrap"],
-          "options_en": ["Hero", "Card", "Form", "Wrap"],
-          "correct": 1,
-          "explain": "Card tạo giao diện thẻ với bóng và góc bo tròn.",
-          "explain_en": "Card provides a Material Design card."
-        },
-        {
-          "q": "Chức năng của `Expanded` trong `Column` hoặc `Row` là gì?",
-          "q_en": "What is the function of the `Expanded` widget within a `Column` or `Row`?",
           "options": [
-            "Cung cấp giá trị mặc định.",
-            "Buộc phần tử con lấp đầy không gian còn lại trên trục chính.",
-            "Tạo luồng lắng nghe nhiều lần.",
-            "Tự xây dựng dựa trên Future."
+            "Hero",
+            "Card",
+            "Form",
+            "Wrap"
           ],
           "options_en": [
-            "It provides a default value...",
-            "It forces a child to fill the remaining available space in the main axis.",
-            "It creates a stream...",
-            "It builds itself based on a Future..."
+            "Hero",
+            "Card",
+            "Form",
+            "Wrap"
           ],
           "correct": 1,
-          "explain": "Expanded giúp widget giãn ra chiếm hết không gian còn lại.",
-          "explain_en": "Expanded forces a child to fill available space."
+          "explain": "Card cung cấp thiết kế thẻ (Material Card) với đổ bóng và bo góc.",
+          "explain_en": "Card provides a Material Design card layout."
         },
         {
-          "q": "Widget nào thiết kế cho chuyển cảnh màn hình mà đối tượng 'bay' sang màn hình khác?",
-          "q_en": "Which Flutter widget is specifically designed to handle screen transitions where an element 'flies' from one screen to another?",
-          "options": ["Form", "Hero", "Card", "Wrap"],
-          "options_en": ["Form", "Hero", "Card", "Wrap"],
+          "q": "Chức năng của widget `Expanded` bên trong một `Column` hoặc `Row` là gì?",
+          "q_en": "What is the function of the `Expanded` widget within a `Column` or `Row`?",
+          "options": [
+            "Nó cung cấp một giá trị mặc định nếu biểu thức bên trái của nó là null.",
+            "Nó buộc một phần tử con lấp đầy không gian trống còn lại trong trục chính.",
+            "Nó tạo ra một luồng (stream) có thể được lắng nghe bởi nhiều người đăng ký (subscriber) cùng một lúc.",
+            "Nó tự xây dựng dựa trên ảnh chụp nhanh mới nhất của quá trình tương tác với một Future."
+          ],
+          "options_en": [
+            "It provides a default value if the expression on its left is null.",
+            "It forces a child to fill the remaining available space in the main axis.",
+            "It creates a stream that can be listened to by multiple subscribers simultaneously.",
+            "It builds itself based on the latest snapshot of interaction with a Future."
+          ],
           "correct": 1,
-          "explain": "Hero widget tạo hiệu ứng bay (hero animation).",
-          "explain_en": "Hero widget handles flying transitions."
+          "explain": "Expanded yêu cầu widget con giãn ra để chiếm hết không gian còn lại trên trục chính.",
+          "explain_en": "Expanded forces its child to expand and fill the available space."
         },
         {
-          "q": "Phương thức Navigator nào điều hướng bằng tên route cụ thể?",
+          "q": "Widget Flutter nào được thiết kế riêng để xử lý các quá trình chuyển đổi màn hình trong đó một phần tử 'bay' từ màn hình này sang màn hình khác?",
+          "q_en": "Which Flutter widget is specifically designed to handle screen transitions where an element 'flies' from one screen to another?",
+          "options": [
+            "Form",
+            "Hero",
+            "Card",
+            "Wrap"
+          ],
+          "options_en": [
+            "Form",
+            "Hero",
+            "Card",
+            "Wrap"
+          ],
+          "correct": 1,
+          "explain": "Hero widget tạo ra hiệu ứng bay (hero animation) kết nối 2 màn hình.",
+          "explain_en": "Hero widget handles flying transitions between screens."
+        },
+        {
+          "q": "Phương thức Navigator nào được sử dụng để điều hướng đến một màn hình mới bằng cách truyền một tên tuyến đường cụ thể?",
           "q_en": "Which Navigator method is used to navigate to a new screen by passing a specific route name?",
-          "options": ["tester.pumpAndSettle()", "tester.enterText()", "ListView.builder", "Navigator.pushNamed"],
-          "options_en": ["tester.pumpAndSettle()", "tester.enterText()", "ListView.builder", "Navigator.pushNamed"],
+          "options": [
+            "tester.pumpAndSettle()",
+            "tester.enterText()",
+            "ListView.builder",
+            "Navigator.pushNamed"
+          ],
+          "options_en": [
+            "tester.pumpAndSettle()",
+            "tester.enterText()",
+            "ListView.builder",
+            "Navigator.pushNamed"
+          ],
           "correct": 3,
-          "explain": "Navigator.pushNamed dùng để chuyển màn hình qua tên route định nghĩa trước.",
+          "explain": "Navigator.pushNamed chuyển màn hình bằng chuỗi định danh (route name).",
           "explain_en": "Navigator.pushNamed navigates via named routes."
         },
         {
-          "q": "Mục đích của `MaterialPageRoute` là gì?",
+          "q": "Mục đích của `MaterialPageRoute` trong điều hướng Flutter là gì?",
           "q_en": "What is the purpose of `MaterialPageRoute` in Flutter navigation?",
           "options": [
-            "Khẳng định không null.",
-            "Quản lý hoạt ảnh chuyển tiếp cụ thể theo nền tảng.",
-            "Sắp xếp Column/Row.",
-            "Chứa mã nguồn test."
+            "Nó khẳng định một cách bắt buộc rằng một biểu thức có thể null là không null.",
+            "Nó quản lý hoạt ảnh chuyển đổi cụ thể theo nền tảng giữa các màn hình.",
+            "Column sắp xếp các phần tử con theo chiều dọc, trong khi Row sắp xếp các phần tử con theo chiều ngang.",
+            "Nó chứa mã nguồn cho các bài kiểm tra đơn vị (unit), tiện ích (widget) và tích hợp (integration)."
           ],
           "options_en": [
-            "It forcefully asserts non-null...",
+            "It forcefully asserts that a nullable expression is non-null.",
             "It manages the platform-specific transition animation between screens.",
-            "Column arranges children...",
-            "It contains source code for tests..."
+            "Column arranges children vertically, while Row arranges children horizontally.",
+            "It contains the source code for unit, widget, and integration tests."
           ],
           "correct": 1,
-          "explain": "MaterialPageRoute cung cấp hiệu ứng chuyển màn hình chuẩn theo hệ điều hành.",
+          "explain": "MaterialPageRoute thay thế toàn bộ màn hình bằng animation đặc trưng của nền tảng (Android/iOS).",
           "explain_en": "Provides platform-specific screen transition animations."
         },
         {
-          "q": "Công cụ nào cung cấp thông tin về kích thước màn hình, hướng và padding?",
+          "q": "Công cụ Flutter nào cung cấp thông tin về kích thước, hướng và padding của màn hình?",
           "q_en": "Which Flutter tool provides information about the screen's size, orientation, and padding?",
-          "options": ["MediaQuery", "validator", "main.dart", "implements"],
-          "options_en": ["MediaQuery", "validator", "main.dart", "implements"],
+          "options": [
+            "MediaQuery",
+            "validator",
+            "main.dart",
+            "implements"
+          ],
+          "options_en": [
+            "MediaQuery",
+            "validator",
+            "main.dart",
+            "implements"
+          ],
           "correct": 0,
-          "explain": "MediaQuery lấy thông số màn hình thiết bị.",
+          "explain": "MediaQuery lấy thông số thiết bị hiển thị.",
           "explain_en": "MediaQuery gets device screen dimensions and settings."
         },
         {
-          "q": "`LayoutBuilder` khác `MediaQuery` thế nào trong UI phản hồi?",
+          "q": "`LayoutBuilder` khác với `MediaQuery` như thế nào trong việc tạo giao diện người dùng phản hồi (responsive UIs)?",
           "q_en": "How does `LayoutBuilder` differ from `MediaQuery` in creating responsive UIs?",
           "options": [
-            "Nhận diện duy nhất widget để bảo toàn state.",
-            "MediaQuery lấy kích thước màn hình thiết bị, LayoutBuilder lấy ràng buộc từ widget cha.",
-            "Tự động kích hoạt xác thực.",
-            "Tạo Future giả lập độ trễ mạng."
+            "Nó giúp framework của Flutter nhận dạng duy nhất các widget để duy trì trạng thái trong quá trình sửa đổi danh sách.",
+            "MediaQuery cung cấp kích thước màn hình thiết bị, trong khi LayoutBuilder cung cấp các ràng buộc của widget cha.",
+            "Một tính năng tự động kích hoạt logic xác thực mà không cần đợi nhấn nút gửi thủ công.",
+            "Nó tạo ra một Future hoàn thành sau một khoảng thời gian được chỉ định, thường được sử dụng để mô phỏng độ trễ mạng."
           ],
           "options_en": [
-            "It helps Flutter's framework uniquely identify widgets...",
+            "It helps Flutter's framework uniquely identify widgets to preserve state during list modifications.",
             "MediaQuery provides device screen dimensions, while LayoutBuilder provides the constraints of the parent widget.",
-            "A feature that automatically triggers validation...",
-            "It creates a Future that completes..."
+            "A feature that automatically triggers validation logic without waiting for a manual submit button press.",
+            "It creates a Future that completes after a specified duration, often used to simulate network latency."
           ],
           "correct": 1,
-          "explain": "LayoutBuilder dựa vào cha, MediaQuery dựa vào toàn màn hình thiết bị.",
-          "explain_en": "LayoutBuilder uses parent constraints; MediaQuery uses screen dimensions."
+          "explain": "LayoutBuilder dựa trên widget chứa nó, còn MediaQuery dựa trên toàn bộ thiết bị.",
+          "explain_en": "LayoutBuilder uses parent constraints; MediaQuery uses full screen dimensions."
         },
         {
-          "q": "Widget nào hiển thị các con tự động xuống dòng/cột khi hết chỗ?",
+          "q": "Widget nào được sử dụng để hiển thị các phần tử con trong nhiều 'dòng' ngang hoặc dọc tự động ngắt dòng khi hết khoảng trống?",
           "q_en": "Which widget is used to display children in multiple horizontal or vertical 'runs' that automatically wrap when space is exhausted?",
-          "options": ["Wrap", "Hero", "Card", "Form"],
-          "options_en": ["Wrap", "Hero", "Card", "Form"],
+          "options": [
+            "Wrap",
+            "Hero",
+            "Card",
+            "Form"
+          ],
+          "options_en": [
+            "Wrap",
+            "Hero",
+            "Card",
+            "Form"
+          ],
           "correct": 0,
-          "explain": "Wrap tự động bẻ dòng khi các widget con vượt quá kích thước ngang hoặc dọc.",
+          "explain": "Wrap sẽ tự động đưa phần tử con xuống dòng/cột tiếp theo nếu không đủ không gian.",
           "explain_en": "Wrap automatically wraps children to the next line/column."
         },
         {
           "q": "Mục đích của widget `SafeArea` là gì?",
           "q_en": "What is the purpose of the `SafeArea` widget?",
           "options": [
-            "Ngăn rebuild widget không cần thiết.",
-            "Cho phép mã nguồn duy nhất hiển thị đa nền tảng.",
-            "Định danh duy nhất Form.",
-            "Đảm bảo UI tránh xâm nhập hệ thống (notch, status bar)."
+            "Nó ngăn chặn việc xây dựng lại không cần thiết các widget không thay đổi trong vòng đời của ứng dụng.",
+            "Nó cho phép một cơ sở mã duy nhất hiển thị giao diện người dùng bằng công cụ riêng của nó trên các nền tảng khác nhau.",
+            "Nó định danh duy nhất Biểu mẫu (Form) và cho phép truy cập vào trạng thái của nó để xác thực và lưu.",
+            "Nó đảm bảo giao diện người dùng tránh được các sự xâm nhập của hệ thống như rãnh khuyết (notch), thanh trạng thái và phần cắt camera."
           ],
           "options_en": [
-            "It prevents unnecessary rebuilds...",
-            "It allows a single codebase...",
-            "It uniquely identifies the Form...",
+            "It prevents unnecessary rebuilds of widgets that do not change during the app's lifecycle.",
+            "It allows a single codebase to render UI using its own engine across different platforms.",
+            "It uniquely identifies the Form and allows access to its state for validation and saving.",
             "It ensures the UI avoids system intrusions like notches, status bars, and camera cutouts."
           ],
           "correct": 3,
-          "explain": "SafeArea đảm bảo UI không bị che bởi tai thỏ hay thanh trạng thái.",
-          "explain_en": "SafeArea keeps UI out of notches and system bars."
+          "explain": "SafeArea đảm bảo giao diện không bị che khuất bởi các thành phần phần cứng/hệ thống của điện thoại.",
+          "explain_en": "SafeArea keeps UI out of system overlays like notches."
         },
         {
-          "q": "Lớp nào đóng vai trò vùng chứa nhóm nhiều trường biểu mẫu?",
+          "q": "Lớp nào hoạt động như một bộ chứa để nhóm nhiều widget trường biểu mẫu lại với nhau?",
           "q_en": "Which class acts as a container for grouping multiple form field widgets together?",
-          "options": ["Wrap", "Card", "Form", "Hero"],
-          "options_en": ["Wrap", "Card", "Form", "Hero"],
-          "correct": 2,
-          "explain": "Form quản lý chung state và validate cho nhiều input.",
-          "explain_en": "Form groups and manages multiple form fields."
-        },
-        {
-          "q": "Thuộc tính nào của `TextFormField` xác định logic kiểm tra dữ liệu hợp lệ?",
-          "q_en": "Which property of a `TextFormField` is used to define custom logic for checking if the input is valid?",
-          "options": ["main.dart", "validator", "runApp()", "ThemeData"],
-          "options_en": ["main.dart", "validator", "runApp()", "ThemeData"],
-          "correct": 1,
-          "explain": "Thuộc tính `validator` chứa logic kiểm tra input.",
-          "explain_en": "`validator` handles input validation logic."
-        },
-        {
-          "q": "Vai trò của `GlobalKey<FormState>` trong biểu mẫu là gì?",
-          "q_en": "What is the role of a `GlobalKey<FormState>` in Flutter forms?",
           "options": [
-            "Cho phép đa nền tảng.",
-            "Cập nhật UI không mất state.",
-            "Tránh xâm nhập hệ thống.",
-            "Định danh Form và truy cập state để validate/lưu."
+            "Wrap",
+            "Card",
+            "Form",
+            "Hero"
           ],
           "options_en": [
-            "It allows a single codebase...",
-            "Hot Reload updates...",
-            "It ensures the UI avoids system intrusions...",
+            "Wrap",
+            "Card",
+            "Form",
+            "Hero"
+          ],
+          "correct": 2,
+          "explain": "Form đóng vai trò nhóm và quản lý trạng thái của các trường nhập liệu.",
+          "explain_en": "Form groups multiple form fields together."
+        },
+        {
+          "q": "Thuộc tính nào của `TextFormField` được sử dụng để xác định logic tùy chỉnh để kiểm tra xem đầu vào có hợp lệ hay không?",
+          "q_en": "Which property of a `TextFormField` is used to define custom logic for checking if the input is valid?",
+          "options": [
+            "main.dart",
+            "validator",
+            "runApp()",
+            "ThemeData"
+          ],
+          "options_en": [
+            "main.dart",
+            "validator",
+            "runApp()",
+            "ThemeData"
+          ],
+          "correct": 1,
+          "explain": "Thuộc tính `validator` gọi hàm kiểm tra tính hợp lệ của text nhập vào.",
+          "explain_en": "`validator` property is a function to check valid input."
+        },
+        {
+          "q": "Vai trò của `GlobalKey<FormState>` trong các biểu mẫu Flutter là gì?",
+          "q_en": "What is the role of a `GlobalKey<FormState>` in Flutter forms?",
+          "options": [
+            "Nó cho phép một cơ sở mã duy nhất hiển thị giao diện người dùng bằng công cụ riêng của nó trên các nền tảng khác nhau.",
+            "Hot Reload cập nhật giao diện người dùng mà không làm mất trạng thái, trong khi Hot Restart đặt lại trạng thái ứng dụng.",
+            "Nó đảm bảo giao diện người dùng tránh được các sự xâm nhập của hệ thống như rãnh khuyết (notch), thanh trạng thái và phần cắt camera.",
+            "Nó định danh duy nhất Biểu mẫu (Form) và cho phép truy cập vào trạng thái của nó để xác thực và lưu."
+          ],
+          "options_en": [
+            "It allows a single codebase to render UI using its own engine across different platforms.",
+            "Hot Reload updates the UI without losing state, while Hot Restart resets the app state.",
+            "It ensures the UI avoids system intrusions like notches, status bars, and camera cutouts.",
             "It uniquely identifies the Form and allows access to its state for validation and saving."
           ],
           "correct": 3,
-          "explain": "GlobalKey truy cập trạng thái toàn cục của Form để gọi hàm validate.",
-          "explain_en": "GlobalKey allows accessing the Form's state to validate/save."
+          "explain": "GlobalKey giúp kiểm soát và thao tác với trạng thái tổng thể của Form (như gọi hàm validate).",
+          "explain_en": "GlobalKey identifies the form to access its validation state."
         },
         {
-          "q": "`AutovalidateMode` nào được khuyên dùng để phản hồi ngay khi người dùng gõ?",
+          "q": "`AutovalidateMode` nào được khuyên dùng để cung cấp phản hồi ngay lập tức cho người dùng khi họ gõ vào biểu mẫu?",
           "q_en": "Which `AutovalidateMode` is recommended to provide immediate feedback to the user as they type in a form?",
           "options": [
             "rootBundle.loadString()",
@@ -5475,86 +5665,106 @@
             "tester.pumpAndSettle()"
           ],
           "correct": 1,
-          "explain": "Chế độ `onUserInteraction` kích hoạt validate ngay khi người dùng nhập liệu.",
+          "explain": "Chế độ `onUserInteraction` sẽ liên tục xác thực ngay khi người dùng bắt đầu tương tác nhập liệu.",
           "explain_en": "`onUserInteraction` triggers validation dynamically as the user types."
         },
         {
-          "q": "Mục đích của `FocusNode` là gì?",
+          "q": "Mục đích của một `FocusNode` trong Flutter là gì?",
           "q_en": "What is the purpose of a `FocusNode` in Flutter?",
           "options": [
-            "Khởi tạo một lần.",
-            "Lưu trữ key-value đơn giản.",
-            "Cuộn widget.",
-            "Quản lý trạng thái focus của widget (như text field) và xử lý sự kiện phím."
+            "Nó được gọi chính xác một lần khi widget được chèn vào cây, được sử dụng để khởi tạo một lần.",
+            "Nó cho phép lưu trữ vĩnh viễn các cặp khóa-giá trị đơn giản (như mã thông báo hoặc cài đặt) trên thiết bị.",
+            "Nó cho phép một widget con duy nhất có thể cuộn được khi nó vượt quá không gian dọc hoặc ngang của màn hình.",
+            "Nó quản lý trạng thái tiêu điểm (focus) của một widget cụ thể, chẳng hạn như trường văn bản và xử lý các sự kiện bàn phím."
           ],
           "options_en": [
-            "It is called exactly once...",
-            "It allows persistence of key-value pairs...",
-            "It allows a single child widget to be scrollable...",
+            "It is called exactly once when the widget is inserted into the tree, used for one-time initialisation.",
+            "It allows for the persistence of simple key-value pairs (like tokens or settings) on the device.",
+            "It allows a single child widget to be scrollable when it exceeds the screen's vertical or horizontal space.",
             "It manages the focus state of a specific widget, such as a text field, and handles keyboard events."
           ],
           "correct": 3,
-          "explain": "FocusNode điều khiển điểm lấy nét trên giao diện.",
-          "explain_en": "FocusNode manages which widget has keyboard focus."
+          "explain": "FocusNode quản lý đối tượng nào đang nhận sự kiện bàn phím.",
+          "explain_en": "FocusNode tracks and controls keyboard focus."
         },
         {
-          "q": "Gói tiêu chuẩn nào dùng để gọi HTTP requests trong Flutter?",
+          "q": "Gói nào là tiêu chuẩn để thực hiện các yêu cầu HTTP trong Flutter?",
           "q_en": "Which package is the standard for making HTTP requests in Flutter?",
-          "options": ["Hero", "Wrap", "http", "Card"],
-          "options_en": ["Hero", "Wrap", "http", "Card"],
+          "options": [
+            "Hero",
+            "Wrap",
+            "http",
+            "Card"
+          ],
+          "options_en": [
+            "Hero",
+            "Wrap",
+            "http",
+            "Card"
+          ],
           "correct": 2,
-          "explain": "Gói `http` phổ biến nhất cho việc giao tiếp mạng cơ bản.",
+          "explain": "Gói `http` là công cụ cơ bản và tiêu chuẩn nhất để làm việc với API.",
           "explain_en": "The `http` package is standard for network calls."
         },
         {
-          "q": "Vai trò chính của widget `FutureBuilder` là gì?",
+          "q": "Vai trò chính của một widget `FutureBuilder` là gì?",
           "q_en": "What is the primary role of a `FutureBuilder` widget?",
           "options": [
-            "Tạo stream nhiều người nghe.",
-            "Buộc lấp đầy khoảng trống.",
-            "Cung cấp giá trị mặc định cho null.",
-            "Tự xây dựng giao diện dựa trên tương tác mới nhất với một Future."
+            "Nó tạo ra một luồng (stream) có thể được lắng nghe bởi nhiều người đăng ký (subscriber) cùng một lúc.",
+            "Nó buộc một phần tử con lấp đầy không gian trống còn lại trong trục chính.",
+            "Nó cung cấp một giá trị mặc định nếu biểu thức bên trái của nó là null.",
+            "Nó tự xây dựng dựa trên ảnh chụp nhanh mới nhất của quá trình tương tác với một Future."
           ],
           "options_en": [
-            "It creates a stream...",
-            "It forces a child to fill...",
-            "It provides a default value...",
+            "It creates a stream that can be listened to by multiple subscribers simultaneously.",
+            "It forces a child to fill the remaining available space in the main axis.",
+            "It provides a default value if the expression on its left is null.",
             "It builds itself based on the latest snapshot of interaction with a Future."
           ],
           "correct": 3,
-          "explain": "FutureBuilder lắng nghe Future và cập nhật UI khi có data hoặc lỗi.",
-          "explain_en": "FutureBuilder rebuilds based on Future's state."
+          "explain": "FutureBuilder lắng nghe trạng thái của Future và vẽ lại UI khi Future hoàn thành.",
+          "explain_en": "FutureBuilder rebuilds based on a Future's execution state."
         },
         {
-          "q": "Trong kiến trúc Service Layer, trách nhiệm của lớp `ApiService` là gì?",
+          "q": "Trong kiến trúc 'Service Layer', trách nhiệm của lớp `ApiService` là gì?",
           "q_en": "In a 'Service Layer' architecture, what is the responsibility of the `ApiService` class?",
           "options": [
-            "Tạo stream nhiều người nghe.",
-            "Tự xây dựng dựa trên Future.",
-            "Ngăn log thông tin nhạy cảm.",
-            "Gói gọn logic giao tiếp mạng, tách khỏi lớp UI."
+            "Nó tạo ra một luồng (stream) có thể được lắng nghe bởi nhiều người đăng ký (subscriber) cùng một lúc.",
+            "Nó tự xây dựng dựa trên ảnh chụp nhanh mới nhất của quá trình tương tác với một Future.",
+            "Để cải thiện hiệu suất và ngăn chặn thông tin nhạy cảm bị ghi log trong môi trường sản xuất.",
+            "Nó đóng gói toàn bộ logic giao tiếp mạng, tách biệt nó khỏi lớp giao diện người dùng (UI)."
           ],
           "options_en": [
-            "It creates a stream...",
-            "It builds itself...",
-            "To improve performance...",
+            "It creates a stream that can be listened to by multiple subscribers simultaneously.",
+            "It builds itself based on the latest snapshot of interaction with a Future.",
+            "To improve performance and prevent sensitive information from being logged in production.",
             "It encapsulates all network communication logic, separating it from the UI layer."
           ],
           "correct": 3,
-          "explain": "ApiService xử lý toàn bộ lệnh gọi API tách biệt khỏi màn hình.",
-          "explain_en": "ApiService centralizes HTTP logic away from UI components."
+          "explain": "ApiService đảm nhận các tác vụ lấy dữ liệu qua mạng nhằm giảm tải cho UI.",
+          "explain_en": "ApiService centralizes HTTP logic separately from UI."
         },
         {
-          "q": "Thư viện Dart nào bắt buộc dùng để gọi hàm `json.decode()`?",
+          "q": "Thư viện Dart nào được yêu cầu để sử dụng hàm `json.decode()`?",
           "q_en": "Which Dart library is required to use the `json.decode()` function?",
-          "options": ["path_provider", "pubspec.yaml", "dart:convert", "MediaQuery"],
-          "options_en": ["path_provider", "pubspec.yaml", "dart:convert", "MediaQuery"],
+          "options": [
+            "path_provider",
+            "pubspec.yaml",
+            "dart:convert",
+            "MediaQuery"
+          ],
+          "options_en": [
+            "path_provider",
+            "pubspec.yaml",
+            "dart:convert",
+            "MediaQuery"
+          ],
           "correct": 2,
-          "explain": "Thư viện `dart:convert` chứa các hàm xử lý JSON.",
-          "explain_en": "`dart:convert` provides JSON encoders and decoders."
+          "explain": "Thư viện `dart:convert` dùng để mã hóa và giải mã JSON.",
+          "explain_en": "`dart:convert` is required for JSON encode/decode functions."
         },
         {
-          "q": "Phương thức nào dùng để tải tệp JSON từ thư mục assets?",
+          "q": "Phương thức nào được sử dụng để tải một tệp JSON được lưu trữ trong thư mục assets của dự án?",
           "q_en": "Which method is used to load a JSON file stored in the project's assets folder?",
           "options": [
             "rootBundle.loadString()",
@@ -5569,39 +5779,49 @@
             "tester.pumpAndSettle()"
           ],
           "correct": 0,
-          "explain": "`rootBundle.loadString()` dùng để đọc file text từ thư mục assets.",
-          "explain_en": "`rootBundle.loadString()` reads asset files as strings."
+          "explain": "`rootBundle.loadString()` dùng để đọc tệp nội dung text từ asset.",
+          "explain_en": "`rootBundle.loadString()` loads text assets from the bundle."
         },
         {
-          "q": "Gói nào dùng để tìm đường dẫn hệ thống tệp tin chính xác trên Android/iOS?",
+          "q": "Gói nào được sử dụng để tìm đường dẫn hệ thống tệp cục bộ chính xác (ví dụ: thư mục Documents) trên Android và iOS?",
           "q_en": "Which package is used to find the correct local file system paths (e.g., Documents directory) on Android and iOS?",
-          "options": ["path_provider", "pubspec.yaml", "dart:convert", "precacheImage()"],
-          "options_en": ["path_provider", "pubspec.yaml", "dart:convert", "precacheImage()"],
+          "options": [
+            "path_provider",
+            "pubspec.yaml",
+            "dart:convert",
+            "precacheImage()"
+          ],
+          "options_en": [
+            "path_provider",
+            "pubspec.yaml",
+            "dart:convert",
+            "precacheImage()"
+          ],
           "correct": 0,
-          "explain": "`path_provider` giúp tìm thư mục nội bộ của thiết bị.",
-          "explain_en": "`path_provider` locates directories on the host file system."
+          "explain": "Gói `path_provider` giúp truy cập các thư mục lưu trữ ứng dụng trên thiết bị.",
+          "explain_en": "`path_provider` finds system directories like documents or temp."
         },
         {
           "q": "Mục đích của gói `SharedPreferences` trong Flutter là gì?",
           "q_en": "What is the purpose of the `SharedPreferences` package in Flutter?",
           "options": [
-            "Tạo Future hoàn thành sau khoảng thời gian.",
-            "Tạm dừng thực thi async.",
-            "Định tuyến trang chủ/đăng nhập.",
-            "Lưu trữ khóa-giá trị đơn giản (token, settings) trên thiết bị."
+            "Nó tạo ra một Future hoàn thành sau một khoảng thời gian được chỉ định, thường được sử dụng để mô phỏng độ trễ mạng.",
+            "Nó tạm dừng việc thực thi hàm bất đồng bộ cho đến khi Future hoàn thành và trả về một giá trị.",
+            "Để xác định trạng thái xác thực của người dùng và định tuyến họ đến màn hình Trang chủ hoặc Đăng nhập.",
+            "Nó cho phép lưu trữ vĩnh viễn các cặp khóa-giá trị đơn giản (như mã thông báo hoặc cài đặt) trên thiết bị."
           ],
           "options_en": [
-            "It creates a Future...",
-            "It pauses the execution...",
-            "To determine the user's authentication...",
+            "It creates a Future that completes after a specified duration, often used to simulate network latency.",
+            "It pauses the execution of the async function until the Future completes and returns a value.",
+            "To determine the user's authentication state and route them to either the Home or Login screen.",
             "It allows for the persistence of simple key-value pairs (like tokens or settings) on the device."
           ],
           "correct": 3,
-          "explain": "Lưu trữ dữ liệu nhỏ, bền vững kiểu key-value.",
-          "explain_en": "Stores persistent key-value data."
+          "explain": "SharedPreferences lưu trữ dữ liệu dạng key-value nhỏ một cách bền vững trên ổ cứng.",
+          "explain_en": "It stores simple, persistent key-value data."
         },
         {
-          "q": "Dịch vụ Firebase nào dùng để triển khai Google Sign-In?",
+          "q": "Dịch vụ Firebase nào được sử dụng để triển khai Google Sign-In trong một ứng dụng Flutter?",
           "q_en": "Which Firebase service is used to implement Google Sign-In in a Flutter app?",
           "options": [
             "Firebase Authentication",
@@ -5616,11 +5836,11 @@
             "Integration testing"
           ],
           "correct": 0,
-          "explain": "Firebase Auth hỗ trợ đăng nhập Google, Email, Apple, v.v.",
-          "explain_en": "Firebase Auth handles identity and authentication."
+          "explain": "Firebase Authentication hỗ trợ xác thực người dùng bằng nhiều phương thức, bao gồm cả Google.",
+          "explain_en": "Firebase Authentication handles user identity."
         },
         {
-          "q": "Gói nào dùng để hiển thị thông báo cục bộ mà không cần máy chủ push?",
+          "q": "Gói nào được sử dụng để hiển thị các thông báo cục bộ trên thiết bị của người dùng mà không cần máy chủ đẩy (push server)?",
           "q_en": "Which package is used to display notifications locally on a user's device without a push server?",
           "options": [
             "flutter_local_notifications",
@@ -5635,17 +5855,17 @@
             "tester.pumpAndSettle()"
           ],
           "correct": 0,
-          "explain": "`flutter_local_notifications` gửi thông báo trực tiếp từ máy (local).",
-          "explain_en": "`flutter_local_notifications` displays local push notifications."
+          "explain": "Gói `flutter_local_notifications` cho phép thiết bị tự tạo thông báo push nội bộ.",
+          "explain_en": "`flutter_local_notifications` generates on-device push notifications."
         },
         {
-          "q": "Mẫu 'AAA' dùng trong kiểm thử nghĩa là gì?",
+          "q": "Trong Lab 11, mẫu 'AAA' được sử dụng để làm gì trong kiểm thử?",
           "q_en": "In Lab 11, what is the 'AAA' pattern used for in testing?",
           "options": [
             "flutter build apk --analyze-size",
-            "Token xác thực.",
-            "Arrange, Act, và Assert (Sắp xếp, Hành động, Kiểm tra).",
-            "Performance Timeline in DevTools"
+            "Một mã thông báo (token) xác thực.",
+            "Arrange (Sắp xếp), Act (Hành động) và Assert (Khẳng định/Kiểm tra).",
+            "Performance Timeline trong DevTools"
           ],
           "options_en": [
             "flutter build apk --analyze-size",
@@ -5654,48 +5874,68 @@
             "Performance Timeline in DevTools"
           ],
           "correct": 2,
-          "explain": "AAA là khuôn mẫu chuẩn để viết code test: Chuẩn bị, Thực thi, So sánh.",
-          "explain_en": "Standard unit test structure: Arrange dependencies, Act on unit, Assert result."
+          "explain": "AAA là khuôn mẫu chuẩn để thiết kế một bài kiểm tra logic.",
+          "explain_en": "AAA stands for Arrange dependencies, Act on unit, Assert result."
         },
         {
-          "q": "Điểm khác biệt giữa unit test và widget test là gì?",
+          "q": "Sự khác biệt giữa kiểm tra đơn vị (unit test) và kiểm tra widget (widget test) trong Flutter là gì?",
           "q_en": "What is the difference between a unit test and a widget test in Flutter?",
           "options": [
-            "Ngăn rebuild widget.",
-            "Tránh xâm nhập hệ thống.",
-            "Unit test kiểm tra logic thuần, widget test kiểm tra hiển thị UI và tương tác.",
-            "Cải thiện hiệu năng."
+            "Nó ngăn chặn việc xây dựng lại không cần thiết các widget không thay đổi trong vòng đời của ứng dụng.",
+            "Nó đảm bảo giao diện người dùng tránh được các sự xâm nhập của hệ thống như rãnh khuyết (notch), thanh trạng thái và phần cắt camera.",
+            "Kiểm tra đơn vị xác thực logic thuần túy, trong khi kiểm tra widget xác thực hiển thị giao diện người dùng và tương tác.",
+            "Để cải thiện hiệu suất và ngăn chặn thông tin nhạy cảm bị ghi log trong môi trường sản xuất."
           ],
           "options_en": [
-            "It prevents unnecessary rebuilds...",
-            "It ensures the UI avoids system intrusions...",
+            "It prevents unnecessary rebuilds of widgets that do not change during the app's lifecycle.",
+            "It ensures the UI avoids system intrusions like notches, status bars, and camera cutouts.",
             "Unit tests validate pure logic, while widget tests validate UI rendering and interaction.",
-            "To improve performance..."
+            "To improve performance and prevent sensitive information from being logged in production."
           ],
           "correct": 2,
-          "explain": "Unit test cho function, Widget test cho giao diện màn hình.",
-          "explain_en": "Unit test checks functions; Widget test checks UI components."
+          "explain": "Unit test kiểm tra hàm độc lập, widget test kiểm tra giao diện người dùng hiển thị.",
+          "explain_en": "Unit test checks individual functions; Widget test checks UI components."
         },
         {
-          "q": "Kiểm thử nào mô phỏng toàn bộ quy trình end-to-end của người dùng?",
+          "q": "Phương pháp kiểm thử Flutter nào được sử dụng để mô phỏng toàn bộ luồng đầu cuối (end-to-end) của người dùng qua ứng dụng?",
           "q_en": "Which Flutter testing method is used to simulate a user's full end-to-end flow through the application?",
-          "options": ["Integration testing", "AppBundle (.aab)", "Microtask queue", "Widget Inspector"],
-          "options_en": ["Integration testing", "AppBundle (.aab)", "Microtask queue", "Widget Inspector"],
+          "options": [
+            "Integration testing",
+            "AppBundle (.aab)",
+            "Microtask queue",
+            "Widget Inspector"
+          ],
+          "options_en": [
+            "Integration testing",
+            "AppBundle (.aab)",
+            "Microtask queue",
+            "Widget Inspector"
+          ],
           "correct": 0,
-          "explain": "Kiểm thử tích hợp (Integration testing) chạy trên máy ảo/thật như user thật.",
-          "explain_en": "Integration testing runs fully on devices/emulators end-to-end."
+          "explain": "Kiểm thử tích hợp (Integration test) chạy ứng dụng thực tế để mô phỏng tương tác người dùng.",
+          "explain_en": "Integration testing runs end-to-end application workflows on devices."
         },
         {
-          "q": "Công cụ nào trong DevTools dùng để kiểm tra cây widget và lỗi bố cục?",
+          "q": "Công cụ nào trong Flutter DevTools được sử dụng để kiểm tra cây widget và phát hiện các vấn đề về bố cục?",
           "q_en": "Which tool in Flutter DevTools is used to inspect the widget tree and detect layout issues?",
-          "options": ["Microtask queue", "flutter doctor", "AppBundle (.aab)", "Widget Inspector"],
-          "options_en": ["Microtask queue", "flutter doctor", "AppBundle (.aab)", "Widget Inspector"],
+          "options": [
+            "Microtask queue",
+            "flutter doctor",
+            "AppBundle (.aab)",
+            "Widget Inspector"
+          ],
+          "options_en": [
+            "Microtask queue",
+            "flutter doctor",
+            "AppBundle (.aab)",
+            "Widget Inspector"
+          ],
           "correct": 3,
-          "explain": "Widget Inspector giúp debug giao diện UI trực quan.",
-          "explain_en": "Widget Inspector visualizes the Flutter widget tree."
+          "explain": "Widget Inspector trực quan hóa cấu trúc giao diện và layout.",
+          "explain_en": "Widget Inspector visualizes the component tree for layout debugging."
         },
         {
-          "q": "Trong widget test, hàm nào kích hoạt frame và chờ animation hoàn tất?",
+          "q": "Trong kiểm thử widget, hàm nào được sử dụng để kích hoạt một khung hình (frame) và đợi hoạt ảnh hoàn tất?",
           "q_en": "In widget testing, which function is used to trigger a frame and wait for animations to complete?",
           "options": [
             "tester.pumpAndSettle()",
@@ -5710,446 +5950,586 @@
             "tester.enterText()"
           ],
           "correct": 0,
-          "explain": "`pumpAndSettle` render các frame cho đến khi không còn animation.",
-          "explain_en": "`pumpAndSettle` repeatedly calls pump until there are no scheduled frames."
+          "explain": "Hàm này gọi pump lặp đi lặp lại cho đến khi không còn frame nào đang chờ.",
+          "explain_en": "`tester.pumpAndSettle()` repeatedly pumps frames until animations are done."
         },
         {
-          "q": "Mục đích của từ khóa `const` trong tối ưu widget là gì?",
+          "q": "Mục đích của từ khóa `const` trong tối ưu hóa widget là gì?",
           "q_en": "What is the purpose of the `const` keyword in widget optimization?",
           "options": [
-            "Hiển thị đa nền tảng.",
-            "Định danh Form.",
-            "Ngăn rebuild các widget không bao giờ thay đổi.",
-            "Tránh xâm nhập hệ thống."
+            "Nó cho phép một cơ sở mã duy nhất hiển thị giao diện người dùng bằng công cụ riêng của nó trên các nền tảng khác nhau.",
+            "Nó định danh duy nhất Biểu mẫu (Form) và cho phép truy cập vào trạng thái của nó để xác thực và lưu.",
+            "Nó ngăn chặn việc xây dựng lại không cần thiết các widget không thay đổi trong vòng đời của ứng dụng.",
+            "Nó đảm bảo giao diện người dùng tránh được các sự xâm nhập của hệ thống như rãnh khuyết (notch), thanh trạng thái và phần cắt camera."
           ],
           "options_en": [
-            "It allows a single codebase...",
-            "It uniquely identifies the Form...",
+            "It allows a single codebase to render UI using its own engine across different platforms.",
+            "It uniquely identifies the Form and allows access to its state for validation and saving.",
             "It prevents unnecessary rebuilds of widgets that do not change during the app's lifecycle.",
-            "It ensures the UI avoids system intrusions..."
+            "It ensures the UI avoids system intrusions like notches, status bars, and camera cutouts."
           ],
           "correct": 2,
-          "explain": "Const báo cho Flutter biết widget không đổi, giảm chi phí render.",
-          "explain_en": "Const widgets aren't rebuilt when their parent changes."
+          "explain": "Widget `const` được đánh dấu là không đổi, giúp framework bỏ qua nó khi vẽ lại màn hình.",
+          "explain_en": "Const widgets are not rebuilt when parent widgets change."
         },
         {
-          "q": "Widget `Selector` từ gói Provider giúp ích gì cho hiệu năng?",
+          "q": "Widget `Selector` từ gói Provider giúp ích gì cho hiệu suất?",
           "q_en": "How does the `Selector` widget from the Provider package help with performance?",
           "options": [
-            "Chỉ rebuild widget khi một phần cụ thể của model thay đổi.",
-            "Cho phép cuộn dọc/ngang.",
-            "Quản lý trạng thái focus phím.",
-            "Trả về instance có sẵn."
+            "Nó cho phép một widget chỉ xây dựng lại khi một phần cụ thể của mô hình thay đổi, thay vì toàn bộ mô hình.",
+            "Nó cho phép một widget con duy nhất có thể cuộn được khi nó vượt quá không gian dọc hoặc ngang của màn hình.",
+            "Nó quản lý trạng thái tiêu điểm (focus) của một widget cụ thể, chẳng hạn như trường văn bản và xử lý các sự kiện bàn phím.",
+            "Nó cho phép một hàm khởi tạo trả về một thể hiện hiện có hoặc một thể hiện của lớp con thay vì luôn tạo một thể hiện mới."
           ],
           "options_en": [
             "It allows a widget to rebuild only when a specific part of a model changes, rather than the entire model.",
-            "It allows a single child widget to be scrollable...",
-            "It manages the focus state...",
-            "It allows a constructor to return an existing instance..."
+            "It allows a single child widget to be scrollable when it exceeds the screen's vertical or horizontal space.",
+            "It manages the focus state of a specific widget, such as a text field, and handles keyboard events.",
+            "It allows a constructor to return an existing instance or a subclass instance instead of always creating a new one."
           ],
           "correct": 0,
-          "explain": "Selector lọc dữ liệu để tránh rebuild giao diện không cần thiết.",
-          "explain_en": "Selector filters rebuilds to specific value changes."
+          "explain": "Selector chỉ lắng nghe sự thay đổi của các trường dữ liệu cụ thể để tránh rebuild dư thừa.",
+          "explain_en": "Selector filters updates to specific model properties."
         },
         {
-          "q": "Lệnh nào cho phép xem các thành phần chiếm dung lượng trong APK?",
+          "q": "Lệnh nào cho phép các nhà phát triển xem các thành phần nào đang đóng góp nhiều nhất vào kích thước APK cuối cùng của ứng dụng?",
           "q_en": "Which command allows developers to see which components are contributing the most to the app's final APK size?",
           "options": [
-            "Arrange, Act, và Assert.",
+            "Arrange (Sắp xếp), Act (Hành động) và Assert (Khẳng định/Kiểm tra).",
             "flutter build apk --analyze-size",
-            "Nội suy chuỗi ${expression}",
-            "Performance Timeline in DevTools"
+            "Nội suy chuỗi sử dụng `${expression}`",
+            "Performance Timeline trong DevTools"
           ],
           "options_en": [
             "Arrange, Act, and Assert.",
             "flutter build apk --analyze-size",
-            "String interpolation using ${expression}",
+            "String interpolation using `${expression}`",
             "Performance Timeline in DevTools"
           ],
           "correct": 1,
-          "explain": "Lệnh này phân tích kích thước và tạo file json để view chi tiết.",
-          "explain_en": "Generates a size analysis map for the compiled APK."
+          "explain": "Lệnh phân tích kích thước APK sẽ tạo ra file thống kê các thành phần chiếm dụng dung lượng.",
+          "explain_en": "Generates a detailed size analysis of the compiled APK."
         },
         {
-          "q": "Sự khác biệt giữa 'Profile mode' và 'Release mode' là gì?",
+          "q": "Sự khác biệt giữa chế độ 'Profile' và chế độ 'Release' khi chạy một ứng dụng Flutter là gì?",
           "q_en": "What is the difference between 'Profile mode' and 'Release mode' when running a Flutter app?",
           "options": [
-            "Cho phép widget con cuộn.",
-            "Profile mode đo hiệu năng với công cụ debug, Release mode tối ưu tối đa để deploy.",
-            "Quản lý trạng thái focus.",
-            "Trả về instance có sẵn."
+            "Nó cho phép một widget con duy nhất có thể cuộn được khi nó vượt quá không gian dọc hoặc ngang của màn hình.",
+            "Chế độ Profile dành cho kiểm tra hiệu suất với một số công cụ gỡ lỗi, trong khi chế độ Release được tối ưu hóa hoàn toàn để triển khai.",
+            "Nó quản lý trạng thái tiêu điểm (focus) của một widget cụ thể, chẳng hạn như trường văn bản và xử lý các sự kiện bàn phím.",
+            "Nó cho phép một hàm khởi tạo trả về một thể hiện hiện có hoặc một thể hiện của lớp con thay vì luôn tạo một thể hiện mới."
           ],
           "options_en": [
-            "It allows a single child widget to be scrollable...",
+            "It allows a single child widget to be scrollable when it exceeds the screen's vertical or horizontal space.",
             "Profile mode is for performance testing with some debugging tools, while Release mode is fully optimised for deployment.",
-            "It manages the focus state...",
-            "It allows a constructor to return an existing instance..."
+            "It manages the focus state of a specific widget, such as a text field, and handles keyboard events.",
+            "It allows a constructor to return an existing instance or a subclass instance instead of always creating a new one."
           ],
           "correct": 1,
-          "explain": "Profile mode giữ lại thông tin tracking hiệu năng, Release thì loại bỏ hoàn toàn.",
-          "explain_en": "Profile mode includes tracing for DevTools; Release strips it."
+          "explain": "Profile mode biên dịch giống release nhưng giữ lại thông tin tracing, Release mode cắt bỏ hoàn toàn để tốc độ cao nhất.",
+          "explain_en": "Profile includes tracing capabilities; Release strips them for optimal performance."
         },
         {
-          "q": "Phương thức nào nạp ảnh vào bộ nhớ trước khi hiển thị để tránh chớp giật?",
+          "q": "Phương thức Flutter nào được sử dụng để tải hình ảnh vào bộ nhớ trước khi chúng thực sự được hiển thị để tránh hiện tượng nhấp nháy?",
           "q_en": "Which Flutter method is used to load images into memory before they are actually displayed to avoid flickering?",
-          "options": ["textInputAction", "ListView.builder", "precacheImage()", "GestureDetector"],
-          "options_en": ["textInputAction", "ListView.builder", "precacheImage()", "GestureDetector"],
+          "options": [
+            "textInputAction",
+            "ListView.builder",
+            "precacheImage()",
+            "GestureDetector"
+          ],
+          "options_en": [
+            "textInputAction",
+            "ListView.builder",
+            "precacheImage()",
+            "GestureDetector"
+          ],
           "correct": 2,
-          "explain": "Precache đưa ảnh vào cache của engine trước khi build layout.",
-          "explain_en": "Pre-populates the image cache to ensure immediate rendering."
+          "explain": "`precacheImage()` đọc ảnh vào ImageCache của framework trước khi UI cần tới nó.",
+          "explain_en": "`precacheImage()` pre-populates the image cache to ensure immediate rendering."
         },
         {
           "q": "Vai trò của `ValueKey` trong việc tối ưu hóa `ListView` là gì?",
           "q_en": "What is the role of `ValueKey` in optimizing a `ListView`?",
           "options": [
-            "Giúp Flutter định danh widget để bảo toàn trạng thái khi list thay đổi.",
-            "Unit test kiểm tra logic thuần...",
-            "Đảm bảo tránh xâm nhập hệ thống.",
-            "Ngăn rebuild không cần thiết."
+            "Nó giúp framework của Flutter nhận dạng duy nhất các widget để duy trì trạng thái trong quá trình sửa đổi danh sách.",
+            "Kiểm tra đơn vị xác thực logic thuần túy, trong khi kiểm tra widget xác thực hiển thị giao diện người dùng và tương tác.",
+            "Nó đảm bảo giao diện người dùng tránh được các sự xâm nhập của hệ thống như rãnh khuyết (notch), thanh trạng thái và phần cắt camera.",
+            "Nó ngăn chặn việc xây dựng lại không cần thiết các widget không thay đổi trong vòng đời của ứng dụng."
           ],
           "options_en": [
             "It helps Flutter's framework uniquely identify widgets to preserve state during list modifications.",
-            "Unit tests validate pure logic...",
-            "It ensures the UI avoids system intrusions...",
-            "It prevents unnecessary rebuilds..."
+            "Unit tests validate pure logic, while widget tests validate UI rendering and interaction.",
+            "It ensures the UI avoids system intrusions like notches, status bars, and camera cutouts.",
+            "It prevents unnecessary rebuilds of widgets that do not change during the app's lifecycle."
           ],
           "correct": 0,
-          "explain": "Key giúp hệ thống biết chính xác item nào bị xóa/thêm/đổi chỗ.",
-          "explain_en": "Keys preserve state when widgets move in the tree."
+          "explain": "Key giúp Flutter biết một widget cụ thể di chuyển hoặc thay đổi để tái sử dụng thay vì tạo mới.",
+          "explain_en": "Keys preserve state when widgets are added, removed, or reordered."
         },
         {
-          "q": "Tệp nào quản lý các dependency (gói phụ thuộc) và asset?",
+          "q": "Tệp nào trong dự án Flutter được sử dụng để quản lý các phụ thuộc (dependency) và khai báo tài sản (asset)?",
           "q_en": "Which file in a Flutter project is used to manage dependencies and asset declarations?",
-          "options": ["dart:convert", "pubspec.yaml", "path_provider", "MediaQuery"],
-          "options_en": ["dart:convert", "pubspec.yaml", "path_provider", "MediaQuery"],
-          "correct": 1,
-          "explain": "pubspec.yaml là file cấu hình chính của dự án Flutter.",
-          "explain_en": "pubspec.yaml handles packages, assets, and project settings."
-        },
-        {
-          "q": "Trong lập trình bất đồng bộ, từ khóa `await` làm gì?",
-          "q_en": "In the context of asynchronous programming, what does the `await` keyword do?",
           "options": [
-            "Xác định trạng thái đăng nhập.",
-            "Lưu key-value.",
-            "Cho phép hiển thị đa nền tảng.",
-            "Tạm dừng thực thi hàm async đến khi Future hoàn tất và trả về giá trị."
+            "dart:convert",
+            "pubspec.yaml",
+            "path_provider",
+            "MediaQuery"
           ],
           "options_en": [
-            "To determine the user's authentication...",
-            "It allows for the persistence of simple key-value pairs...",
-            "It allows a single codebase...",
+            "dart:convert",
+            "pubspec.yaml",
+            "path_provider",
+            "MediaQuery"
+          ],
+          "correct": 1,
+          "explain": "pubspec.yaml định nghĩa packages và cấu hình resources của dự án.",
+          "explain_en": "pubspec.yaml handles packages, assets, and overall project metadata."
+        },
+        {
+          "q": "Trong bối cảnh lập trình bất đồng bộ, từ khóa `await` làm gì?",
+          "q_en": "In the context of asynchronous programming, what does the `await` keyword do?",
+          "options": [
+            "Để xác định trạng thái xác thực của người dùng và định tuyến họ đến màn hình Trang chủ hoặc Đăng nhập.",
+            "Nó cho phép lưu trữ vĩnh viễn các cặp khóa-giá trị đơn giản (như mã thông báo hoặc cài đặt) trên thiết bị.",
+            "Nó cho phép một cơ sở mã duy nhất hiển thị giao diện người dùng bằng công cụ riêng của nó trên các nền tảng khác nhau.",
+            "Nó tạm dừng việc thực thi hàm bất đồng bộ cho đến khi Future hoàn thành và trả về một giá trị."
+          ],
+          "options_en": [
+            "To determine the user's authentication state and route them to either the Home or Login screen.",
+            "It allows for the persistence of simple key-value pairs (like tokens or settings) on the device.",
+            "It allows a single codebase to render UI using its own engine across different platforms.",
             "It pauses the execution of the async function until the Future completes and returns a value."
           ],
           "correct": 3,
-          "explain": "Await dừng tiến trình tại dòng code đó để đợi kết quả bất đồng bộ.",
-          "explain_en": "Await suspends execution until the Future completes."
+          "explain": "`await` chờ Future hoàn thành quá trình xử lý bất đồng bộ trước khi chạy dòng mã tiếp theo.",
+          "explain_en": "`await` suspends execution until the Future completes."
         },
         {
-          "q": "Từ khóa nào khai báo biến chỉ khởi tạo một lần và không thể thay đổi?",
+          "q": "Từ khóa Dart nào được sử dụng để khai báo một biến chỉ được khởi tạo một lần và không thể thay đổi sau này?",
           "q_en": "Which Dart keyword is used to declare a variable that is initialised once and cannot be changed later?",
-          "options": ["Stream", "Card", "final", "map()"],
-          "options_en": ["Stream", "Card", "final", "map()"],
+          "options": [
+            "Stream",
+            "Card",
+            "final",
+            "map()"
+          ],
+          "options_en": [
+            "Stream",
+            "Card",
+            "final",
+            "map()"
+          ],
           "correct": 2,
-          "explain": "Biến `final` chỉ được gán giá trị duy nhất một lần.",
+          "explain": "Biến `final` được khởi tạo giá trị tại thời điểm chạy và không thể gán lại.",
           "explain_en": "A `final` variable can be set only once."
         },
         {
-          "q": "Mục đích chính của `StreamController.broadcast()` là gì?",
+          "q": "Mục đích sử dụng chính của `StreamController.broadcast()` trong Dart là gì?",
           "q_en": "What is the primary use of `StreamController.broadcast()` in Dart?",
           "options": [
-            "Xây dựng theo Future.",
-            "Tạo Stream có thể lắng nghe bởi nhiều subscriber cùng lúc.",
-            "Gói gọn logic giao tiếp mạng.",
-            "Kiểm tra logic và render UI."
+            "Nó tự xây dựng dựa trên ảnh chụp nhanh mới nhất của quá trình tương tác với một Future.",
+            "Nó tạo ra một luồng (stream) có thể được lắng nghe bởi nhiều người đăng ký (subscriber) cùng một lúc.",
+            "Nó đóng gói toàn bộ logic giao tiếp mạng, tách biệt nó khỏi lớp giao diện người dùng (UI).",
+            "Kiểm tra đơn vị xác thực logic thuần túy, trong khi kiểm tra widget xác thực hiển thị giao diện người dùng và tương tác."
           ],
           "options_en": [
-            "It builds itself based on the latest snapshot...",
+            "It builds itself based on the latest snapshot of interaction with a Future.",
             "It creates a stream that can be listened to by multiple subscribers simultaneously.",
-            "It encapsulates network communication logic...",
-            "Unit tests validate pure logic..."
+            "It encapsulates all network communication logic, separating it from the UI layer.",
+            "Unit tests validate pure logic, while widget tests validate UI rendering and interaction."
           ],
           "correct": 1,
-          "explain": "Broadcast stream cho phép có nhiều luồng listen cùng lúc.",
+          "explain": "Broadcast stream là một luồng dữ liệu cho phép gắn nhiều listener đồng thời.",
           "explain_en": "Broadcast stream allows multiple simultaneous listeners."
         },
         {
-          "q": "Mẫu UI nào sử dụng một controller để xử lý logic và state (như ApiService task)?",
+          "q": "Mẫu giao diện người dùng nào sử dụng một lớp điều khiển duy nhất để xử lý logic kinh doanh và trạng thái, như được thấy trong bài tập ApiService của Lab 8?",
           "q_en": "Which UI pattern uses a single controller class to handle business logic and state, as seen in the Lab 8 ApiService task?",
-          "options": ["Service Layer pattern", "Token xác thực", "Firebase Authentication", "int và double"],
-          "options_en": ["Service Layer pattern", "An authentication token.", "Firebase Authentication", "int and double"],
+          "options": [
+            "Service Layer pattern",
+            "Một mã thông báo (token) xác thực.",
+            "Firebase Authentication",
+            "int và double"
+          ],
+          "options_en": [
+            "Service Layer pattern",
+            "An authentication token.",
+            "Firebase Authentication",
+            "int and double"
+          ],
           "correct": 0,
-          "explain": "Service Layer tách biệt logic xử lý khỏi giao diện màn hình.",
+          "explain": "Service Layer Pattern giúp cô lập mã liên quan đến logic xử lý và dịch vụ bên ngoài khỏi mã UI.",
           "explain_en": "Service Layer pattern cleanly separates business logic."
         },
         {
-          "q": "'autovalidation' trong biểu mẫu Flutter là gì?",
+          "q": "'autovalidation' (tự động xác thực) trong bối cảnh biểu mẫu Flutter là gì?",
           "q_en": "What is 'autovalidation' in the context of Flutter forms?",
           "options": [
-            "Khởi tạo một lần.",
-            "Lấy kích thước màn hình.",
-            "Tính năng tự động chạy logic xác thực không cần đợi bấm nút Submit.",
-            "Tạo độ trễ giả."
+            "Nó được gọi chính xác một lần khi widget được chèn vào cây, được sử dụng để khởi tạo một lần.",
+            "MediaQuery cung cấp kích thước màn hình thiết bị, trong khi LayoutBuilder cung cấp các ràng buộc của widget cha.",
+            "Một tính năng tự động kích hoạt logic xác thực mà không cần đợi nhấn nút gửi thủ công.",
+            "Nó tạo ra một Future hoàn thành sau một khoảng thời gian được chỉ định, thường được sử dụng để mô phỏng độ trễ mạng."
           ],
           "options_en": [
-            "It is called exactly once...",
-            "MediaQuery provides...",
+            "It is called exactly once when the widget is inserted into the tree, used for one-time initialisation.",
+            "MediaQuery provides device screen dimensions, while LayoutBuilder provides the constraints of the parent widget.",
             "A feature that automatically triggers validation logic without waiting for a manual submit button press.",
-            "It creates a Future..."
+            "It creates a Future that completes after a specified duration, often used to simulate network latency."
           ],
           "correct": 2,
-          "explain": "Tự động kiểm tra dữ liệu thay vì chờ ấn nút Xác nhận.",
+          "explain": "Biểu mẫu sẽ liên tục tự kiểm tra lỗi (ví dụ mỗi khi người dùng gõ phím) mà không cần nhấn gửi.",
           "explain_en": "Automatically triggers form field validation continuously."
         },
         {
-          "q": "Phương thức HTTP nào dùng để gửi dữ liệu lên máy chủ nhằm tạo tài nguyên mới?",
+          "q": "Phương thức HTTP nào thường được sử dụng để gửi dữ liệu đến máy chủ nhằm tạo tài nguyên mới?",
           "q_en": "Which HTTP method is generally used to send data to a server to create a new resource?",
-          "options": ["POST", "Wrap", "Card", "Hero"],
-          "options_en": ["POST", "Wrap", "Card", "Hero"],
+          "options": [
+            "POST",
+            "Wrap",
+            "Card",
+            "Hero"
+          ],
+          "options_en": [
+            "POST",
+            "Wrap",
+            "Card",
+            "Hero"
+          ],
           "correct": 0,
-          "explain": "POST được dùng phổ biến để tạo mới (Create).",
-          "explain_en": "POST handles resource creation on servers."
+          "explain": "Giao thức POST gửi dữ liệu đi để máy chủ lưu trữ bản ghi mới.",
+          "explain_en": "POST requests handle resource creation on servers."
         },
         {
-          "q": "Mục đích chính của màn hình `SplashScreen` là gì?",
+          "q": "Trong Lab 10.3, mục đích chính của `SplashScreen` là gì?",
           "q_en": "In Lab 10.3, what was the primary purpose of the `SplashScreen`?",
           "options": [
-            "Tạm dừng hàm async.",
-            "Xác định trạng thái đăng nhập để điều hướng về Home hoặc Login.",
-            "Lưu key-value.",
-            "Tạo độ trễ giả lập."
+            "Nó tạm dừng việc thực thi hàm bất đồng bộ cho đến khi Future hoàn thành và trả về một giá trị.",
+            "Để xác định trạng thái xác thực của người dùng và định tuyến họ đến màn hình Trang chủ hoặc Đăng nhập.",
+            "Nó cho phép lưu trữ vĩnh viễn các cặp khóa-giá trị đơn giản (như mã thông báo hoặc cài đặt) trên thiết bị.",
+            "Nó tạo ra một Future hoàn thành sau một khoảng thời gian được chỉ định, thường được sử dụng để mô phỏng độ trễ mạng."
           ],
           "options_en": [
-            "It pauses execution...",
+            "It pauses the execution of the async function until the Future completes and returns a value.",
             "To determine the user's authentication state and route them to either the Home or Login screen.",
-            "It allows for the persistence...",
-            "It creates a Future..."
+            "It allows for the persistence of simple key-value pairs (like tokens or settings) on the device.",
+            "It creates a Future that completes after a specified duration, often used to simulate network latency."
           ],
           "correct": 1,
-          "explain": "Splash thường được dùng để che khoảng thời gian check token/session.",
-          "explain_en": "Acts as a loading state while checking user authentication."
+          "explain": "Màn hình chào (Splash Screen) thường tạo thời gian chờ để hệ thống kiểm tra token và quyết định route.",
+          "explain_en": "Acts as a loading state while checking user authentication routing."
         },
         {
-          "q": "Thư mục `test/` trong dự án Flutter dùng làm gì?",
+          "q": "Mục đích của thư mục `test/` trong một dự án Flutter là gì?",
           "q_en": "What is the purpose of the `test/` directory in a Flutter project?",
           "options": [
-            "Cung cấp giá trị mặc định.",
-            "Khẳng định không null.",
-            "Chứa mã nguồn cho các bài kiểm tra unit, widget và integration.",
-            "Quản lý hoạt ảnh."
+            "Nó cung cấp một giá trị mặc định nếu biểu thức bên trái của nó là null.",
+            "Nó khẳng định một cách bắt buộc rằng một biểu thức có thể null là không null.",
+            "Nó chứa mã nguồn cho các bài kiểm tra đơn vị (unit), tiện ích (widget) và tích hợp (integration).",
+            "Nó quản lý hoạt ảnh chuyển đổi cụ thể theo nền tảng giữa các màn hình."
           ],
           "options_en": [
-            "It provides a default value...",
-            "It forcefully asserts non-null...",
+            "It provides a default value if the expression on its left is null.",
+            "It forcefully asserts that a nullable expression is non-null.",
             "It contains the source code for unit, widget, and integration tests.",
-            "It manages transition animation..."
+            "It manages the platform-specific transition animation between screens."
           ],
           "correct": 2,
-          "explain": "Thư mục test chứa toàn bộ kịch bản kiểm thử của app.",
-          "explain_en": "Holds unit, widget, and integration test code."
+          "explain": "Thư mục `test` là nơi Flutter tìm kiếm và chạy các tệp mã nguồn phục vụ mục đích kiểm thử phần mềm.",
+          "explain_en": "Holds all testing source files for the application."
         },
         {
-          "q": "Hàm `find.text()` làm gì trong widget test?",
+          "q": "Hàm `find.text()` làm gì trong một bài kiểm tra widget của Flutter?",
           "q_en": "What does the `find.text()` function do in a Flutter widget test?",
           "options": [
-            "Tìm kiếm trong cây widget một widget chứa chuỗi văn bản chỉ định.",
-            "Cập nhật UI không mất state.",
-            "Định danh Form.",
-            "Hiển thị đa nền tảng."
+            "Nó tìm kiếm trên cây widget một widget có chứa chuỗi văn bản được chỉ định.",
+            "Hot Reload cập nhật giao diện người dùng mà không làm mất trạng thái, trong khi Hot Restart đặt lại trạng thái ứng dụng.",
+            "Nó định danh duy nhất Biểu mẫu (Form) và cho phép truy cập vào trạng thái của nó để xác thực và lưu.",
+            "Nó cho phép một cơ sở mã duy nhất hiển thị giao diện người dùng bằng công cụ riêng của nó trên các nền tảng khác nhau."
           ],
           "options_en": [
             "It searches the widget tree for a widget that contains the specified string of text.",
-            "Hot Reload updates...",
-            "It uniquely identifies the Form...",
-            "It allows a single codebase..."
+            "Hot Reload updates the UI without losing state, while Hot Restart resets the app state.",
+            "It uniquely identifies the Form and allows access to its state for validation and saving.",
+            "It allows a single codebase to render UI using its own engine across different platforms."
           ],
           "correct": 0,
-          "explain": "Trình tìm kiếm (Finder) quét text trên màn hình để verify giao diện.",
-          "explain_en": "Finder identifies widgets containing specific text."
+          "explain": "Trình tìm kiếm (Finder) dùng để định vị một widget cụ thể dựa trên chữ viết hiển thị trên nó.",
+          "explain_en": "Finder searches the widget tree for matching text strings."
         },
         {
-          "q": "Tại sao nên xóa câu lệnh `print()` trước khi build bản Release?",
+          "q": "Trong Lab 12, tại sao các câu lệnh `print()` nên bị xóa trước khi xây dựng bản Release?",
           "q_en": "In Lab 12, why should `print()` statements be removed before a Release build?",
           "options": [
-            "Tránh xâm nhập hệ thống.",
-            "Gói gọn logic giao tiếp.",
-            "Unit test kiểm tra logic.",
-            "Để cải thiện hiệu năng và tránh lộ thông tin nhạy cảm ở production."
+            "Nó đảm bảo giao diện người dùng tránh được các sự xâm nhập của hệ thống như rãnh khuyết (notch), thanh trạng thái và phần cắt camera.",
+            "Nó đóng gói toàn bộ logic giao tiếp mạng, tách biệt nó khỏi lớp giao diện người dùng (UI).",
+            "Kiểm tra đơn vị xác thực logic thuần túy, trong khi kiểm tra widget xác thực hiển thị giao diện người dùng và tương tác.",
+            "Để cải thiện hiệu suất và ngăn chặn thông tin nhạy cảm bị ghi log trong môi trường sản xuất."
           ],
           "options_en": [
-            "It ensures the UI avoids system intrusions...",
-            "It encapsulates all network communication...",
-            "Unit tests validate pure logic...",
+            "It ensures the UI avoids system intrusions like notches, status bars, and camera cutouts.",
+            "It encapsulates all network communication logic, separating it from the UI layer.",
+            "Unit tests validate pure logic, while widget tests validate UI rendering and interaction.",
             "To improve performance and prevent sensitive information from being logged in production."
           ],
           "correct": 3,
-          "explain": "Lệnh print gây lag nhẹ và dễ lộ dữ liệu trong console thiết bị thật.",
+          "explain": "Lệnh `print` ghi console gây giảm hiệu năng và dễ vô tình làm lộ dữ liệu nội bộ.",
           "explain_en": "Logging leaks secrets and reduces runtime performance."
         },
         {
-          "q": "File build nào được khuyên dùng phân phối trên Google Play để tối ưu dung lượng?",
+          "q": "Gói xây dựng nào được khuyên dùng để phân phối trên Google Play Store nhằm tối ưu hóa kích thước ứng dụng cho các thiết bị khác nhau?",
           "q_en": "Which build artifact is recommended for distribution on the Google Play Store to optimize app size for different devices?",
-          "options": ["Microtask queue", "flutter doctor", "Widget Inspector", "AppBundle (.aab)"],
-          "options_en": ["Microtask queue", "flutter doctor", "Widget Inspector", "AppBundle (.aab)"],
+          "options": [
+            "Microtask queue",
+            "flutter doctor",
+            "Widget Inspector",
+            "AppBundle (.aab)"
+          ],
+          "options_en": [
+            "Microtask queue",
+            "flutter doctor",
+            "Widget Inspector",
+            "AppBundle (.aab)"
+          ],
           "correct": 3,
-          "explain": "App Bundle (.aab) giúp Google tách nhỏ ứng dụng phù hợp cho từng thiết bị.",
-          "explain_en": "Android App Bundle creates device-optimized APKs dynamically."
+          "explain": "Android App Bundle (.aab) là định dạng tải lên cho phép Google Play chủ động trích xuất các thành phần tương thích nhất với từng máy.",
+          "explain_en": "Android App Bundle generates optimized APKs dynamically per device architecture."
         },
         {
-          "q": "Từ khóa nào trong Dart OOP bắt buộc lớp phải tự triển khai toàn bộ phương thức của interface?",
+          "q": "Trong Dart OOP, từ khóa nào cho phép một lớp triển khai một giao diện (interface) bằng cách cung cấp cách thực thi riêng biệt cho tất cả các phương thức của nó?",
           "q_en": "In Dart OOP, which keyword allows a class to implement an interface by providing its own implementation of all methods?",
-          "options": ["implements", "main.dart", "validator", "MediaQuery"],
-          "options_en": ["implements", "main.dart", "validator", "MediaQuery"],
+          "options": [
+            "implements",
+            "main.dart",
+            "validator",
+            "MediaQuery"
+          ],
+          "options_en": [
+            "implements",
+            "main.dart",
+            "validator",
+            "MediaQuery"
+          ],
           "correct": 0,
-          "explain": "Từ khóa `implements` dùng để áp dụng interface.",
-          "explain_en": "`implements` keyword is used to enforce interface contracts."
+          "explain": "Từ khóa `implements` bắt buộc lớp con phải viết code thực thi cho tất cả các hàm khai báo ở interface.",
+          "explain_en": "The `implements` keyword is used to enforce interface contracts."
         },
         {
           "q": "Mục đích của `SingleChildScrollView` là gì?",
           "q_en": "What is the purpose of `SingleChildScrollView`?",
           "options": [
-            "Quản lý trạng thái focus.",
-            "Cho phép widget con cuộn khi vượt quá giới hạn màn hình dọc/ngang.",
-            "Khởi tạo một lần.",
-            "Chỉ rebuild một phần model."
+            "Nó quản lý trạng thái tiêu điểm (focus) của một widget cụ thể, chẳng hạn như trường văn bản và xử lý các sự kiện bàn phím.",
+            "Nó cho phép một widget con duy nhất có thể cuộn được khi nó vượt quá không gian dọc hoặc ngang của màn hình.",
+            "Nó được gọi chính xác một lần khi widget được chèn vào cây, được sử dụng để khởi tạo một lần.",
+            "Nó cho phép một widget chỉ xây dựng lại khi một phần cụ thể của mô hình thay đổi, thay vì toàn bộ mô hình."
           ],
           "options_en": [
-            "It manages the focus state...",
+            "It manages the focus state of a specific widget, such as a text field, and handles keyboard events.",
             "It allows a single child widget to be scrollable when it exceeds the screen's vertical or horizontal space.",
-            "It is called exactly once...",
-            "It allows a widget to rebuild only when a specific part..."
+            "It is called exactly once when the widget is inserted into the tree, used for one-time initialisation.",
+            "It allows a widget to rebuild only when a specific part of a model changes, rather than the entire model."
           ],
           "correct": 1,
-          "explain": "Giải quyết lỗi tràn màn hình (overflow pixel) bằng cách thêm thanh cuộn.",
+          "explain": "Đây là widget dùng để bọc các phần tử UI dễ gây lỗi tràn màn hình (overflow), hỗ trợ thao tác cuộn.",
           "explain_en": "Provides a scrollable view for overflowing content."
         },
         {
-          "q": "Widget nào hiển thị thông báo tạm thời ở cuối màn hình và tự biến mất?",
+          "q": "Widget nào được sử dụng để hiển thị một thông báo tạm thời ở cuối màn hình và sẽ biến mất sau vài giây?",
           "q_en": "Which widget is used to display a temporary message at the bottom of the screen that disappears after a few seconds?",
-          "options": ["Scaffold", "runApp()", "main.dart", "SnackBar"],
-          "options_en": ["Scaffold", "runApp()", "main.dart", "SnackBar"],
+          "options": [
+            "Scaffold",
+            "runApp()",
+            "main.dart",
+            "SnackBar"
+          ],
+          "options_en": [
+            "Scaffold",
+            "runApp()",
+            "main.dart",
+            "SnackBar"
+          ],
           "correct": 3,
-          "explain": "SnackBar hiện lên thông báo ngắn ở bottom màn hình.",
+          "explain": "SnackBar hiển thị dạng popup nhanh từ cạnh dưới màn hình.",
           "explain_en": "SnackBar shows a brief, auto-dismissing bottom message."
         },
         {
-          "q": "Kết quả của `identical(a, b)` trong Dart nếu cả hai trỏ đến cùng một instance của lớp Singleton?",
+          "q": "Kết quả của việc sử dụng `identical(a, b)` trong Dart nếu cả hai biến đều trỏ đến cùng một thể hiện của lớp singleton là gì?",
           "q_en": "What is the result of using `identical(a, b)` in Dart if both variables refer to the same instance of a singleton class?",
-          "options": ["Wrap", "Hero", "true", "Card"],
-          "options_en": ["Wrap", "Hero", "true", "Card"],
+          "options": [
+            "Wrap",
+            "Hero",
+            "true",
+            "Card"
+          ],
+          "options_en": [
+            "Wrap",
+            "Hero",
+            "true",
+            "Card"
+          ],
           "correct": 2,
-          "explain": "`identical` trả về true nếu cả 2 biến trỏ cùng vị trí vùng nhớ.",
-          "explain_en": "identical() checks memory reference equality."
+          "explain": "`identical` so sánh vị trí bộ nhớ, nên trả về true cho cùng một vùng lưu trữ singleton.",
+          "explain_en": "`identical()` checks memory reference equality."
         },
         {
-          "q": "Công cụ nào đo 'jank' hoặc tốc độ khung hình (FPS) của ứng dụng?",
+          "q": "Công cụ nào bạn sẽ sử dụng để đo độ giật ('jank') hoặc tốc độ khung hình (FPS) của một ứng dụng Flutter?",
           "q_en": "Which tool would you use to measure the 'jank' or frame rate (FPS) of a Flutter application?",
           "options": [
-            "Arrange, Act, và Assert.",
-            "Performance Timeline in DevTools",
+            "Arrange (Sắp xếp), Act (Hành động) và Assert (Khẳng định/Kiểm tra).",
+            "Performance Timeline trong DevTools",
             "flutter build apk --analyze-size",
-            "Nội suy chuỗi ${expression}"
+            "Nội suy chuỗi sử dụng `${expression}`"
           ],
           "options_en": [
             "Arrange, Act, and Assert.",
             "Performance Timeline in DevTools",
             "flutter build apk --analyze-size",
-            "String interpolation using ${expression}"
+            "String interpolation using `${expression}`"
           ],
           "correct": 1,
-          "explain": "Performance tab đo render UI có bị rớt khung hình (jank) không.",
+          "explain": "Performance Timeline theo dõi thời gian render của UI thread để phát hiện frame bị trễ.",
           "explain_en": "Performance timeline traces frame render times."
         },
         {
-          "q": "Lớp nào dùng để định nghĩa màu sắc và kiểu font tuỳ chỉnh cho toàn ứng dụng?",
+          "q": "Lớp Flutter nào được sử dụng để định nghĩa các chủ đề (theme) tùy chỉnh, bao gồm màu sắc và kiểu phông chữ, cho toàn bộ ứng dụng?",
           "q_en": "Which Flutter class is used to define custom themes, including colours and font styles, for the entire app?",
-          "options": ["runApp()", "ThemeData", "main.dart", "validator"],
-          "options_en": ["runApp()", "ThemeData", "main.dart", "validator"],
+          "options": [
+            "runApp()",
+            "ThemeData",
+            "main.dart",
+            "validator"
+          ],
+          "options_en": [
+            "runApp()",
+            "ThemeData",
+            "main.dart",
+            "validator"
+          ],
           "correct": 1,
-          "explain": "ThemeData lưu trữ thuộc tính cấu hình giao diện tổng thể.",
-          "explain_en": "ThemeData holds color, typography, and styling globally."
+          "explain": "ThemeData lưu trữ cấu hình hệ thống giao diện, giúp đồng bộ màu sắc và chữ viết toàn app.",
+          "explain_en": "ThemeData holds global visual configuration."
         },
         {
           "q": "Mục đích của `Future.delayed()` trong Dart là gì?",
           "q_en": "What is the purpose of `Future.delayed()` in Dart?",
           "options": [
-            "Tự động kích hoạt xác thực.",
-            "Khởi tạo một lần.",
-            "Tạo Future hoàn thành sau khoảng thời gian nhất định (thường dùng giả lập độ trễ mạng).",
-            "Lưu key-value."
+            "Một tính năng tự động kích hoạt logic xác thực mà không cần đợi nhấn nút gửi thủ công.",
+            "Nó được gọi chính xác một lần khi widget được chèn vào cây, được sử dụng để khởi tạo một lần.",
+            "Nó tạo ra một Future hoàn thành sau một khoảng thời gian được chỉ định, thường được sử dụng để mô phỏng độ trễ mạng.",
+            "Nó cho phép lưu trữ vĩnh viễn các cặp khóa-giá trị đơn giản (như mã thông báo hoặc cài đặt) trên thiết bị."
           ],
           "options_en": [
-            "A feature that automatically triggers validation...",
-            "It is called exactly once...",
+            "A feature that automatically triggers validation logic without waiting for a manual submit button press.",
+            "It is called exactly once when the widget is inserted into the tree, used for one-time initialisation.",
             "It creates a Future that completes after a specified duration, often used to simulate network latency.",
-            "It allows for the persistence of simple key-value pairs..."
+            "It allows for the persistence of simple key-value pairs (like tokens or settings) on the device."
           ],
           "correct": 2,
-          "explain": "Hàm dùng để trì hoãn thực thi (delay).",
+          "explain": "Dùng để tạo một điểm ngắt có độ dài hẹn trước.",
           "explain_en": "Delays execution by a specified duration."
         },
         {
-          "q": "Thuộc tính nào dùng để chuyển focus sang ô nhập tiếp theo khi người dùng nhấn 'Enter'/'Next'?",
+          "q": "Thuộc tính widget nào được sử dụng để chuyển tiêu điểm (focus) sang trường nhập liệu tiếp theo khi người dùng nhấn phím 'Enter' hoặc 'Next' trên bàn phím?",
           "q_en": "Which widget property is used to move focus to the next input field when the user presses the 'Enter' or 'Next' key on the keyboard?",
-          "options": ["textInputAction", "precacheImage()", "GestureDetector", "ListView.builder"],
-          "options_en": ["textInputAction", "precacheImage()", "GestureDetector", "ListView.builder"],
-          "correct": 0,
-          "explain": "TextInputAction thay đổi nút done trên bàn phím ảo (ví dụ: actionNext).",
-          "explain_en": "Configures the virtual keyboard's action button (e.g. Next/Done)."
-        },
-        {
-          "q": "Hàm nào dùng để nhập văn bản vào `TextField` trong quá trình widget test?",
-          "q_en": "In Lab 11.2, which function is used to enter text into a `TextField` during a widget test?",
-          "options": ["precacheImage()", "tester.enterText()", "ListView.builder", "Navigator.pushNamed"],
-          "options_en": ["precacheImage()", "tester.enterText()", "ListView.builder", "Navigator.pushNamed"],
-          "correct": 1,
-          "explain": "tester.enterText mô phỏng thao tác gõ bàn phím.",
-          "explain_en": "tester.enterText simulates user keyboard input into forms."
-        },
-        {
-          "q": "Lệnh nào xóa thư mục `build/` và reset trạng thái dự án trước khi build release?",
-          "q_en": "Which command is used to delete the `build/` folder and reset the project state before a final release build?",
-          "options": ["Microtask queue", "flutter clean", "Widget Inspector", "flutter doctor"],
-          "options_en": ["Microtask queue", "flutter clean", "Widget Inspector", "flutter doctor"],
-          "correct": 1,
-          "explain": "flutter clean dọn rác build cũ, giúp tránh lỗi cache.",
-          "explain_en": "flutter clean removes generated build files."
-        },
-        {
-          "q": "Vai trò của phương thức `initState()` trong `StatefulWidget` là gì?",
-          "q_en": "What is the role of the `initState()` method in a `StatefulWidget`?",
           "options": [
-            "Quản lý trạng thái focus.",
-            "Cho phép cuộn widget con.",
-            "Được gọi chính xác một lần khi widget được chèn vào cây, dùng cho việc khởi tạo ban đầu.",
-            "Tạo độ trễ giả lập."
+            "textInputAction",
+            "precacheImage()",
+            "GestureDetector",
+            "ListView.builder"
           ],
           "options_en": [
-            "It manages the focus state...",
-            "It allows a single child widget to be scrollable...",
+            "textInputAction",
+            "precacheImage()",
+            "GestureDetector",
+            "ListView.builder"
+          ],
+          "correct": 0,
+          "explain": "`textInputAction` cấu hình nút thao tác ở góc phải dưới của bàn phím ảo điện thoại.",
+          "explain_en": "Configures the action button on the device keyboard."
+        },
+        {
+          "q": "Trong Lab 11.2, hàm nào được sử dụng để nhập văn bản vào `TextField` trong một bài kiểm tra widget?",
+          "q_en": "In Lab 11.2, which function is used to enter text into a `TextField` during a widget test?",
+          "options": [
+            "precacheImage()",
+            "tester.enterText()",
+            "ListView.builder",
+            "Navigator.pushNamed"
+          ],
+          "options_en": [
+            "precacheImage()",
+            "tester.enterText()",
+            "ListView.builder",
+            "Navigator.pushNamed"
+          ],
+          "correct": 1,
+          "explain": "`tester.enterText` mô phỏng việc bấm phím vật lý để gõ dữ liệu trên bàn phím ảo.",
+          "explain_en": "`tester.enterText` simulates typing."
+        },
+        {
+          "q": "Lệnh nào được sử dụng để xóa thư mục `build/` và đặt lại trạng thái dự án trước khi thực hiện một bản dựng phát hành (release build) cuối cùng?",
+          "q_en": "Which command is used to delete the `build/` folder and reset the project state before a final release build?",
+          "options": [
+            "Microtask queue",
+            "flutter clean",
+            "Widget Inspector",
+            "flutter doctor"
+          ],
+          "options_en": [
+            "Microtask queue",
+            "flutter clean",
+            "Widget Inspector",
+            "flutter doctor"
+          ],
+          "correct": 1,
+          "explain": "`flutter clean` xóa tất cả tệp biên dịch bộ nhớ đệm, giúp tránh các lỗi từ lần build cũ.",
+          "explain_en": "`flutter clean` wipes the project cache."
+        },
+        {
+          "q": "Vai trò của phương thức `initState()` trong một `StatefulWidget` là gì?",
+          "q_en": "What is the role of the `initState()` method in a `StatefulWidget`?",
+          "options": [
+            "Nó quản lý trạng thái tiêu điểm (focus) của một widget cụ thể, chẳng hạn như trường văn bản và xử lý các sự kiện bàn phím.",
+            "Nó cho phép một widget con duy nhất có thể cuộn được khi nó vượt quá không gian dọc hoặc ngang của màn hình.",
+            "Nó được gọi chính xác một lần khi widget được chèn vào cây, được sử dụng để khởi tạo một lần.",
+            "Nó tạo ra một Future hoàn thành sau một khoảng thời gian được chỉ định, thường được sử dụng để mô phỏng độ trễ mạng."
+          ],
+          "options_en": [
+            "It manages the focus state of a specific widget, such as a text field, and handles keyboard events.",
+            "It allows a single child widget to be scrollable when it exceeds the screen's vertical or horizontal space.",
             "It is called exactly once when the widget is inserted into the tree, used for one-time initialisation.",
-            "It creates a Future..."
+            "It creates a Future that completes after a specified duration, often used to simulate network latency."
           ],
           "correct": 2,
-          "explain": "Hàm chạy đầu tiên và duy nhất 1 lần khi màn hình (State) tạo ra.",
-          "explain_en": "Called exactly once per State lifecycle creation."
+          "explain": "Được sử dụng cho các khai báo chỉ thiết lập 1 lần, chạy ngay lúc sinh ra state.",
+          "explain_en": "Called exactly once per State object."
         },
         {
-          "q": "Widget nào dùng để phát hiện và phản hồi các thao tác chạm (chạm, kéo) mà không có hiệu ứng hình ảnh?",
+          "q": "Widget Flutter nào được sử dụng để phát hiện và phản hồi các tương tác chạm như nhấn (tap) và kéo (drag) mà không cung cấp phản hồi hình ảnh?",
           "q_en": "Which Flutter widget is used to detect and respond to touch interactions like taps and drags without providing visual feedback?",
-          "options": ["precacheImage()", "ListView.builder", "textInputAction", "GestureDetector"],
-          "options_en": ["precacheImage()", "ListView.builder", "textInputAction", "GestureDetector"],
+          "options": [
+            "precacheImage()",
+            "ListView.builder",
+            "textInputAction",
+            "GestureDetector"
+          ],
+          "options_en": [
+            "precacheImage()",
+            "ListView.builder",
+            "textInputAction",
+            "GestureDetector"
+          ],
           "correct": 3,
-          "explain": "Khác với InkWell có hiệu ứng gợn sóng, GestureDetector bắt sự kiện bấm trong suốt.",
-          "explain_en": "GestureDetector detects gestures but provides no visual ripple effect."
+          "explain": "Trái với InkWell tạo sóng ripple, GestureDetector thu nhận mọi thao tác chạm vô hình.",
+          "explain_en": "GestureDetector registers touch events without visual feedback."
         },
         {
-          "q": "Trong DummyJSON API, đoạn dữ liệu nào thường được trả về khi login thành công để nhận diện phiên?",
+          "q": "Trong API DummyJSON được sử dụng ở Lab 10, dữ liệu nào thường được trả về khi đăng nhập thành công để nhận diện phiên làm việc?",
           "q_en": "In the DummyJSON API used in Lab 10, what piece of data is typically returned on a successful login to identify the session?",
           "options": [
-            "Arrange, Act, và Assert.",
+            "Arrange (Sắp xếp), Act (Hành động) và Assert (Khẳng định/Kiểm tra).",
             "Service Layer pattern",
-            "Một Token xác thực (Authentication token).",
+            "Một mã thông báo (token) xác thực.",
             "Firebase Authentication"
           ],
           "options_en": [
@@ -6159,8 +6539,8 @@
             "Firebase Authentication"
           ],
           "correct": 2,
-          "explain": "Token JWT hoặc chuỗi token thường được cấp sau khi gửi username/mật khẩu đúng.",
-          "explain_en": "APIs return authentication tokens (like JWT) upon valid credentials."
+          "explain": "Máy chủ xác nhận mật khẩu đúng và phản hồi bằng một token chuỗi duy nhất để sử dụng cho các api sau đó.",
+          "explain_en": "APIs respond to valid logins with authentication tokens."
         }
       ]
     }
