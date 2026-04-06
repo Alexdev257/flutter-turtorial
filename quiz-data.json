@@ -3845,7 +3845,7 @@
             "To pause the program",
             "To replace exceptions"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Lập trình bất đồng bộ trong Dart dùng để làm gì?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -3933,7 +3933,7 @@
           ]
         },
         {
-          "q": "What will this code print?",
+          "q": "What will this code print?\n\nFuture<void> main() async {\n  print('A');\n  await Future.delayed(Duration(seconds: 1));\n  print('B');\n}",
           "options": [
             "A B immediately",
             "A (pause 1 second) B",
@@ -3942,7 +3942,7 @@
           ],
           "correct": 0,
           "explain": "PRM393 — trích từ FE.docx.",
-          "q_vi": "Đoạn mã này sẽ in ra gì?",
+          "q_vi": "Đoạn mã này sẽ in ra gì?\n\nFuture<void> main() async {\n  print('A');\n  await Future.delayed(Duration(seconds: 1));\n  print('B');\n}",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
           "options_vi": [
             "A B ngay lập tức",
@@ -3978,7 +3978,7 @@
             "await",
             "async"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào có thể dùng cùng try/catch trong hàm async để xử lý lỗi?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4016,7 +4016,7 @@
             "define",
             "static"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng để khai báo biến trong Dart?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4054,7 +4054,7 @@
             "float",
             "String"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Phần nào sau đây không phải kiểu primitive trong Dart?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4073,7 +4073,7 @@
             "undefined",
             "empty"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Giá trị mặc định của biến chưa khởi tạo trong Dart là gì?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4092,7 +4092,7 @@
             "bool flag = true;",
             "Bool flag = TRUE;"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Khai báo boolean hợp lệ nào sau đây?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4130,7 +4130,7 @@
             "Value can be set only once",
             "Value is always null"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa `final` trong Dart có nghĩa là gì?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4149,7 +4149,7 @@
             "Both are the same",
             "final variables are mutable"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Khác biệt giữa `final` và `const` là gì?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4187,7 +4187,7 @@
             "Conditional operator",
             "Assignment operator"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Toán tử `??` làm gì?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4225,7 +4225,7 @@
             "It prints 0",
             "It assigns default value"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Nếu dùng biến `late` trước khi khởi tạo thì sao?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4244,7 +4244,7 @@
             "var",
             "static"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng cho khởi tạo lười (lazy) trong Dart?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4263,7 +4263,7 @@
             "Unused variables",
             "Dynamic variables only"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "`late` thường dùng với loại biến nào?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4282,7 +4282,7 @@
             "Variable is immutable",
             "Variable must be null"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "`dynamic` trong Dart có nghĩa là gì?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4301,7 +4301,7 @@
             "dynamic x;",
             "All of the above"
           ],
-          "correct": 0,
+          "correct": 3,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Phần nào sau đây là hợp lệ?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4358,7 +4358,7 @@
             "var.runtimeType",
             "getType(var)"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Làm sao kiểm tra kiểu của một biến?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4377,7 +4377,7 @@
             "int? number;",
             "var? number;"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Cách nào khai báo biến int nullable?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4396,7 +4396,7 @@
             "bit",
             "logical"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Kiểu dữ liệu của `true` trong Dart là gì?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4415,7 +4415,7 @@
             "dynamic x = null;",
             "All of the above"
           ],
-          "correct": 0,
+          "correct": 3,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Khai báo nào sau đây hợp lệ?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4453,7 +4453,7 @@
             "===",
             ":="
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Toán tử nào là toán tử so sánh bằng trong Dart?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4472,7 +4472,7 @@
             "&",
             "Both A and B"
           ],
-          "correct": 0,
+          "correct": 3,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Toán tử nào dùng để kết hợp hai điều kiện?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4529,7 +4529,7 @@
             "import",
             "require"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng để nạp thư viện Dart khác?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4548,7 +4548,7 @@
             "include 'dart:io';",
             "use dart.io;"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Cú pháp đúng để import thư viện built-in?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4567,7 +4567,7 @@
             "dart:async",
             "All of the above"
           ],
-          "correct": 0,
+          "correct": 3,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Phần nào là thư viện cốt lõi của Dart?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4586,7 +4586,7 @@
             "dart:async",
             "dart:convert"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Thư viện nào được tự động import vào mọi chương trình Dart?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4624,7 +4624,7 @@
             "import 'dart:math' use sin, cos;",
             "import 'dart:math' with sin;"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Cú pháp nào chỉ import một phần của thư viện?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4681,7 +4681,7 @@
             "when",
             "select"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng để ra quyết định trong Dart?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4700,7 +4700,7 @@
             "if [condition] { }",
             "if {condition}"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Cú pháp đúng cho câu lệnh `if` trong Dart?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4719,7 +4719,7 @@
             "The program has an error",
             "Always executes"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Khối `else` trong Dart chạy khi nào?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4738,7 +4738,7 @@
             "switch",
             "break"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Câu lệnh nào dùng để lặp khối mã số lần cố định?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4757,7 +4757,7 @@
             "Restarts the loop",
             "Pauses the loop"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "`break` trong vòng lặp Dart làm gì?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4776,7 +4776,7 @@
             "Stops the program",
             "Exits the current block"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "`continue` làm gì?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4795,7 +4795,7 @@
             "do-while",
             "foreach"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Vòng lặp nào kiểm tra điều kiện sau khi chạy thân vòng lặp?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4814,7 +4814,7 @@
             "when",
             "check"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng cho nhiều nhánh thay cho nhiều if-else?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4833,7 +4833,7 @@
             "break",
             "exit"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Sau mỗi `case` trong `switch` của Dart cần gì?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4852,7 +4852,7 @@
             "A blueprint for creating objects",
             "A module"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Class trong Dart là gì?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4871,7 +4871,7 @@
             "A keyword",
             "A list"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Object trong Dart là gì?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4890,7 +4890,7 @@
             "class",
             "struct"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Từ khóa nào dùng để định nghĩa class?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4909,7 +4909,7 @@
             "Person();",
             "object Person();"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Làm sao tạo object trong Dart?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4928,7 +4928,7 @@
             "To copy data",
             "To print variables"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Mục đích của constructor trong class?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4947,7 +4947,7 @@
             ".",
             ":"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Ký hiệu nào dùng để truy cập thuộc tính hoặc method của object?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4966,7 +4966,7 @@
             "A variable defined inside a class and belongs to an object",
             "A constant value"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Mô tả nào đúng nhất về biến instance?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -4985,7 +4985,7 @@
             "You can’t create objects",
             "You must use new"
           ],
-          "correct": 0,
+          "correct": 1,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "Nếu không định nghĩa constructor trong class Dart thì sao?",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
@@ -5004,7 +5004,7 @@
             "Object",
             "None of the above"
           ],
-          "correct": 0,
+          "correct": 2,
           "explain": "PRM393 — trích từ FE.docx.",
           "q_vi": "________ là biểu diễn thời gian thực của một thực thể.",
           "explain_vi": "Theo bài kiểm tra tiến độ trong FE.docx (PRM393).",
