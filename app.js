@@ -1,6 +1,9 @@
 (function () {
   'use strict';
 
+  const DESKTOP_MIN = 901;
+  const SIDEBAR_COLLAPSE_KEY = 'on-tap-sidebar-collapsed';
+
   const els = {
     loading: document.getElementById('loading'),
     errorPanel: document.getElementById('errorPanel'),
@@ -11,6 +14,7 @@
     themeToggle: document.getElementById('themeToggle'),
     navToggle: document.getElementById('navToggle'),
     sidebar: document.getElementById('sidebar'),
+    sidebarCollapseToggle: document.getElementById('sidebarCollapseToggle'),
     backdrop: document.getElementById('backdrop'),
     fabTop: document.getElementById('fabTop'),
   };
@@ -333,6 +337,58 @@
     localStorage.setItem('on-tap-theme', next);
   });
 
+  function isDesktopWidth() {
+    return window.innerWidth >= DESKTOP_MIN;
+  }
+
+  function readSidebarCollapsedPref() {
+    return localStorage.getItem(SIDEBAR_COLLAPSE_KEY) === '1';
+  }
+
+  function setDesktopSidebarCollapsed(collapsed) {
+    document.documentElement.classList.toggle('sidebar-collapsed', collapsed);
+    if (isDesktopWidth()) {
+      localStorage.setItem(SIDEBAR_COLLAPSE_KEY, collapsed ? '1' : '0');
+    }
+    if (els.sidebarCollapseToggle) {
+      els.sidebarCollapseToggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+      els.sidebarCollapseToggle.setAttribute(
+        'aria-label',
+        collapsed ? 'Hiện mục lục bên trái' : 'Ẩn mục lục bên trái',
+      );
+    }
+    if (els.sidebar) {
+      els.sidebar.setAttribute('aria-hidden', collapsed && isDesktopWidth() ? 'true' : 'false');
+    }
+  }
+
+  function applyLayoutForViewport() {
+    if (isDesktopWidth()) {
+      setDesktopSidebarCollapsed(readSidebarCollapsedPref());
+    } else {
+      document.documentElement.classList.remove('sidebar-collapsed');
+      if (els.sidebar) els.sidebar.removeAttribute('aria-hidden');
+      if (els.sidebarCollapseToggle) {
+        els.sidebarCollapseToggle.setAttribute('aria-expanded', 'true');
+        els.sidebarCollapseToggle.setAttribute('aria-label', 'Ẩn / hiện mục lục');
+      }
+    }
+  }
+
+  let resizeLayoutTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeLayoutTimer);
+    resizeLayoutTimer = setTimeout(applyLayoutForViewport, 150);
+  });
+
+  if (els.sidebarCollapseToggle) {
+    els.sidebarCollapseToggle.addEventListener('click', function () {
+      if (!isDesktopWidth()) return;
+      const next = !document.documentElement.classList.contains('sidebar-collapsed');
+      setDesktopSidebarCollapsed(next);
+    });
+  }
+
   function closeSidebar() {
     els.sidebar.classList.remove('open');
     els.backdrop.hidden = true;
@@ -375,6 +431,7 @@
   });
 
   initTheme();
+  applyLayoutForViewport();
 
   function getEmbeddedMd() {
     if (typeof window.EMBEDDED_MD === 'string' && window.EMBEDDED_MD.length > 0) {
