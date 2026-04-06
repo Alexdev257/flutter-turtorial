@@ -6543,6 +6543,598 @@
           "explain_en": "APIs respond to valid logins with authentication tokens."
         }
       ]
+    },
+    {
+      "id": "flutter_true_false_full",
+      "title": "Trắc nghiệm Flutter Đúng/Sai (Câu 1 - 65)",
+      "title_en": "Flutter True/False (Q1 - Q65)",
+      "questions": [
+        {
+          "q": "Lệnh 'flutter doctor' được sử dụng để xác định các dependency (phụ thuộc) bị thiếu và các vấn đề về cấu hình công cụ trong môi trường phát triển.",
+          "q_en": "The 'flutter doctor' command is used to identify missing dependencies and tool configuration issues in the development environment.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác. Nó được dùng để chẩn đoán hệ thống.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Tệp 'main.dart' đóng vai trò là điểm vào bắt buộc cho bất kỳ ứng dụng Flutter nào.",
+          "q_en": "The 'main.dart' file serves as the mandatory entry point for any Flutter application.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác. Đây là tệp chứa hàm main().",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Hot Reload đặt lại toàn bộ trạng thái ứng dụng và khởi động lại ứng dụng từ đầu.",
+          "q_en": "Hot Reload resets the entire application state and restarts the app from the beginning.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 1,
+          "explain": "Sai, Hot Reload cập nhật giao diện người dùng trong khi vẫn giữ nguyên trạng thái ứng dụng hiện tại.",
+          "explain_en": "False, Hot Reload updates the user interface while preserving the current application state."
+        },
+        {
+          "q": "Trong Dart, String interpolation (Nội suy chuỗi) cho phép nhúng các biểu thức vào trong chuỗi bằng cách sử dụng ký hiệu '$'.",
+          "q_en": "In Dart, String interpolation allows embedding expressions within strings using the '$' symbol.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Set trong Dart là một collection cho phép lưu trữ các giá trị trùng lặp.",
+          "q_en": "A Dart Set is a collection that allows duplicate values to be stored.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 1,
+          "explain": "Sai, Set là một tập hợp các phần tử duy nhất và không cho phép trùng lặp.",
+          "explain_en": "False, a Set is a collection of unique items that does not permit duplicates."
+        },
+        {
+          "q": "Toán tử '??' trong Dart được sử dụng để cung cấp giá trị dự phòng nếu một biểu thức được đánh giá là null.",
+          "q_en": "The '??' operator in Dart is used to provide a fallback value if an expression evaluates to null.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Một Future đại diện cho một giá trị bất đồng bộ duy nhất, trong khi một Stream cung cấp một chuỗi các sự kiện bất đồng bộ.",
+          "q_en": "A Future represents a single asynchronous value, while a Stream provides a sequence of asynchronous events.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Vòng lặp sự kiện (Event Loop) của Dart ưu tiên các microtask hơn các event callback như I/O hoặc timer.",
+          "q_en": "Dart's Event Loop prioritises microtasks over event callbacks like I/O or timers.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác. Hàng đợi microtask luôn được thực thi trước hàng đợi event.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Hàm khởi tạo Factory trong Dart luôn phải trả về một phiên bản hoàn toàn mới của lớp đó.",
+          "q_en": "A Factory Constructor in Dart must always return a brand new instance of its class.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 1,
+          "explain": "Sai, hàm khởi tạo Factory có thể trả về một phiên bản đã được cache hoặc một phiên bản của lớp con.",
+          "explain_en": "False, a Factory Constructor can return a cached instance or an instance of a subclass."
+        },
+        {
+          "q": "Widget 'ListTile' thường được sử dụng bên trong widget 'Card' để tạo một mục danh sách có cấu trúc.",
+          "q_en": "The 'ListTile' widget is commonly used inside a 'Card' widget to create a structured list item.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Widget 'Expanded' phải được sử dụng bên trong Row, Column hoặc Flex để chiếm phần không gian còn lại.",
+          "q_en": "The 'Expanded' widget must be used within a Row, Column, or Flex to occupy remaining space.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Trong Flutter, 'Scaffold' cung cấp cấu trúc hình ảnh cơ bản cho một màn hình, bao gồm AppBar và FloatingActionButton.",
+          "q_en": "In Flutter, 'Scaffold' provides the basic visual structure for a screen, including an AppBar and FloatingActionButton.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Widget 'Hero' được sử dụng để tạo hoạt ảnh chuyển đổi một widget qua các màn hình khác nhau.",
+          "q_en": "The 'Hero' widget is used to animate a widget transition across different screens.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'MediaQuery' thường được sử dụng để truy xuất kích thước màn hình và hướng của thiết bị.",
+          "q_en": "'MediaQuery' is generally used to retrieve the screen dimensions and orientation of the device.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'LayoutBuilder' xác định bố cục dựa trên các ràng buộc của widget cha thay vì kích thước toàn màn hình.",
+          "q_en": "'LayoutBuilder' determines the layout based on the parent widget's constraints rather than the whole screen size.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Widget 'Wrap' lý tưởng để hiển thị các chip vì nó tự động đẩy các mục xuống dòng tiếp theo khi không gian bị hạn chế.",
+          "q_en": "The 'Wrap' widget is ideal for displaying chips because it automatically flows items to the next line when space is limited.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Cần có 'GlobalKey<FormState>' để xác thực và lưu dữ liệu trong widget Form của Flutter.",
+          "q_en": "A 'GlobalKey<FormState>' is required to validate and save data within a Flutter Form widget.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Đặt 'autovalidateMode' thành 'onUserInteraction' sẽ cung cấp phản hồi xác thực ngay lập tức khi người dùng nhập liệu.",
+          "q_en": "Setting 'autovalidateMode' to 'onUserInteraction' provides immediate validation feedback as the user types.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'FocusNode' được sử dụng để di chuyển con trỏ lập trình từ trường văn bản này sang trường văn bản khác.",
+          "q_en": "'FocusNode' is used to programmatically move the cursor from one text field to another.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Gói 'http' trong Flutter được sử dụng để gửi các yêu cầu GET và POST tới các API REST.",
+          "q_en": "The 'http' package in Flutter is used to send GET and POST requests to REST APIs.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'json.decode()' là một phương thức từ thư viện 'dart:convert' được sử dụng để chuyển đổi một chuỗi JSON thành Map hoặc List.",
+          "q_en": "'json.decode()' is a method from the 'dart:convert' library used to transform a JSON string into a Map or List.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'FutureBuilder' tự động xây dựng lại giao diện người dùng (UI) khi trạng thái của một hoạt động bất đồng bộ thay đổi.",
+          "q_en": "'FutureBuilder' automatically rebuilds its UI when the state of an asynchronous operation changes.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Một 'Service Layer' (Lớp dịch vụ, ví dụ ApiService) nên xử lý logic mạng để tách biệt nó khỏi mã giao diện người dùng.",
+          "q_en": "A 'Service Layer' (ApiService) should handle networking logic to separate it from the UI code.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'rootBundle.loadString()' được sử dụng để đọc các tệp JSON được lưu trữ cục bộ trong thư mục nội dung (assets) của ứng dụng.",
+          "q_en": "'rootBundle.loadString()' is used to read JSON files stored locally within the application assets.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Gói 'path_provider' cho phép một ứng dụng truy cập các thư mục lưu trữ liên tục (persistent storage) như 'Application Documents'.",
+          "q_en": "The 'path_provider' package allows an application to access persistent storage directories like 'Application Documents'.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'SharedPreferences' phù hợp để lưu trữ cơ sở dữ liệu JSON lớn trên thiết bị cục bộ.",
+          "q_en": "'SharedPreferences' is suitable for storing large JSON databases on a local device.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 1,
+          "explain": "Sai, SharedPreferences được thiết kế cho các cặp khóa-giá trị nhỏ như cài đặt người dùng hoặc phiên làm việc.",
+          "explain_en": "False, SharedPreferences is designed for small key-value pairs like user settings or session tokens."
+        },
+        {
+          "q": "Local Notifications (Thông báo cục bộ) là một tích hợp bắt buộc để đáp ứng Learning Outcome 7 (LO7).",
+          "q_en": "Local Notifications are a mandatory integration to satisfy Learning Outcome 7 (LO7).",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Các Unit test (kiểm thử đơn vị) được thiết kế đặc biệt để xác thực bố cục trực quan và khả năng kết xuất của các widget Flutter.",
+          "q_en": "Unit tests are specifically designed to validate the visual layout and rendering of Flutter widgets.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 1,
+          "explain": "Sai, Unit test dùng để xác thực logic thuần túy của Dart, chẳng hạn như models và repositories (phần xử lý widget gọi là widget test).",
+          "explain_en": "False, unit tests validate pure Dart logic, such as models and repositories."
+        },
+        {
+          "q": "Mô hình AAA trong kiểm thử là viết tắt của Arrange (Chuẩn bị), Act (Hành động), và Assert (Khẳng định/Kiểm tra).",
+          "q_en": "The AAA pattern in testing stands for Arrange, Act, and Assert.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Integration tests (Kiểm thử tích hợp) xác thực toàn bộ luồng của một ứng dụng, từ đăng nhập đến truy xuất dữ liệu.",
+          "q_en": "Integration tests validate the entire flow of an application, from login to data retrieval.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Công cụ 'Widget Inspector' trong DevTools cho phép các nhà phát triển hình dung cây widget và các ràng buộc bố cục.",
+          "q_en": "The 'Widget Inspector' tool in DevTools allows developers to visualise the widget tree and layout constraints.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Việc trích xuất một danh sách phức tạp thành một widget riêng biệt có thể cải thiện hiệu suất bằng cách giảm thiểu các lần xây dựng lại (rebuild) không cần thiết.",
+          "q_en": "Extracting a complex list item into a separate widget can improve performance by reducing unnecessary rebuilds.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Widget 'Selector' hoạt động hiệu quả hơn 'Provider.of' vì nó chỉ xây dựng lại (rebuild) khi dữ liệu cụ thể thay đổi.",
+          "q_en": "The 'Selector' widget is more efficient than 'Provider.of' because it only rebuilds when specific data changes.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'Profile Mode' được sử dụng để kiểm tra các tính năng hiệu suất của ứng dụng như FPS và hiện tượng giật hình (jank) trước khi triển khai.",
+          "q_en": "'Profile Mode' is used to test application performance features like FPS and jank before deployment.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Một 'Release Build' bao gồm tất cả thông tin gỡ lỗi để giúp khắc phục sự cố trên một thiết bị vật lý.",
+          "q_en": "A 'Release Build' includes all debugging information to help troubleshoot issues on a physical device.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 1,
+          "explain": "Sai, các bản dựng Release được tối ưu hóa cho hiệu suất và kích thước bằng cách loại bỏ tất cả mã gỡ lỗi.",
+          "explain_en": "False, Release builds are optimised for performance and size by removing all debugging code."
+        },
+        {
+          "q": "'flutter build apk --analyze-size' là lệnh được sử dụng để xem xét các thành phần nào đóng góp nhiều nhất vào kích thước ứng dụng.",
+          "q_en": "'flutter build apk --analyze-size' is the command used to review which components contribute most to the app size.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Mọi ứng dụng Flutter phải gọi hàm 'runApp()' để đính kèm widget gốc vào màn hình.",
+          "q_en": "Every Flutter application must call the 'runApp()' function to attach the root widget to the screen.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Câu lệnh 'switch' của Dart có thể được sử dụng để thực thi các khối mã khác nhau dựa trên giá trị của một biến.",
+          "q_en": "Dart's 'switch' statement can be used to execute different blocks of code based on a variable's value.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'StreamController.broadcast()' cho phép nhiều listener đăng ký cùng một luồng dữ liệu.",
+          "q_en": "'StreamController.broadcast()' allows multiple listeners to subscribe to the same stream of data.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Việc thêm 'const' vào các static widgets sẽ ngăn chúng bị xây dựng lại (rebuild) trong quá trình cập nhật ứng dụng.",
+          "q_en": "Adding 'const' to static widgets prevents them from being rebuilt during application updates.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'SingleChildScrollView' là giải pháp phổ biến để ngăn chặn lỗi tràn bố cục (layout overflow) khi bàn phím ảo xuất hiện.",
+          "q_en": "'SingleChildScrollView' is a common solution for preventing layout overflow when the soft keyboard appears.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'FocusScope.of(context).unfocus()' là phương thức tiêu chuẩn được sử dụng để ẩn/tắt bàn phím trên thiết bị di động.",
+          "q_en": "'FocusScope.of(context).unfocus()' is the standard method used to dismiss the mobile keyboard.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Hàm khởi tạo 'factory Model.fromJson' thường được sử dụng để ánh xạ các Map phản hồi từ API thành các đối tượng Dart.",
+          "q_en": "The 'factory Model.fromJson' constructor is typically used to map API response maps to Dart objects.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Việc tích hợp Firebase Google Sign-In yêu cầu phải cấu hình khóa SHA trong dự án Firebase.",
+          "q_en": "Integration of Firebase Google Sign-In requires the configuration of SHA keys in the Firebase project.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'pumpWidget()' là chức năng được sử dụng trong kiểm thử widget (widget testing) để hiển thị giao diện người dùng phục vụ cho việc kiểm tra.",
+          "q_en": "'pumpWidget()' is the function used in widget testing to render the UI for inspection.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "AppBundle (.aab) là định dạng được khuyên dùng để xuất bản ứng dụng Flutter lên Google Play.",
+          "q_en": "An AppBundle (.aab) is the recommended format for publishing Flutter apps to Google Play.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Trong Dart, một named constructor (hàm khởi tạo có tên) cho phép một lớp có nhiều hàm khởi tạo phục vụ cho các mục đích khác nhau.",
+          "q_en": "In Dart, a named constructor allows a class to have multiple constructors with different purposes.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'identical(a, b)' trả về true nếu cả hai biến đều trỏ đến cùng một thực thể (instance) chính xác trong bộ nhớ.",
+          "q_en": "'identical(a, b)' returns true if both variables refer to the exact same instance in memory.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Xác thực bất đồng bộ (chẳng hạn như kiểm tra tính khả dụng của email) có thể được thực hiện sau khi vượt qua xác thực biểu mẫu cục bộ.",
+          "q_en": "Asynchronous validation (like checking email availability) can be performed after local form validation passes.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'SafeArea' là widget được sử dụng để đảm bảo giao diện người dùng không bị che khuất bởi các tính năng phần cứng như rãnh cắt của camera (notch).",
+          "q_en": "'SafeArea' is a widget used to ensure the UI is not obscured by hardware features like camera notches.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Thuộc tính 'TextInputAction.done' yêu cầu bàn phím hiển thị nút hoàn thành thay vì nút chuyển sang trường tiếp theo.",
+          "q_en": "The 'TextInputAction.done' property tells the keyboard to display a completion button rather than a next field button.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "CRUD là viết tắt của Create, Read, Update, và Design.",
+          "q_en": "CRUD stands for Create, Read, Update, and Design.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 1,
+          "explain": "Sai, CRUD là viết tắt của Create (Tạo mới), Read (Đọc), Update (Cập nhật), và Delete (Xóa).",
+          "explain_en": "False, CRUD stands for Create, Read, Update, and Delete."
+        },
+        {
+          "q": "Việc lưu trữ hình ảnh trước (Pre-caching images) giúp cải thiện trải nghiệm người dùng bằng cách tải nội dung vào bộ nhớ trước khi chúng được hiển thị.",
+          "q_en": "Pre-caching images improves user experience by loading assets into memory before they are displayed.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Các Unit test nên được lưu trữ trong thư mục 'test/' của dự án Flutter.",
+          "q_en": "Unit tests should be stored in the 'test/' folder of a Flutter project.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Nút 'Retry' (Thử lại) là một yếu tố UX (trải nghiệm người dùng) được khuyến nghị khi một lệnh gọi API dẫn đến trạng thái lỗi.",
+          "q_en": "A 'Retry' button is a recommended UX element when an API call results in an error state.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'ThemeData' cho phép tùy chỉnh màu sắc, phông chữ và kiểu widget trên toàn cầu trong một ứng dụng.",
+          "q_en": "'ThemeData' allows for global customisation of colours, fonts, and widget styles across an app.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Các Named routes (tuyến đường được đặt tên) được kích hoạt bằng phương thức 'Navigator.pushNamed'.",
+          "q_en": "Named routes are triggered using the 'Navigator.pushNamed' method.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Trong Dart, 'Future.delayed()' có thể được sử dụng để mô phỏng độ trễ của mạng trong quá trình kiểm thử.",
+          "q_en": "In Dart, 'Future.delayed()' can be used to simulate network latency during testing.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Hàm khởi tạo 'ListView.builder' hiệu quả hơn cho các danh sách dài so với hàm khởi tạo 'ListView' tiêu chuẩn.",
+          "q_en": "The 'ListView.builder' constructor is more efficient for long lists than the standard 'ListView' constructor.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Việc sử dụng 'ValueKey' giúp Flutter xác định tính duy nhất của các widget trong quá trình cập nhật và sắp xếp lại danh sách.",
+          "q_en": "Use of 'ValueKey' helps Flutter uniquely identify widgets during list updates and reordering.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "Unit tests yêu cầu máy ảo mô phỏng (emulator) đang chạy hoặc thiết bị vật lý để thực thi.",
+          "q_en": "Unit tests require a running emulator or physical device to execute.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 1,
+          "explain": "Sai, các unit test chạy trên môi trường thực thi (runtime) Dart của máy tính cục bộ mà không cần emulator.",
+          "explain_en": "False, unit tests run on the local machine's Dart runtime without an emulator."
+        },
+        {
+          "q": "Kiểm thử tích hợp (Integration tests) mô phỏng các tương tác thực tế của người dùng để xác minh logic đầu cuối (end-to-end) của ứng dụng.",
+          "q_en": "Integration tests simulate real user interactions to verify end-to-end application logic.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'pubspec.yaml' là tệp nơi các dependency bên ngoài và tài sản hình ảnh (image assets) phải được đăng ký.",
+          "q_en": "'pubspec.yaml' is the file where external dependencies and image assets must be registered.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'SplashScreen' của Flutter thường được sử dụng để xác định tuyến đường (route) ban đầu dựa trên các session token hiện có.",
+          "q_en": "A Flutter 'SplashScreen' is often used to determine the initial route based on existing session tokens.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        },
+        {
+          "q": "'CircularProgressIndicator' là widget tiêu chuẩn để biểu thị trạng thái đang tải (loading) trong Flutter.",
+          "q_en": "The 'CircularProgressIndicator' is the standard widget for indicating a loading state in Flutter.",
+          "options": ["Đúng", "Sai"],
+          "options_en": ["True", "False"],
+          "correct": 0,
+          "explain": "Câu lệnh này là chính xác.",
+          "explain_en": "The statement is true."
+        }
+      ]
     }
   ]
 }
